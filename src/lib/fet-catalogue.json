@@ -1,0 +1,322 @@
+[
+  {
+    "id": "fet-9781770065451",
+    "g": "en",
+    "course": "FAL",
+    "grade": 10,
+    "genre": "Drama",
+    "t": "The African Dustbin",
+    "a": "Victor Mtubani",
+    "isbn": "9781770065451"
+  },
+  {
+    "id": "fet-9781928297796",
+    "g": "af",
+    "course": "HL",
+    "grade": 10,
+    "genre": "Drama",
+    "t": "Die Testament",
+    "a": "Rhona Peens",
+    "isbn": "9781928297796"
+  },
+  {
+    "id": "fet-9781485622925",
+    "g": "en",
+    "course": "HL",
+    "grade": 10,
+    "genre": "Novel",
+    "t": "Mother to Mother",
+    "a": "Sindiwe Magona",
+    "isbn": "9781485622925"
+  },
+  {
+    "id": "fet-9780994651655",
+    "g": "en",
+    "course": "FAL",
+    "grade": 10,
+    "genre": "Novel",
+    "t": "Finders Keepers",
+    "a": "Rosamund Haden",
+    "isbn": "9780994651655"
+  },
+  {
+    "id": "fet-9781928294023",
+    "g": "en",
+    "course": "HL",
+    "grade": 10,
+    "genre": "Novel",
+    "t": "The Mark",
+    "a": "Edyth Bulbring",
+    "isbn": "9781928294023"
+  },
+  {
+    "id": "fet-9781776040001",
+    "g": "en",
+    "course": "FAL",
+    "grade": 10,
+    "genre": "Short Stories Anthology",
+    "t": "Fabulus: An Anthology of Short Stories",
+    "a": "B Walter",
+    "isbn": "9781776040001"
+  },
+  {
+    "id": "fet-9781776042418",
+    "g": "en",
+    "course": "FAL",
+    "grade": 11,
+    "genre": "Novel",
+    "t": "Far from the madding crowd",
+    "a": "Thomas Hardy",
+    "isbn": "9781776042418"
+  },
+  {
+    "id": "fet-9781430542964",
+    "g": "en",
+    "course": "FAL",
+    "grade": 11,
+    "genre": "Poetry Anthology",
+    "t": "Vistas of Poems",
+    "a": "Blanche Scheffler",
+    "isbn": "9781430542964"
+  },
+  {
+    "id": "fet-9781431041763",
+    "g": "af",
+    "course": "FAL",
+    "grade": 11,
+    "genre": "Drama",
+    "t": "Die laaste karretjiesgraf",
+    "a": "A Fugard; T Viviers",
+    "isbn": "9781431041763"
+  },
+  {
+    "id": "fet-9781431039722",
+    "g": "af",
+    "course": "FAL",
+    "grade": 11,
+    "genre": "Novel",
+    "t": "Die Kruppel Engel",
+    "a": "Z Kock",
+    "isbn": "9781431039722"
+  },
+  {
+    "id": "fet-9781431037254",
+    "g": "en",
+    "course": "FAL",
+    "grade": 11,
+    "genre": "Drama",
+    "t": "Sophiatown",
+    "a": "Author: Malcolm Purkey; Resource material: Joanette van der Merwe",
+    "isbn": "9781431037254"
+  },
+  {
+    "id": "fet-9781431041770",
+    "g": "af",
+    "course": "HL",
+    "grade": 10,
+    "genre": "Poetry Anthology",
+    "t": "Verskuns vir Huistaal",
+    "a": "Riens Vosloo (Compiler)",
+    "isbn": "9781431041770"
+  },
+  {
+    "id": "fet-9780798165860",
+    "g": "af",
+    "course": "FAL",
+    "grade": 10,
+    "genre": "Poetry Anthology",
+    "t": "Vers en vlam: 'n poësiebloemlesing",
+    "a": "Jeanette Ferreira",
+    "isbn": "9780798165860"
+  },
+  {
+    "id": "fet-9781775898306",
+    "g": "en",
+    "course": "HL",
+    "grade": 10,
+    "genre": "Drama",
+    "t": "The Lighthouse Keeper's Wife",
+    "a": "Charles Fourie",
+    "isbn": "9781775898306"
+  },
+  {
+    "id": "fet-9780636179394",
+    "g": "af",
+    "course": "FAL",
+    "grade": 10,
+    "genre": "Novel",
+    "t": "Die kind",
+    "a": "J. van Tonder",
+    "isbn": "9780636179394"
+  },
+  {
+    "id": "fet-9780636184763",
+    "g": "af",
+    "course": "FAL",
+    "grade": 11,
+    "genre": "Poetry Anthology",
+    "t": "Sprak of sprook en ander gedigte",
+    "a": "K. Kombuis, J. Boyes, K. Lombard, L. Esterhuizen, W. Krog, Elias P. Nel, W. Fransman, S. Donges, P. Snyders, P. Bekker, D. Ferrus, P.J. Philander, D. Hugo, L. Malan, G. Weidemann, H. Viljoen, J. de Lange, Totius, H. Boshoff, H. Heese, MM Walters",
+    "isbn": "9780636184763"
+  },
+  {
+    "id": "fet-9780636179417",
+    "g": "af",
+    "course": "FAL",
+    "grade": 11,
+    "genre": "Short Stories Anthology",
+    "t": "Verneukkind en ander verhale",
+    "a": "R. Daniels, A. de Vries, E. Joubert, C. Neser, A. Simon, K. Willemse, R. Scheepers, J. Spies, P. Bekker, J. Fouche, C. Fourie, J.M. Gilfillan, H. Kalmer, A. Kulsen, J. van Tonder, F. Bloemhof, E. Joubert, J. Basson, F. Viljoen, C.V. du Plessis",
+    "isbn": "9780636179417"
+  },
+  {
+    "id": "fet-9780636184756",
+    "g": "af",
+    "course": "HL",
+    "grade": 11,
+    "genre": "Poetry Anthology",
+    "t": "Om die aarde aan te haal en ander gedigte",
+    "a": "I. van Staden, W. Stockenstrom, J.L. Marais, M. Bosman, D. Hugo, E. Castelyn, V. Oliphant, TT Cloete, J. Myburg, R.S. Kamfer, I. Rousseau, H. du Plooy, E. Marais, M. Grobler, MM Walters, D. van Niekerk, Z. Bezuidenhout, Elias P. Nel, B. Breytenbach",
+    "isbn": "9780636184756"
+  },
+  {
+    "id": "fet-9780636179530",
+    "g": "en",
+    "course": "HL",
+    "grade": 11,
+    "genre": "Novel",
+    "t": "Things fall apart",
+    "a": "Chinua Achebe",
+    "isbn": "9780636179530"
+  },
+  {
+    "id": "fet-9781920542122",
+    "g": "en",
+    "course": "FAL",
+    "grade": 11,
+    "genre": "Drama",
+    "t": "Shakespeare 2000 The Merchant of Venice",
+    "a": "WG Saunders",
+    "isbn": "9781920542122"
+  },
+  {
+    "id": "fet-9781770245068",
+    "g": "af",
+    "course": "HL",
+    "grade": 10,
+    "genre": "Novel",
+    "t": "Die driehoekige sirkel",
+    "a": "C Vorster",
+    "isbn": "9781770245068"
+  },
+  {
+    "id": "fet-9781430737544",
+    "g": "af",
+    "course": "HL",
+    "grade": 11,
+    "genre": "Drama",
+    "t": "Op die planke",
+    "a": "PW Scholtz & ME Vorster",
+    "isbn": "9781430737544"
+  },
+  {
+    "id": "fet-9781770336513",
+    "g": "en",
+    "course": "FAL",
+    "grade": 11,
+    "genre": "Novel",
+    "t": "Dreaming of Light",
+    "a": "Jayne Bauling",
+    "isbn": "9781770336513"
+  },
+  {
+    "id": "fet-9780190407315",
+    "g": "en",
+    "course": "HL",
+    "grade": 11,
+    "genre": "Drama",
+    "t": "Macbeth: Shakespeare for Southern Africa",
+    "a": "W. Shakespeare, M. Merrington",
+    "isbn": "9780190407315"
+  },
+  {
+    "id": "fet-9780199079636",
+    "g": "en",
+    "course": "HL",
+    "grade": 11,
+    "genre": "Poetry Anthology",
+    "t": "Poems from all over",
+    "a": "R. Kozain, J. Monk, M. Monk, R. Peverley",
+    "isbn": "9780199079636"
+  },
+  {
+    "id": "fet-9780799375398",
+    "g": "af",
+    "course": "FAL",
+    "grade": 10,
+    "genre": "Drama",
+    "t": "Betower: die drama",
+    "a": "Fanie Viljoen",
+    "isbn": "9780799375398"
+  },
+  {
+    "id": "fet-9780799375404",
+    "g": "af",
+    "course": "FAL",
+    "grade": 10,
+    "genre": "Short Stories Anthology",
+    "t": "Ink en ander verhale",
+    "a": "André  P. Brink; Braam van der Vyver;Carina Diedericks-Hugo;Chris Barnard;Christo Davids; E.K.M. Dido; Elias P. Nel;Elsa Joubert;Fanie Viljoen;George Weideman;J.M. Gilfillan; Jaco Jacobs;Jan van Tonder; Johan Bakkes; Maya Fowler;Modikwagae Joseph Pholo",
+    "isbn": "9780799375404"
+  },
+  {
+    "id": "fet-9780992228880",
+    "g": "af",
+    "course": "HL",
+    "grade": 11,
+    "genre": "Novel",
+    "t": "Droomdelwers",
+    "a": "Esta Steyn / Aletta Mihalik",
+    "isbn": "9780992228880"
+  },
+  {
+    "id": "fet-9780521735759",
+    "g": "en",
+    "course": "HL",
+    "grade": 10,
+    "genre": "Drama",
+    "t": "Romeo and Juliet",
+    "a": "William Shakespeare/Clive Jordaan/Rex Gibson",
+    "isbn": "9780521735759"
+  },
+  {
+    "id": "fet-9780796074379",
+    "g": "en",
+    "course": "FAL",
+    "grade": 10,
+    "genre": "Poetry Anthology",
+    "t": "SHUTERS POETRY ANTHOLOGY (FAL) (SCHOOL EDITION)",
+    "a": "KRONE BC, KEAL HM",
+    "isbn": "9780796074379"
+  },
+  {
+    "id": "fet-9780796074386",
+    "g": "en",
+    "course": "FAL",
+    "grade": 11,
+    "genre": "Short Stories Anthology",
+    "t": "SHUTERS SHORT STORY ANTHOLOGY(FAL) (SCHOOL EDITION)",
+    "a": "Krone, Bridget C",
+    "isbn": "9780796074386"
+  },
+  {
+    "id": "fet-9780796074201",
+    "g": "en",
+    "course": "HL",
+    "grade": 10,
+    "genre": "Poetry Anthology",
+    "t": "SHUTERS HL POETRY ANTHOLOGY (SCHOOL EDITION)",
+    "a": "Krone, Bridget C",
+    "isbn": "9780796074201"
+  }
+]

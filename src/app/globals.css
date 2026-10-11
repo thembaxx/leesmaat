@@ -1,0 +1,167 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-sf: var(--sf);
+  --color-ink: var(--ink);
+  --color-mu: var(--mu);
+  --color-ln: var(--ln);
+  --color-hl: var(--hl);
+  --color-hw: var(--hw);
+  --color-ac: var(--ac);
+  --color-fl: var(--fl);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-literata), Georgia, serif;
+  --ease-ios: cubic-bezier(0.32, 0.72, 0, 1);
+  --animate-pop: pop 0.5s var(--ease-ios);
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-sway: sway 5s ease-in-out infinite;
+  --animate-rise: rise 0.45s var(--ease-ios);
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.7);
+  }
+  60% {
+    transform: scale(1.18);
+  }
+}
+@keyframes float {
+  50% {
+    translate: 0 -14px;
+  }
+}
+@keyframes sway {
+  0%,
+  100% {
+    transform: perspective(600px) rotateY(-28deg);
+  }
+  50% {
+    transform: perspective(600px) rotateY(24deg);
+  }
+}
+@keyframes rise {
+  from {
+    transform: translateY(10px);
+  }
+}
+
+/* Reading themes: paper (default) · sepia (e-reader) · night (AMOLED) */
+:root {
+  --bg: #fbfaf7;
+  --sf: #fff;
+  --ink: #161614;
+  --mu: #79766e;
+  --ln: #ece8df;
+  --hl: #e4f4d0;
+  --hw: #b7df8b;
+  --ac: #2f6b4f;
+  --fl: #e8643c;
+  --fs: 19px;
+}
+:root[data-theme='sepia'] {
+  --bg: #f4ecd8;
+  --sf: #fbf5e6;
+  --ink: #3b3022;
+  --mu: #8a7a60;
+  --ln: #e3d7bb;
+  --hl: #e7e4b4;
+  --hw: #d2cc86;
+  --ac: #6a5a2e;
+}
+:root[data-theme='night'] {
+  --bg: #000;
+  --sf: #121212;
+  --ink: #e9e6df;
+  --mu: #8b8880;
+  --ln: #242321;
+  --hl: #1c3220;
+  --hw: #2f5d37;
+  --ac: #8fd69a;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #000;
+    --sf: #121212;
+    --ink: #e9e6df;
+    --mu: #8b8880;
+    --ln: #242321;
+    --hl: #1c3220;
+    --hw: #2f5d37;
+    --ac: #8fd69a;
+  }
+}
+:root[data-mono] {
+  --ac: var(--ink);
+  --hl: #8884;
+  --hw: #8886;
+  --fl: var(--ink);
+}
+[data-mono] .cover {
+  filter: grayscale(1);
+}
+
+@utility squircle {
+  corner-shape: squircle;
+}
+@utility glass {
+  background: color-mix(in srgb, var(--sf) 78%, transparent);
+  backdrop-filter: blur(26px) saturate(1.8);
+  box-shadow:
+    0 10px 34px #0002,
+    inset 0 0 0 0.5px var(--ln);
+}
+
+body {
+  transition: background-color 0.4s;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01s !important;
+    transition-duration: 0.01s !important;
+  }
+}
+
+:root {
+  color-scheme: light;
+  --mu: #68655d;
+}
+:root[data-theme='sepia'] {
+  --mu: #75654c;
+}
+:root[data-theme='night'] {
+  color-scheme: dark;
+  --mu: #aaa79f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --mu: #aaa79f;
+  }
+}
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+:focus-visible {
+  outline: 2px solid var(--ac);
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
