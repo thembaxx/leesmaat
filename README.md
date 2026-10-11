@@ -64,7 +64,7 @@ pnpm exec playwright install chromium
 pnpm test:e2e          # production browser, offline reload, notes, placement, practice and axe checks
 ```
 
-The sync tests use the isolated `demo-leesmaat` emulator project, including simulated Google credentials, account isolation and two-device transaction merging. They do not use a real Google account. Browser tests run a production server on port 3100. CI runs all of these checks and preserves failure traces.
+The sync tests use the isolated `demo-leesmaat` emulator project, including simulated Google credentials, account isolation and two-device transaction merging. They do not use a real Google account. Browser tests run a production server on port 3100. CI runs all of these checks and preserves failure traces. It uses a reserved example origin to verify canonical URLs, social metadata and the complete sitemap. A workspace override keeps Firebase’s Node gRPC transport on the patched compatible v1 release; the emulator tests verify the override.
 
 Deploy to a Next.js-compatible host with Node support. The build generates `/sw.js` from the actual production JavaScript, CSS and font assets; it caches only public same-origin app files and never auth/API traffic. A newly built worker waits until the reader chooses Update, or until old tabs close. Applying an update reloads controlled tabs while retaining local progress and downloads. Browsers may evict stored files when space is scarce: the archive reconciles with IndexedDB on startup, and downloads can be recreated. Removing an archived read deletes its stored content; artwork is a small shared app asset.
 

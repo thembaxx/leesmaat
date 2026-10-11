@@ -4,3 +4,7 @@ allowBuilds:
   '@firebase/util': false
   protobufjs: false
   re2: false
+
+# Firebase's Node transport pins an older minor; keep the compatible v1 patch line current.
+overrides:
+  '@grpc/grpc-js': 1.14.6
