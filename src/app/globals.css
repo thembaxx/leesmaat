@@ -265,3 +265,12 @@ dialog:fullscreen {
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
 }
+
+.summary-details summary:focus-visible {
+  outline: 2px solid var(--ac);
+  outline-offset: 4px;
+}
+article p[id^='passage-']:target {
+  background: var(--hl);
+  border-radius: 0.5rem;
+}

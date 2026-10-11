@@ -14,9 +14,12 @@ import {
   ShareNetworkIcon,
   CornersOutIcon,
   CornersInIcon,
+  ListBulletsIcon,
 } from '@phosphor-icons/react';
 import { DICT, LEVELS, type Item } from '@/lib/data';
 import { norm, parse, today, yesterday } from '@/lib/text';
+import { summarize, SUMMARY_COPY, type SummaryPoint } from '@/lib/summaries';
+import { SummaryContent } from './ReadingSummary';
 import { locateWords, findRanges } from '@/lib/reader';
 import { useFocusScope } from '@/lib/focus';
 import { useNativeAudio, shareRead } from '@/lib/native';
@@ -25,7 +28,7 @@ import { useStore } from '@/lib/store';
 import { SettingsPanel, Sheet, WordPanel, type Anchor } from './Sheets';
 
 const SPEEDS = [0.8, 1, 1.25, 1.5, 2];
-type View = { k: 'settings' } | { k: 'word'; text: string; anchor?: Anchor };
+type View = { k: 'summary' } | { k: 'settings' } | { k: 'word'; text: string; anchor?: Anchor };
 
 const Round = ({
   label,
@@ -52,6 +55,9 @@ const Round = ({
 export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
   const { s, set } = useStore();
   const poem = item.k === 'Poem';
+  const digest = useMemo(() => summarize(item), [item]);
+  const summaryCopy = SUMMARY_COPY[item.g];
+  const [summaryPassage, setSummaryPassage] = useState<SummaryPoint | null>(null);
   const paras = useMemo(() => parse(item.x, poem), [item.x, poem]);
   const flat = useMemo(() => paras.flat(), [paras]);
   const offsets = useMemo(
@@ -75,6 +81,29 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
   const [zen, setZen] = useState(false);
   const [find, setFind] = useState<string | null>(null);
   const [findPosition, setFindPosition] = useState({ query: '', index: 0 });
+  // Wait for the modal to close and restore its trigger before focusing the text.
+  useEffect(() => {
+    if (!summaryPassage) return;
+    const frame = requestAnimationFrame(() => {
+      const word = [
+        ...(scroller.current?.querySelectorAll<HTMLButtonElement>('[data-start]') ?? []),
+      ].find(
+        (element) =>
+          Number(element.dataset.end) > summaryPassage.start &&
+          Number(element.dataset.start) < summaryPassage.end,
+      );
+      word?.focus({ preventScroll: true });
+      word?.scrollIntoView({
+        block: 'center',
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+      });
+    });
+    const timer = setTimeout(() => setSummaryPassage(null), 6000);
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(timer);
+    };
+  }, [summaryPassage]);
   const exitZen = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     if (zen) exitZen.current?.focus();
@@ -414,6 +443,31 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
               </>
             )}
           </p>
+          {digest && !zen && (
+            <div
+              lang={item.g}
+              className="mb-6 flex items-center gap-3 rounded-2xl border border-ln bg-sf p-3 font-sans"
+            >
+              <div className="min-w-0 flex-1">
+                <h2 className="text-sm font-semibold">{summaryCopy.title}</h2>
+                <p className="mt-1 text-xs leading-relaxed text-mu">
+                  {summaryCopy[digest.scope]} · {digest.seconds} s
+                  {item.k === 'Story' && <span className="block">{summaryCopy.spoilers}</span>}
+                </p>
+              </div>
+              <button
+                aria-label={summaryCopy.title}
+                title={summaryCopy.title}
+                onClick={(event) => {
+                  event.currentTarget.focus();
+                  show({ k: 'summary' });
+                }}
+                className="grid size-11 shrink-0 place-items-center rounded-full bg-ln text-ac"
+              >
+                <ListBulletsIcon size={22} />
+              </button>
+            </div>
+          )}
           {paras.map((p, pi) => (
             <p key={pi} className="mb-[1.15em]">
               {p.map((words, si) => {
@@ -434,6 +488,10 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
                         activeMatch &&
                         activeMatch.start < range.end &&
                         activeMatch.end > range.start;
+                      const summaryHighlight =
+                        summaryPassage &&
+                        summaryPassage.start < range.end &&
+                        summaryPassage.end > range.start;
                       const notes = s.nt.filter(
                         (n) =>
                           n.itemId === item.id &&
@@ -452,6 +510,7 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
                             title={notes.map((n) => n.n).join(' · ') || undefined}
                             data-fm={match || undefined}
                             data-find-current={currentMatch || undefined}
+                            data-summary-passage={summaryHighlight || undefined}
                             onClick={() => {
                               if (!window.getSelection()?.toString().trim())
                                 show({
@@ -460,7 +519,7 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
                                   anchor,
                                 });
                             }}
-                            className={`rounded-[.25em] text-left [font:inherit] ${notes.length ? 'bg-hl underline decoration-ac underline-offset-4' : ''} ${DICT[norm(w)] ? 'underline decoration-mu decoration-dotted underline-offset-[.22em]' : ''} ${(gi === cur && wi === cw) || match ? 'bg-hw' : ''}`}
+                            className={`rounded-[.25em] text-left [font:inherit] ${notes.length ? 'bg-hl underline decoration-ac underline-offset-4' : ''} ${DICT[norm(w)] ? 'underline decoration-mu decoration-dotted underline-offset-[.22em]' : ''} ${(gi === cur && wi === cw) || match || summaryHighlight ? 'bg-hw' : ''}`}
                           >
                             {w}
                           </button>{' '}
@@ -579,8 +638,30 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
         </button>
       )}
 
-      <Sheet open={open} onClose={() => setOpen(false)}>
-        {view.k === 'settings' ? (
+      <Sheet
+        open={open}
+        onClose={() => setOpen(false)}
+        title={view.k === 'summary' ? summaryCopy.title : undefined}
+      >
+        {view.k === 'summary' && digest ? (
+          <SummaryContent
+            item={item}
+            summary={digest}
+            onPassage={(point) => {
+              setOpen(false);
+              setSummaryPassage(point);
+            }}
+          />
+        ) : view.k === 'word' ? (
+          <WordPanel
+            key={view.text}
+            text={view.text}
+            from={item.t}
+            language={item.g}
+            anchor={view.anchor}
+            onClose={() => setOpen(false)}
+          />
+        ) : (
           <SettingsPanel
             reader={{
               item,
@@ -589,15 +670,6 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
                 setZen(true);
               },
             }}
-          />
-        ) : (
-          <WordPanel
-            key={view.text}
-            text={view.text}
-            from={item.t}
-            language={item.g}
-            anchor={view.anchor}
-            onClose={() => setOpen(false)}
           />
         )}
       </Sheet>

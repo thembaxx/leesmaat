@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Brand } from '@/components/Brand';
+import { PublicSummary } from '@/components/ReadingSummary';
+import { summarize } from '@/lib/summaries';
 import { LIBRARY, LEVELS } from '@/lib/data';
 import { SITE_URL, publicUrl } from '@/lib/site';
 
@@ -39,6 +41,7 @@ export default async function TitlePage({ params }: Props) {
   const item = LIBRARY.find((entry) => entry.id === id);
   if (!item) notFound();
   const study = item.rights === 'Original study note';
+  const digest = summarize(item);
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
@@ -105,9 +108,14 @@ export default async function TitlePage({ params }: Props) {
             ? '. This is a selected opening excerpt. Find the full text at the source below.'
             : '. A complete short read created for Leesmaat.'}
       </p>
+      {digest && <PublicSummary item={item} summary={digest} />}
       <article lang={item.g} className="max-w-prose font-serif text-lg leading-relaxed">
         {item.x.split('\n\n').map((paragraph, index) => (
-          <p key={index} className={`mb-6 ${item.k === 'Poem' ? 'whitespace-pre-line' : ''}`}>
+          <p
+            id={`passage-${index}`}
+            key={index}
+            className={`mb-6 scroll-mt-6 ${item.k === 'Poem' ? 'whitespace-pre-line' : ''}`}
+          >
             {paragraph}
           </p>
         ))}
