@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/prepare-build.mjs && next build && node scripts/build-sw.mjs",
+    "build": "pnpm art && node scripts/prepare-build.mjs && next build && node scripts/build-sw.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint",
@@ -14,7 +14,8 @@
     "format:check": "oxfmt --check",
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
-    "test:sync": "firebase emulators:exec --project demo-leesmaat --only firestore,auth \"tsx --test tests/security/*.test.ts\""
+    "test:sync": "firebase emulators:exec --project demo-leesmaat --only firestore,auth \"tsx --test tests/security/*.test.ts\"",
+    "art": "tsx scripts/create-brand.ts"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
@@ -22,6 +23,7 @@
     "next": "16.4.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "three": "^0.186.1",
     "zod": "^4.6.5"
   },
   "devDependencies": {
@@ -32,9 +34,11 @@
     "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
     "firebase-tools": "^15.33.0",
     "oxfmt": "0.72.0",
     "oxlint": "1.87.0",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"

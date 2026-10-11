@@ -5,6 +5,8 @@ import { norm } from '@/lib/text';
 import { useStore, type State } from '@/lib/store';
 import { useOffline } from './OfflineProvider';
 import { useSync } from './SyncProvider';
+import { InstallPanel } from './PwaControls';
+import { XIcon } from '@phosphor-icons/react';
 export const chip = (on: boolean) =>
   `rounded-full px-3.5 py-2 text-[13px] font-semibold transition active:scale-95 ${on ? 'bg-ink text-bg' : 'bg-ln'}`;
 export function Sheet({
@@ -39,15 +41,20 @@ export function Sheet({
         onClose();
       }}
 
-      className="squircle fixed inset-x-0 top-auto bottom-2 mx-auto max-h-[85dvh] w-[calc(100%-16px)] max-w-[432px] overflow-auto rounded-[34px] bg-sf p-0 text-ink shadow-2xl backdrop:bg-black/40"
+      className="squircle fixed inset-x-0 top-auto bottom-[calc(8px+env(safe-area-inset-bottom))] mx-auto max-h-[85dvh] w-[calc(100%-16px)] max-w-[432px] overflow-auto rounded-[34px] bg-sf p-0 text-ink shadow-2xl backdrop:bg-black/40"
     >
       <div className="px-5 pt-5 pb-6">
         <div className="mb-3 flex items-center justify-between">
           <h2 id={titleId} className="text-sm font-semibold text-mu">
             {title}
           </h2>
-          <button onClick={onClose} className={chip(false)}>
-            Done
+          <button
+            aria-label="Done"
+            title="Close"
+            onClick={onClose}
+            className="grid size-11 place-items-center rounded-full bg-ln"
+          >
+            <XIcon size={20} />
           </button>
         </div>
         {children}
@@ -150,6 +157,7 @@ export function SettingsPanel({ reader }: { reader?: { item: Item; onZen: () => 
         </>
       ) : (
         <>
+          <InstallPanel />
           <div className="mt-5 border-t border-ln pt-4">
             <h3 className="mb-2 text-lg font-bold">Your levels</h3>
             <p className="mb-3 text-[13px] text-mu">

@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useState } from 'react';
 import { FireIcon, SlidersHorizontalIcon } from '@phosphor-icons/react';
 import { dailyItem, KINDS, LEVELS, LIBRARY, type Kind } from '@/lib/data';
@@ -6,6 +7,7 @@ import { CATALOGUE_SOURCE, CURRICULUM_SOURCE } from '@/lib/curriculum';
 import { today } from '@/lib/text';
 import { useStore } from '@/lib/store';
 import { Cover, ItemRow } from './Cover';
+import { Brand } from './Brand';
 import { SettingsPanel, Sheet, chip } from './Sheets';
 
 export function Home({ onOpen }: { onOpen: (id: string) => void }) {
@@ -45,6 +47,12 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
 
   return (
     <div className="absolute inset-0 animate-rise overflow-y-auto px-5 pt-4 pb-32">
+      <div className="mb-4 flex items-center justify-between">
+        <Brand />
+        <Link href="/library" className="text-xs text-mu underline">
+          Explore library
+        </Link>
+      </div>
       <div className="mb-3.5 flex items-center justify-between">
         <h1 className="text-3xl leading-[1.1] font-bold tracking-tight">{greet}</h1>
         <div className="flex items-center gap-2">

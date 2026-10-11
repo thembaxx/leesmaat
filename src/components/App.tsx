@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+/* oxlint-disable react/set-state-in-effect -- Read and follow native browser history. */
+import { useEffect, useState } from 'react';
 import { LIBRARY } from '@/lib/data';
 import { StoreProvider, useStore } from '@/lib/store';
 import { OfflineProvider, useOffline } from './OfflineProvider';
@@ -11,6 +12,8 @@ import { Home } from './Home';
 import { Onboarding } from './Onboarding';
 import { Practice } from './Practice';
 import { Reader } from './Reader';
+import { AppLoading } from './Brand';
+import { PwaStatus } from './PwaControls';
 
 function Shell() {
   const { s, ready, storageError } = useStore();
@@ -18,23 +21,49 @@ function Shell() {
   const [tab, setTab] = useState<Tab>('home');
   const [open, setOpen] = useState<string | null>(null);
   const item = offline.items.find((i) => i.id === open) ?? LIBRARY.find((i) => i.id === open);
-  if (!ready) return <output className="p-8 text-center">Opening your library…</output>; // wait for localStorage so server and client markup never disagree
+  useEffect(() => {
+    const readLocation = () => {
+      const url = new URL(location.href);
+      const value = url.searchParams.get('tab');
+      setTab(value === 'practice' || value === 'bookmarks' ? value : 'home');
+      setOpen(url.searchParams.get('read'));
+    };
+    readLocation();
+    window.addEventListener('popstate', readLocation);
+    return () => window.removeEventListener('popstate', readLocation);
+  }, []);
+  const navigate = (id: string | null, nextTab = tab) => {
+    const url = new URL(location.href);
+    url.searchParams.delete('read');
+    url.searchParams.delete('tab');
+    if (id) url.searchParams.set('read', id);
+    if (nextTab !== 'home') url.searchParams.set('tab', nextTab);
+    history.pushState({ leesmaat: true, reader: !!id }, '', url);
+    setOpen(id);
+    setTab(nextTab);
+  };
+  const closeReader = () => {
+    if (history.state?.reader) history.back();
+    else navigate(null);
+  };
+  if (!ready) return <AppLoading />;
 
   return (
-    <main className="relative mx-auto h-dvh max-w-md overflow-hidden pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
+    <main className="app-frame">
       {storageError && (
         <p role="alert" className="absolute inset-x-0 top-0 z-40 bg-sf p-3 text-sm">
           This browser could not save your progress. Allow local storage to keep it.
         </p>
       )}
       <div className="contents" inert={!!item || !s.ob} aria-hidden={!!item || !s.ob}>
-        {tab === 'home' && <Home onOpen={setOpen} />}
+        {tab === 'home' && <Home onOpen={(id) => navigate(id)} />}
         {tab === 'practice' && <Practice />}
-        {tab === 'bookmarks' && <Bookmarks onOpen={setOpen} />}
-        <FloatingNav tab={tab} onChange={setTab} />
+        {tab === 'bookmarks' && <Bookmarks onOpen={(id) => navigate(id)} />}
+        <PwaStatus />
+        <FloatingNav tab={tab} onChange={(next) => navigate(null, next)} />
       </div>
       <Celebration />
-      {item && s.ob && <Reader key={item.id} item={item} onClose={() => setOpen(null)} />}
+      {item && s.ob && <Reader key={item.id} item={item} onClose={closeReader} />}
       {!s.ob && <Onboarding />}
     </main>
   );

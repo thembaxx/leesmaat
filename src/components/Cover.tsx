@@ -14,19 +14,24 @@ export function Cover({ item, size = 'md' }: { item: Item; size?: 'sm' | 'md' | 
       className={`cover squircle flex aspect-[2/3] origin-left flex-col justify-between rounded-[6px_14px_14px_6px] text-white shadow-[inset_6px_0_8px_-4px_#0006,0_8px_18px_#0003] [transform:perspective(600px)_rotateY(-12deg)] ${box}`}
       style={{
         backgroundColor: `hsl(${h} 38% 26%)`,
-        backgroundImage: item.art ? `url(${item.art})` : undefined,
+        backgroundImage: item.art
+          ? `linear-gradient(180deg,#0008,transparent 55%,#000b),url(${item.art})`
+          : undefined,
         backgroundSize: 'cover',
       }}
     >
-      <i
-        className={`font-serif font-bold not-italic leading-none rounded bg-black/30 px-1 opacity-90 ${size === 'sm' ? 'text-2xl' : 'text-5xl'}`}
+      <span
+        className={`font-serif font-semibold leading-tight text-balance drop-shadow-md ${size === 'sm' ? 'text-xl' : size === 'lg' ? 'text-lg' : 'text-[13px]'}`}
       >
-        {item.t[0]}
-      </i>
+        {size === 'sm' ? item.t[0] : item.t}
+      </span>
       {size !== 'sm' && (
-        <span className="text-[10px] font-semibold opacity-80">
-          {item.rights === 'Original study note' ? 'Study note' : item.k}
-        </span>
+        <div className="text-[9px] leading-tight drop-shadow-md">
+          <span className="block font-semibold">{item.a}</span>
+          <span className="mt-1 block uppercase tracking-[.12em] text-white/80">
+            {item.rights === 'Original study note' ? 'Study notes' : item.k}
+          </span>
+        </div>
       )}
     </div>
   );

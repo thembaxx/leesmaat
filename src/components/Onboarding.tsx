@@ -5,6 +5,9 @@ import { today } from '@/lib/text';
 import { useStore } from '@/lib/store';
 import { useFocusScope } from '@/lib/focus';
 import { Cover } from './Cover';
+import { Brand } from './Brand';
+import { ReadingWorld } from './ReadingWorld';
+import { CaretLeftIcon } from '@phosphor-icons/react';
 const Opt = ({
   onClick,
   children,
@@ -57,44 +60,48 @@ export function Onboarding() {
       aria-label="Reading placement"
       className="absolute inset-0 z-30 m-0 flex h-full max-h-none w-full max-w-none flex-col overflow-y-auto border-0 bg-bg px-6 pt-5 pb-7 text-ink"
     >
-      <div aria-label={`Step ${Math.min(step + 1, 5)} of 5`} className="mb-5 flex gap-1.5">
-        {[0, 1, 2, 3, 4].map((i) => (
+      <div className="mb-4">
+        <Brand />
+      </div>
+      <progress
+        className="sr-only"
+        aria-label="Reading placement progress"
+        value={step + 1}
+        max={6}
+      >
+        Step {step + 1} of 6
+      </progress>
+      <div aria-hidden="true" className="mb-5 flex gap-1.5">
+        {[0, 1, 2, 3, 4, 5].map((i) => (
           <i key={i} className={`h-[5px] flex-1 rounded ${i <= step ? 'bg-ink' : 'bg-ln'}`} />
         ))}
       </div>
       {step > 0 && (
         <button
+          aria-label="Back"
+          title="Back"
           onClick={() => setStep(step - 1)}
           className="mb-4 self-start rounded-full bg-ln px-4 py-2 text-sm"
         >
-          Back
+          <CaretLeftIcon size={20} />
         </button>
       )}
-      <div key={step} className="flex flex-1 animate-rise flex-col gap-3.5">
+      <ReadingWorld step={step} active ambient={step !== 0} />
+      <div key={step} className="relative mt-4 flex flex-1 animate-rise flex-col gap-3.5">
         {step === 0 && (
           <>
-            <div aria-hidden="true" className="relative h-52">
-              {[
-                ['Read', 'left-[6%] top-8 -rotate-6'],
-                ['Lees', 'right-[4%] top-1.5 rotate-6'],
-                ['Listen', 'left-[30%] top-[104px] -rotate-3'],
-              ].map(([text, pos]) => (
-                <b
-                  key={text}
-                  className={`squircle absolute animate-float rounded-[26px] bg-sf px-6 py-4 font-serif text-2xl shadow-xl ${pos}`}
-                >
-                  {text}
-                </b>
-              ))}
-            </div>
-            <h1 ref={title} tabIndex={-1} className="text-3xl font-bold">
-              Read a little.
+            <h1
+              ref={title}
+              tabIndex={-1}
+              className="font-serif text-3xl font-semibold tracking-tight"
+            >
+              A little reading.
               <br />
-              Understand a lot.
+              A bigger world.
             </h1>
             <p className="text-sm text-mu">
-              English and Afrikaans, five minutes at a time. Three quick steps to find your starting
-              level. Each language gets its own level.
+              English and Afrikaans, five minutes at a time. A few quick choices to find your
+              starting level. Each language gets its own level.
             </p>
             <button
               onClick={() => setStep(1)}
@@ -106,7 +113,11 @@ export function Onboarding() {
         )}
         {step === 1 && (
           <>
-            <h1 ref={title} tabIndex={-1} className="text-3xl font-bold">
+            <h1
+              ref={title}
+              tabIndex={-1}
+              className="font-serif text-3xl font-semibold tracking-tight"
+            >
               What do you want to read first?
             </h1>
             {(['en', 'af'] as const).map((g) => (
@@ -128,7 +139,11 @@ export function Onboarding() {
         )}
         {step === 2 && (
           <>
-            <h1 ref={title} tabIndex={-1} className="text-3xl font-bold">
+            <h1
+              ref={title}
+              tabIndex={-1}
+              className="font-serif text-3xl font-semibold tracking-tight"
+            >
               Pick the hardest sentence you still read easily.
             </h1>
             {pl.c.map((text, i) => (
@@ -147,7 +162,11 @@ export function Onboarding() {
         )}
         {step === 3 && (
           <>
-            <h1 ref={title} tabIndex={-1} className="text-3xl font-bold">
+            <h1
+              ref={title}
+              tabIndex={-1}
+              className="font-serif text-3xl font-semibold tracking-tight"
+            >
               What does “{pl.w}” mean?
             </h1>
             {pl.o.map((text, i) => (
@@ -165,7 +184,11 @@ export function Onboarding() {
         )}
         {step === 4 && (
           <>
-            <h1 ref={title} tabIndex={-1} className="text-3xl font-bold">
+            <h1
+              ref={title}
+              tabIndex={-1}
+              className="font-serif text-3xl font-semibold tracking-tight"
+            >
               What can you infer?
             </h1>
             <p lang={lang} className="rounded-2xl bg-sf p-4 font-serif text-lg leading-relaxed">
@@ -202,7 +225,11 @@ export function Onboarding() {
         )}
         {step === 5 && (
           <>
-            <h1 ref={title} tabIndex={-1} className="text-3xl font-bold">
+            <h1
+              ref={title}
+              tabIndex={-1}
+              className="font-serif text-3xl font-semibold tracking-tight"
+            >
               You’re set.
             </h1>
             <p className="text-sm text-mu">

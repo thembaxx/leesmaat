@@ -1,0 +1,82 @@
+{
+  "id": "/",
+  "name": "Leesmaat \u2014 Your reading companion",
+  "short_name": "Leesmaat",
+  "description": "A little reading. A bigger world. English and Afrikaans, five minutes at a time.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fbfaf7",
+  "theme_color": "#fbfaf7",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "any",
+  "lang": "en-ZA",
+  "dir": "ltr",
+  "categories": ["education", "books"],
+  "prefer_related_applications": false,
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "shortcuts": [
+    {
+      "name": "Practice",
+      "short_name": "Practice",
+      "description": "Review your vocabulary and understanding",
+      "url": "/?tab=practice",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Bookmarks",
+      "short_name": "Saved reads",
+      "description": "Your saved reading and offline archive",
+      "url": "/?tab=bookmarks",
+      "icons": [
+        {
+          "src": "/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/brand/screenshot-phone.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Your daily read and illustrated bookshelf"
+    },
+    {
+      "src": "/brand/screenshot-wide.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "English and Afrikaans reading library"
+    }
+  ]
+}

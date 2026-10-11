@@ -1,6 +1,8 @@
 import { hash } from './text';
 import { FET_CATALOGUE } from './catalogue';
 import { CURRICULUM } from './curriculum';
+import { DISCOVERIES } from './discoveries';
+import { artPath } from './art';
 
 export type Lang = 'en' | 'af';
 export type Kind = 'Story' | 'Poem' | 'Article' | 'Book';
@@ -22,6 +24,8 @@ export type Item = {
   grade?: number;
   genre?: string;
   isbn?: string;
+  summary?: string;
+  tags?: string[];
 };
 
 export const LEVELS = ['Beginner', 'Intermediate', 'Advanced'] as const;
@@ -122,11 +126,21 @@ en die stilte hou my aan die hand.`,
   },
 ];
 
-export const LIBRARY: Item[] = [...ORIGINALS, ...CURRICULUM, ...FET_CATALOGUE].map(
-  (item, index) => ({
+export const LIBRARY: Item[] = [...ORIGINALS, ...DISCOVERIES, ...CURRICULUM, ...FET_CATALOGUE].map(
+  (item) => ({
     ...item,
     rights: item.rights ?? 'Original Leesmaat writing',
-    art: `/art/cover-${index % 6}.svg`,
+    art: artPath(item.id),
+    summary:
+      item.rights === 'Original study note'
+        ? `${item.g === 'af' ? 'Oorspronklike studienotas' : 'Original study notes'}: ${item.t} · ${item.a}. ${item.n ?? ''}`
+        : item.x.split('\n\n')[0]!.replace(/\n/g, ' ').slice(0, 180),
+    tags: [
+      item.k,
+      item.g === 'af' ? 'Afrikaans' : 'English',
+      ...(item.genre ? [item.genre] : []),
+      ...(item.grade ? [`Grade ${item.grade}`, item.course ?? ''] : ['Short read']),
+    ].filter(Boolean),
   }),
 );
 

@@ -114,12 +114,93 @@
 }
 
 body {
-  transition: background-color 0.4s;
+  margin: 0;
+  min-height: 100svh;
+  background: var(--bg);
 }
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01s !important;
     transition-duration: 0.01s !important;
+  }
+}
+
+html {
+  background: var(--bg);
+  accent-color: var(--ac);
+}
+.app-frame {
+  position: relative;
+  margin: env(safe-area-inset-top) auto 0;
+  height: calc(100dvh - env(safe-area-inset-top));
+  max-width: 42rem;
+  overflow: hidden;
+  background: var(--bg);
+  isolation: isolate;
+}
+.native-bottom {
+  bottom: calc(18px + env(safe-area-inset-bottom));
+}
+.onboarding-art {
+  background: radial-gradient(
+    ellipse at 50% 65%,
+    color-mix(in srgb, var(--ac) 14%, transparent),
+    transparent 68%
+  );
+}
+.loading-line {
+  animation: loading-line 1.5s ease-in-out infinite;
+}
+@keyframes loading-line {
+  50% {
+    transform: translateX(100%);
+  }
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button {
+  transition:
+    transform 180ms var(--ease-ios),
+    background-color 180ms,
+    box-shadow 180ms;
+}
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+input,
+textarea,
+select {
+  font-size: max(16px, 1em);
+}
+dialog {
+  overscroll-behavior: contain;
+}
+.app-frame > div[class*='overflow-y-auto'] {
+  overscroll-behavior-y: contain;
+}
+@media (hover: hover) {
+  .cover {
+    transition:
+      transform 0.45s var(--ease-ios),
+      box-shadow 0.45s;
+  }
+  button:hover .cover {
+    transform: perspective(600px) rotateY(0deg) translateY(-4px);
+    box-shadow: 0 14px 24px #0003;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-sway,
+  .loading-line {
+    animation: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .app-frame {
+    border-inline: 1px solid var(--ln);
   }
 }
 
@@ -164,4 +245,23 @@ button:disabled {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Programmatically focused reading headings need no control outline. */
+h1[tabindex='-1']:focus-visible {
+  outline: none;
+}
+[data-mono] img {
+  filter: grayscale(1);
+}
+:root[data-theme='night'] article img {
+  filter: brightness(0.85);
+}
+:root[data-theme='night'][data-mono] article img {
+  filter: grayscale(1) brightness(0.85);
+}
+
+dialog:fullscreen {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }

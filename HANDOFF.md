@@ -2,6 +2,12 @@
 
 The supplied prototype has been installed and completed as a Next.js App Router application. See README.md for run, deployment, sync configuration and test commands, and CONTENT.md for catalogue provenance and text/art rights.
 
+## Branding and PWA pass
+
+The name stays Leesmaat. A new open-book/spark identity, tagline, 125 title-specific illustrated covers, six original readings, 3D interactive onboarding and animated Three.js backgrounds are included. Themes now cover browser chrome, first paint, loading/recovery, safe areas, responsive layouts and supported iOS portrait launch screens. PWA installation, shortcuts, update prompts, real offline reading and storage protection are wired. Reader Back/Forward, sharing, fullscreen, Media Session and read-aloud wake lock use native browser support where available.
+
+Public library/title pages, structured data, robots, a configurable sitemap, social art, plain-text endpoints and llms.txt/llm.txt/llms-full.txt support discovery. Set NEXT_PUBLIC_SITE_URL before building to activate production canonical URLs and the sitemap. The existing Firebase setup requirement remains. See BRAND.md and README.md.
+
 ## Delivered
 
 Home, reader, practice, bookmarks/archive and richer onboarding; separate English/Afrikaans levels; phrase search and navigation; stable note anchors and highlights; saved-word spaced repetition and comprehension questions; accessible native sheets, keyboard focus, reduced motion and first-paint theming; original illustrated covers; optional Firebase Google sign-in and per-entry Firestore sync; production PWA shell, manifest and real IndexedDB downloads; daily-goal celebration and once-per-day awards; verified 2026 Grade 12 setworks and 32 Grade 10–11 catalogue selections.

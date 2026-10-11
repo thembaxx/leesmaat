@@ -7,6 +7,8 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SITE_URL: https://leesmaat.example
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4

@@ -7,8 +7,13 @@ export function Celebration() {
   const { s } = useStore();
   const [show, setShow] = useState(false);
   useEffect(() => {
-    if (s.done !== today() || sessionStorage.getItem('lm-celebrated') === s.done) return;
-    sessionStorage.setItem('lm-celebrated', s.done);
+    if (s.done !== today()) return;
+    try {
+      if (sessionStorage.getItem('lm-celebrated') === s.done) return;
+      sessionStorage.setItem('lm-celebrated', s.done);
+    } catch {
+      /* Completion still works when browser storage is restricted. */
+    }
     setShow(true);
     const timer = window.setTimeout(() => setShow(false), 5000);
     return () => window.clearTimeout(timer);

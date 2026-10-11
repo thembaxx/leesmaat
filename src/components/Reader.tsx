@@ -1,4 +1,6 @@
 'use client';
+import Image from 'next/image';
+/* oxlint-disable react/set-state-in-effect -- Read browser fullscreen capabilities after hydration. */
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import {
   BookmarkSimpleIcon,
@@ -9,11 +11,15 @@ import {
   SkipBackIcon,
   SkipForwardIcon,
   TextAaIcon,
+  ShareNetworkIcon,
+  CornersOutIcon,
+  CornersInIcon,
 } from '@phosphor-icons/react';
 import { DICT, LEVELS, type Item } from '@/lib/data';
 import { norm, parse, today, yesterday } from '@/lib/text';
 import { locateWords, findRanges } from '@/lib/reader';
 import { useFocusScope } from '@/lib/focus';
+import { useNativeAudio, shareRead } from '@/lib/native';
 import { readingTick } from '@/lib/learning';
 import { useStore } from '@/lib/store';
 import { SettingsPanel, Sheet, WordPanel, type Anchor } from './Sheets';
@@ -32,6 +38,7 @@ const Round = ({
 }) => (
   <button
     aria-label={label}
+    title={label}
     onClick={(event) => {
       event.currentTarget.focus();
       onClick();
@@ -74,6 +81,23 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
   }, [zen]);
   const [sel, setSel] = useState<{ text: string; anchor: Anchor } | null>(null);
   const [audioError, setAudioError] = useState('');
+  const [shareMessage, setShareMessage] = useState('');
+  const [fullscreen, setFullscreen] = useState(false);
+  const [canFullscreen, setCanFullscreen] = useState(false);
+  useEffect(() => {
+    setCanFullscreen(!!document.fullscreenEnabled);
+    const change = () => setFullscreen(!!document.fullscreenElement);
+    document.addEventListener('fullscreenchange', change);
+    return () => {
+      document.removeEventListener('fullscreenchange', change);
+      if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+    };
+  }, []);
+  useEffect(() => {
+    if (!shareMessage) return;
+    const timer = setTimeout(() => setShareMessage(''), 5000);
+    return () => clearTimeout(timer);
+  }, [shareMessage]);
   const [view, setView] = useState<View>({ k: 'settings' });
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -240,6 +264,17 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
       say(first);
     }
   };
+  const pause = () => {
+    tok.current++;
+    window.speechSynthesis?.cancel();
+    setPlaying(false);
+  };
+  useNativeAudio(item, playing, {
+    play: () => say(Math.max(cur, 0)),
+    pause,
+    next: () => say(cur + 1),
+    previous: () => say(cur - 1),
+  });
   const cycle = () => {
     const next = SPEEDS[(SPEEDS.indexOf(s.sp) + 1) % SPEEDS.length]!;
     sp.current = next;
@@ -295,6 +330,29 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
             <CaretLeftIcon size={22} />
           </Round>
           <div className="flex gap-2">
+            <Round
+              label="Share reading"
+              onClick={() => {
+                void shareRead(item).then(setShareMessage);
+              }}
+            >
+              <ShareNetworkIcon size={22} />
+            </Round>
+            {canFullscreen && (
+              <Round
+                label={fullscreen ? 'Exit fullscreen' : 'Fullscreen'}
+                onClick={() => {
+                  const request = document.fullscreenElement
+                    ? document.exitFullscreen()
+                    : root.current?.requestFullscreen();
+                  void request?.catch(() =>
+                    setShareMessage('Fullscreen is unavailable on this device.'),
+                  );
+                }}
+              >
+                {fullscreen ? <CornersInIcon size={22} /> : <CornersOutIcon size={22} />}
+              </Round>
+            )}
             <Round label="Find in text" onClick={() => setFind(find === null ? '' : null)}>
               <MagnifyingGlassIcon size={22} />
             </Round>
@@ -314,9 +372,19 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
 
         <article
           lang={item.g}
-          className={`px-6 font-serif leading-[1.75] text-pretty transition-[padding] duration-500 ease-ios [hyphens:auto] ${zen ? 'pt-[9vh]' : ''}`}
+          className={`mx-auto max-w-prose px-6 font-serif leading-[1.75] text-pretty transition-[padding] duration-500 ease-ios [hyphens:auto] ${zen ? 'pt-[9vh]' : ''}`}
           style={{ fontSize: 'var(--fs)' }}
         >
+          {item.art && (
+            <Image
+              unoptimized
+              src={item.art}
+              alt=""
+              width="400"
+              height="600"
+              className="mb-6 h-28 w-full rounded-2xl object-cover object-[50%_65%]"
+            />
+          )}
           <h1 className="font-serif text-[1.75em] leading-[1.15] font-bold tracking-tight">
             {item.t}
           </h1>
@@ -407,6 +475,11 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
         </article>
       </div>
 
+      {shareMessage && (
+        <output className="absolute inset-x-4 bottom-28 z-20 rounded-2xl bg-sf p-3 text-sm shadow-xl">
+          {shareMessage}
+        </output>
+      )}
       {audioError && (
         <output className="absolute right-4 bottom-24 left-4 z-20 rounded-2xl bg-sf p-3 text-sm shadow-lg">
           {audioError}

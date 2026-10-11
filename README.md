@@ -52,7 +52,7 @@ The Firebase public configuration has not been supplied with this project. Sign-
 - Reader search supports phrases, match counts and previous/next matches. Paper, sepia, night, monochrome, font size, speed and zen controls are included.
 - A daily goal awards once per day; a completion celebration respects reduced motion.
 - The verified Grade 12 HL/FAL literature list covers the 2026 exam period. Grade 10–11 entries come from the current DBE FET literature catalogue and are labelled catalogue selections: confirm the school's chosen texts.
-- Modern setworks show **original study notes**, clearly identified as such. Two public-domain works include attributed opening excerpts. Six original vector illustrations provide book and article art. See [CONTENT.md](CONTENT.md) for sources and rights.
+- Modern setworks show **original study notes**, clearly identified as such. Two public-domain works include attributed opening excerpts. 125 individually assigned vector illustrations provide title-specific cover art. Six new complete original reads expand stories, poems and articles, including advanced Afrikaans. See [CONTENT.md](CONTENT.md) for sources and rights.
 
 ## Verification
 
@@ -66,4 +66,20 @@ pnpm test:e2e          # production browser, offline reload, notes, placement, p
 
 The sync tests use the isolated `demo-leesmaat` emulator project, including simulated Google credentials, account isolation and two-device transaction merging. They do not use a real Google account. Browser tests run a production server on port 3100. CI runs all of these checks and preserves failure traces.
 
-Deploy to a Next.js-compatible host with Node support. The build generates `/sw.js` from the actual production JavaScript, CSS and font assets; it caches only public same-origin app files and never auth/API traffic. A newly built worker waits for old tabs to close before activation. Browsers may evict stored files when space is scarce: the archive reconciles with IndexedDB on startup, and downloads can be recreated. Removing an archived read deletes its stored content; artwork is a small shared app asset.
+Deploy to a Next.js-compatible host with Node support. The build generates `/sw.js` from the actual production JavaScript, CSS and font assets; it caches only public same-origin app files and never auth/API traffic. A newly built worker waits until the reader chooses Update, or until old tabs close. Applying an update reloads controlled tabs while retaining local progress and downloads. Browsers may evict stored files when space is scarce: the archive reconciles with IndexedDB on startup, and downloads can be recreated. Removing an archived read deletes its stored content; artwork is a small shared app asset.
+
+## Brand, PWA and discovery
+
+Leesmaat is the retained name, with the tagline **A little reading. A bigger world.** The open-book and spark mark, wordmark, maskable icons, social image, iPhone/iPad launch images and all covers are reproducible with `pnpm art`. See [BRAND.md](BRAND.md) for the visual direction. Previous cover assets remain available for existing archived downloads.
+
+The onboarding book and floating background use lazily loaded Three.js. Drag the book or use its keyboard-accessible turn/reset buttons. Animation caps pixel density and runs at 30 fps; it pauses outside the active view and when hidden. Reduced motion, data saver and unavailable WebGL retain a static illustration. Three.js is never needed to complete placement.
+
+The installed app supports installation prompts where provided, Safari instructions, app shortcuts, offline status, optional persistent-storage requests and controlled updates. Reader links survive reload and browser Back/Forward; sharing uses Web Share or clipboard fallback. Fullscreen, Media Session controls and a screen wake lock during read-aloud enhance supporting devices. These APIs vary by browser; installed local voices determine offline audio availability.
+
+Paper, sepia, night and system themes coordinate the HTML background, safe areas, browser chrome, loading/recovery screens, manifest and supported portrait iOS launch images. A necessary `leesmaat-theme` preference cookie lets the manifest use the selected launch colors. Browsers can retain an older installed launch screen until they refresh app metadata.
+
+Public `/library` and `/library/[id]` pages render without JavaScript, expose original text/notes and attribution, and include per-title descriptions and structured data. `/llms.txt`, `/llm.txt` (alias), `/llms-full.txt` and per-title `/text` endpoints expose public material with rights labels, never private reading data.
+
+Set **NEXT_PUBLIC_SITE_URL** to the production HTTPS origin in `.env.local` and on the host **before building**. This enables canonical URLs, absolute social images, robots sitemap discovery and all 127 sitemap entries. Without a configured domain, the project deliberately omits canonicals and absolute sitemap entries. The public library and relative LLM links still work.
+
+Browser verification covers phone, tablet, desktop and landscape layouts, reduced motion, install events, sharing/history, system themes, public content, WCAG checks and a real service-worker update through a local test proxy. Native API behavior still warrants a smoke test on physical iOS and Android devices before release.
