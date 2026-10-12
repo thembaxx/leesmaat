@@ -25,6 +25,7 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
   const [sheet, setSheet] = useState(false);
   const [search, setSearch] = useState('');
   const [grade, setGrade] = useState('All');
+  const [difficulty, setDifficulty] = useState('All');
   const [course, setCourse] = useState<'All' | 'HL' | 'FAL'>('All');
   const [h] = useState(() => new Date().getHours());
   const af = s.lang === 'af';
@@ -54,6 +55,7 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
         (kind === 'All' || i.k === kind) &&
         (course === 'All' || i.course === course) &&
         (grade === 'All' || i.grade === Number(grade)) &&
+        (difficulty === 'All' || i.v === Number(difficulty)) &&
         `${i.t} ${i.a}`.toLowerCase().includes(search.toLowerCase()),
     )
     .sort(
@@ -206,19 +208,37 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
         placeholder="Find a title or author"
         className="mb-3 w-full rounded-2xl bg-ln px-4 py-3 text-sm"
       />
-      <label className="mb-3 flex items-center gap-3 text-sm text-mu">
-        Grade
-        <select
-          aria-label="Grade"
-          value={grade}
-          onChange={(e) => setGrade(e.target.value)}
-          className="rounded-xl bg-ln px-3 py-2 text-ink"
-        >
-          {['All', '10', '11', '12'].map((value) => (
-            <option key={value}>{value}</option>
-          ))}
-        </select>
-      </label>
+      <div className="mb-3 grid grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] gap-3">
+        <label className="flex min-w-0 flex-col gap-2 text-sm text-mu">
+          Grade
+          <select
+            aria-label="Grade"
+            value={grade}
+            onChange={(e) => setGrade(e.target.value)}
+            className="min-h-11 w-full min-w-0 rounded-xl bg-ln px-3 py-2 text-ink"
+          >
+            {['All', '10', '11', '12'].map((value) => (
+              <option key={value}>{value}</option>
+            ))}
+          </select>
+        </label>
+        <label className="flex min-w-0 flex-col gap-2 text-sm text-mu">
+          Difficulty
+          <select
+            aria-label="Difficulty"
+            value={difficulty}
+            onChange={(e) => setDifficulty(e.target.value)}
+            className="min-h-11 w-full min-w-0 rounded-xl bg-ln px-3 py-2 text-ink"
+          >
+            <option value="All">All</option>
+            {LEVELS.map((level, index) => (
+              <option key={level} value={index}>
+                {level}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
       <fieldset aria-label="Reader filters" className="mb-3 flex min-w-0 gap-2 overflow-x-auto">
         {(['All', 'HL', 'FAL'] as const).map((c) => (
           <button
@@ -247,7 +267,7 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
         ))}
       </fieldset>
       {!list.length && (
-        <output className="py-6 text-sm text-mu">No reads match your search.</output>
+        <output className="py-6 text-sm text-mu">No reads match your search or filters.</output>
       )}
       {list.map((i) => (
         <ItemRow key={i.id} item={i} onOpen={onOpen} />
