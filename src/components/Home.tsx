@@ -91,12 +91,15 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
         </button>
       )}
 
-      <div className="cover squircle grid grid-cols-[1fr_96px] items-center gap-3 rounded-[28px] bg-[linear-gradient(155deg,#1f4030,#0f1f18)] p-5 text-white">
-        <div>
+      <section
+        aria-label="Daily reading goal"
+        className="cover squircle grid min-w-0 grid-cols-[minmax(0,1fr)_96px] items-center gap-3 rounded-[28px] bg-[linear-gradient(155deg,#1f4030,#0f1f18)] p-5 text-white"
+      >
+        <div className="min-w-0">
           <small className="text-[13px] text-white/70">
             {s.done === today() ? 'Daily goal complete' : 'Today’s 5-minute read'}
           </small>
-          <h2 className="mt-1.5 mb-0.5 font-serif text-[22px] leading-tight font-bold">
+          <h2 className="mt-1.5 mb-0.5 font-serif text-[22px] leading-tight font-bold [overflow-wrap:anywhere]">
             {daily.t}
           </h2>
           <small className="text-[13px] text-white/70">
@@ -110,7 +113,13 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
             {secs > 0 && secs < 300 ? 'Keep going' : 'Start'}
           </button>
         </div>
-        <svg viewBox="0 0 100 100" aria-label="Daily progress">
+        <svg
+          viewBox="0 0 100 100"
+          width="96"
+          height="96"
+          aria-label="Daily progress"
+          className="block size-24 max-w-full shrink-0"
+        >
           <circle cx="50" cy="50" r="40" fill="none" stroke="#fff3" strokeWidth="9" />
           <circle
             cx="50"
@@ -129,7 +138,7 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
             {Math.floor(secs / 60)}:{String(secs % 60).padStart(2, '0')}
           </text>
         </svg>
-      </div>
+      </section>
 
       {resume && (
         <>
