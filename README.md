@@ -100,3 +100,9 @@ pnpm test
 ```
 
 Content and voice manifests store exact sizes and SHA-256 digests. Generated book JSON, dictionary snapshots and vendored speech engines are excluded from formatting to preserve those digests. A production build regenerates the Piper worker and engine manifest; model weights remain on demand. eSpeak recordings in `public/voice-previews` were generated with the shipped pack.
+
+## Optional offline reading assistant
+
+Settings → **Offline reading assistant** offers a compact Qwen model and Llama 3.2, with exact download sizes, device checks, progress, cancellation and removal. In the reader, the spark action produces chapter/reading talking points; selecting text exposes a passage explanation action. Generation runs locally in a background worker, with supporting links to the actual text. The model reads every bounded passage of the current chapter before reducing its points.
+
+Models are downloaded only on a deliberate click and require compatible WebGPU hardware, storage and roughly 1.1 GB of working graphics memory. Existing summaries and real dictionary definitions remain available on other devices. The shared runtime and large model weights are excluded from the default offline shell. See [OFFLINE-AI.md](OFFLINE-AI.md) for models, licences, privacy, source coverage and validation.

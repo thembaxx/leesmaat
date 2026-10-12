@@ -14,6 +14,7 @@ import { Practice } from './Practice';
 import { ReadingGate } from './ReadingGate';
 import { baseId } from '@/lib/books';
 import { AppLoading } from './Brand';
+import { AssistantProvider } from './AssistantProvider';
 import { VoiceProvider } from './VoiceProvider';
 import { PwaStatus } from './PwaControls';
 
@@ -85,11 +86,13 @@ export function App() {
   return (
     <StoreProvider>
       <SyncProvider>
-        <VoiceProvider>
-          <OfflineProvider>
-            <Shell />
-          </OfflineProvider>
-        </VoiceProvider>
+        <AssistantProvider>
+          <VoiceProvider>
+            <OfflineProvider>
+              <Shell />
+            </OfflineProvider>
+          </VoiceProvider>
+        </AssistantProvider>
       </SyncProvider>
     </StoreProvider>
   );

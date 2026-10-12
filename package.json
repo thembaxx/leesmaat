@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "build": "pnpm art && node scripts/build-voice.mjs && node scripts/prepare-build.mjs && next build && node scripts/build-sw.mjs",
+    "build": "pnpm art && node scripts/build-voice.mjs && node scripts/build-assistant.mjs && node scripts/prepare-build.mjs && next build && node scripts/build-sw.mjs",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "oxlint",
@@ -18,9 +18,11 @@
     "art": "tsx scripts/create-brand.ts",
     "content:import": "python3 scripts/import-content.py",
     "voices:import": "python3 scripts/import-voice-assets.py",
-    "dictionary:import": "python3 scripts/import-dictionary.py"
+    "dictionary:import": "python3 scripts/import-dictionary.py",
+    "assistant:import": "node scripts/import-assistant.mjs"
   },
   "dependencies": {
+    "@mlc-ai/web-llm": "0.2.85",
     "@phosphor-icons/react": "^2.1.10",
     "firebase": "^13.0.0",
     "next": "16.4.0",

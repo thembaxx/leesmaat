@@ -12,6 +12,7 @@
     "node_modules",
     "public/voice-runtime/**",
     "public/content/**",
-    "public/dictionaries/**"
+    "public/dictionaries/**",
+    "public/assistant-runtime/**"
   ]
 }
