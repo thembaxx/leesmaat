@@ -219,25 +219,33 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
           ))}
         </select>
       </label>
-      <div className="mb-3 flex gap-2">
+      <fieldset aria-label="Reader filters" className="mb-3 flex min-w-0 gap-2 overflow-x-auto">
         {(['All', 'HL', 'FAL'] as const).map((c) => (
           <button
             key={c}
             aria-pressed={course === c}
             onClick={() => setCourse(c)}
-            className={chip(course === c)}
+            className={`${chip(course === c)} shrink-0 whitespace-nowrap`}
           >
             {c === 'All' ? 'All readers' : c === 'HL' ? 'Home Language' : 'First Additional'}
           </button>
         ))}
-      </div>
-      <div className="mb-2.5 flex gap-2 overflow-x-auto">
+      </fieldset>
+      <fieldset
+        aria-label="Content type filters"
+        className="mb-2.5 flex min-w-0 gap-2 overflow-x-auto"
+      >
         {(['All', ...KINDS] as const).map((k) => (
-          <button key={k} onClick={() => setKind(k)} className={chip(kind === k)}>
+          <button
+            key={k}
+            aria-pressed={kind === k}
+            onClick={() => setKind(k)}
+            className={`${chip(kind === k)} shrink-0 whitespace-nowrap`}
+          >
             {k === 'All' ? 'All' : KIND_LABELS[k]}
           </button>
         ))}
-      </div>
+      </fieldset>
       {!list.length && (
         <output className="py-6 text-sm text-mu">No reads match your search.</output>
       )}
