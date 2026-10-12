@@ -176,7 +176,7 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
           Official Grade 12 list
         </a>
       </p>
-      <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4">
+      <div className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-4">
         {pool
           .filter((i) => i.k === 'Book' && i.published)
           .map((i) => (
