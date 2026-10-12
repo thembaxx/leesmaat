@@ -64,7 +64,10 @@ test('a real worker update waits for the reader, then preserves saved data when 
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem('lm')!).sv)).toContain('e1');
     await page.getByRole('button', { name: 'Back', exact: true }).click();
     await expect(page.getByRole('button', { name: 'Update Leesmaat', exact: true })).toBeVisible();
-    await page.getByRole('button', { name: 'Update Leesmaat', exact: true }).click();
+    await Promise.all([
+      page.waitForEvent('load'),
+      page.getByRole('button', { name: 'Update Leesmaat', exact: true }).click(),
+    ]);
     await expect(page.getByRole('button', { name: 'Settings', exact: true })).toBeVisible();
     await expect
       .poll(() =>
