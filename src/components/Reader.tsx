@@ -16,12 +16,15 @@ import {
   CornersInIcon,
   ListBulletsIcon,
   GraduationCapIcon,
+  SparkleIcon,
 } from '@phosphor-icons/react';
 import { DICT, LEVELS, type Item } from '@/lib/data';
 import { norm, parse, today, yesterday } from '@/lib/text';
 import { summarize, SUMMARY_COPY, type SummaryPoint } from '@/lib/summaries';
 import { useVoices } from './VoiceProvider';
 import { VOICES, unlockAudio, synthesize, playAudio, stopAudio } from '@/lib/voices';
+import { AssistantReadingPanel } from './AssistantPanel';
+import type { AssistantRange, AssistantTask } from '@/lib/assistant-source';
 import { AutoStudy } from './AutoStudy';
 import { SummaryContent } from './ReadingSummary';
 import { locateWords, findRanges } from '@/lib/reader';
@@ -33,6 +36,7 @@ import { SettingsPanel, Sheet, WordPanel, type Anchor } from './Sheets';
 
 const SPEEDS = [0.8, 1, 1.25, 1.5, 2];
 type View =
+  | { k: 'assistant'; task: AssistantTask; range?: AssistantRange }
   | { k: 'study' }
   | { k: 'chapters' }
   | { k: 'summary' }
@@ -576,6 +580,22 @@ export function Reader({
               <GraduationCapIcon size={24} />
             </button>
           )}
+          {!zen && (
+            <div className="mb-5 flex items-center gap-3 rounded-2xl border border-ln bg-sf p-3 font-sans">
+              <div className="min-w-0 flex-1">
+                <h2 className="text-sm font-semibold">Offline reading assistant</h2>
+                <p className="mt-1 text-xs text-mu">Optional summaries and passage explanations.</p>
+              </div>
+              <button
+                aria-label="Reading assistant"
+                title="Reading assistant"
+                onClick={() => show({ k: 'assistant', task: 'summary' })}
+                className="grid size-11 shrink-0 place-items-center rounded-full bg-ln text-ac"
+              >
+                <SparkleIcon size={22} />
+              </button>
+            </div>
+          )}
           {paras.map((p, pi) => (
             <p key={pi} className="mb-[1.15em]">
               {p.map((words, si) => {
@@ -737,29 +757,58 @@ export function Reader({
         </button>
       )}
       {sel && !open && (
-        <button
-          onPointerDown={(e) => e.preventDefault()}
-          onClick={() => show({ k: 'word', text: sel.text, anchor: sel.anchor })}
-          className="absolute bottom-24 left-1/2 z-20 -translate-x-1/2 animate-rise rounded-full bg-ink px-4 py-2 text-[13px] font-semibold text-bg"
-        >
-          Add note
-        </button>
+        <div className="absolute bottom-24 left-1/2 z-20 flex -translate-x-1/2 animate-rise items-center gap-2 rounded-full bg-ink p-1 text-bg">
+          <button
+            onPointerDown={(e) => e.preventDefault()}
+            onClick={() => show({ k: 'word', text: sel.text, anchor: sel.anchor })}
+            className="min-h-11 whitespace-nowrap rounded-full px-4 text-[13px] font-semibold"
+          >
+            Add note
+          </button>
+          <button
+            aria-label="Explain selected passage"
+            title="Explain selected passage"
+            onPointerDown={(e) => e.preventDefault()}
+            onClick={() =>
+              show({
+                k: 'assistant',
+                task: 'explain',
+                range: { start: sel.anchor.start!, end: sel.anchor.end! },
+              })
+            }
+            className="grid size-11 shrink-0 place-items-center rounded-full"
+          >
+            <SparkleIcon size={22} />
+          </button>
+        </div>
       )}
 
       <Sheet
         open={open}
         onClose={() => setOpen(false)}
         title={
-          view.k === 'study'
-            ? 'Auto study'
-            : view.k === 'chapters'
-              ? 'Chapters and scenes'
-              : view.k === 'summary'
-                ? summaryCopy.title
-                : undefined
+          view.k === 'assistant'
+            ? 'Reading assistant'
+            : view.k === 'study'
+              ? 'Auto study'
+              : view.k === 'chapters'
+                ? 'Chapters and scenes'
+                : view.k === 'summary'
+                  ? summaryCopy.title
+                  : undefined
         }
       >
-        {view.k === 'study' ? (
+        {view.k === 'assistant' ? (
+          <AssistantReadingPanel
+            item={item}
+            task={view.task}
+            range={view.range}
+            onPassage={(point) => {
+              setOpen(false);
+              setSummaryPassage(point);
+            }}
+          />
+        ) : view.k === 'study' ? (
           <AutoStudy item={item} />
         ) : view.k === 'chapters' && bookNavigation ? (
           <ol className="space-y-2">

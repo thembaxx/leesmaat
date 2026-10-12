@@ -7,6 +7,7 @@ import { useOffline } from './OfflineProvider';
 import { useSync } from './SyncProvider';
 import { DictionaryCard } from './DictionaryCard';
 import type { DictionaryEntry } from '@/lib/dictionary';
+import { AssistantDownloadPanel } from './AssistantPanel';
 import { VoicePanel } from './VoicePanel';
 import { InstallPanel } from './PwaControls';
 import { XIcon } from '@phosphor-icons/react';
@@ -128,6 +129,7 @@ export function SettingsPanel({ reader }: { reader?: { item: Item; onZen: () => 
         ))}
       </div>
       <VoicePanel language={reader?.item.g ?? s.lang} />
+      <AssistantDownloadPanel />
       {reader ? (
         <>
           <div className="flex flex-wrap gap-2">

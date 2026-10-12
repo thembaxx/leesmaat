@@ -18,7 +18,7 @@ export function SummaryContent({
       <p className="mb-3 text-xs font-semibold text-ac">
         {copy[summary.scope]} · {summary.seconds} s
       </p>
-      {summary.scope !== 'read' && (
+      {(summary.scope === 'excerpt' || summary.scope === 'notes') && (
         <p className="mb-4 rounded-xl bg-ln p-3 text-mu">
           {summary.scope === 'excerpt' ? copy.excerptNotice : copy.notesNotice}
         </p>
