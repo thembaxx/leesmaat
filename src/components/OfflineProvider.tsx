@@ -1,6 +1,7 @@
 'use client';
 /* oxlint-disable react/set-state-in-effect -- Synchronize service-worker and browser connectivity state. */
 import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
+import { completeDownload } from '@/lib/books';
 import { downloadItem, offlineItems, removeDownload } from '@/lib/offline';
 import type { Item } from '@/lib/data';
 import { useStore } from '@/lib/store';
@@ -133,6 +134,7 @@ export function OfflineProvider({ children }: { children: ReactNode }) {
     setBusy(item.id);
     setError('');
     try {
+      item = await completeDownload(item);
       await downloadItem(item);
       setItems((old) => [...old.filter((i) => i.id !== item.id), item]);
       set((old) => ({ dl: [...new Set([...old.dl, item.id])] }));

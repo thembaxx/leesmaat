@@ -15,10 +15,14 @@ import {
   CornersOutIcon,
   CornersInIcon,
   ListBulletsIcon,
+  GraduationCapIcon,
 } from '@phosphor-icons/react';
 import { DICT, LEVELS, type Item } from '@/lib/data';
 import { norm, parse, today, yesterday } from '@/lib/text';
 import { summarize, SUMMARY_COPY, type SummaryPoint } from '@/lib/summaries';
+import { useVoices } from './VoiceProvider';
+import { VOICES, unlockAudio, synthesize, playAudio, stopAudio } from '@/lib/voices';
+import { AutoStudy } from './AutoStudy';
 import { SummaryContent } from './ReadingSummary';
 import { locateWords, findRanges } from '@/lib/reader';
 import { useFocusScope } from '@/lib/focus';
@@ -28,7 +32,12 @@ import { useStore } from '@/lib/store';
 import { SettingsPanel, Sheet, WordPanel, type Anchor } from './Sheets';
 
 const SPEEDS = [0.8, 1, 1.25, 1.5, 2];
-type View = { k: 'summary' } | { k: 'settings' } | { k: 'word'; text: string; anchor?: Anchor };
+type View =
+  | { k: 'study' }
+  | { k: 'chapters' }
+  | { k: 'summary' }
+  | { k: 'settings' }
+  | { k: 'word'; text: string; anchor?: Anchor };
 
 const Round = ({
   label,
@@ -52,9 +61,19 @@ const Round = ({
   </button>
 );
 
-export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
+export function Reader({
+  item,
+  onClose,
+  bookNavigation,
+}: {
+  item: Item;
+  onClose: () => void;
+  bookNavigation?: { sections: string[]; index: number; choose: (index: number) => void };
+}) {
   const { s, set } = useStore();
-  const poem = item.k === 'Poem';
+  const voices = useVoices();
+  const bookmarkId = item.bookId ?? item.id;
+  const poem = item.k === 'Poem' || item.genre === 'Drama' || item.genre === 'Poetry collection';
   const digest = useMemo(() => summarize(item), [item]);
   const summaryCopy = SUMMARY_COPY[item.g];
   const [summaryPassage, setSummaryPassage] = useState<SummaryPoint | null>(null);
@@ -206,6 +225,7 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
           },
         }));
       window.speechSynthesis?.cancel();
+      stopAudio();
     };
   }, [set, item.id, item.x]);
 
@@ -228,6 +248,47 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
 
   // read aloud: one utterance per sentence, word highlight where the device reports boundaries
   const say = (i: number) => {
+    const selected = voices.preferences[item.g];
+    const downloadable = VOICES.find((voice) => 'pack:' + voice.id === selected);
+    if (downloadable) {
+      tok.current++;
+      const token = tok.current;
+      window.speechSynthesis?.cancel();
+      stopAudio();
+      const n = Math.max(i, 0);
+      if (n >= flat.length) {
+        setPlaying(false);
+        setCur(-1);
+        setCw(-1);
+        return;
+      }
+      if (!voices.installed.includes(downloadable.id)) {
+        setPlaying(false);
+        setAudioError('Download your chosen voice again in Reading settings.');
+        return;
+      }
+      setAudioError('');
+      setCur(n);
+      setCw(-1);
+      setPlaying(true);
+      void unlockAudio()
+        .then(() => synthesize(downloadable, flat[n]!.join(' '), sp.current))
+        .then((audio) => {
+          if (tok.current === token)
+            playAudio(audio, () => {
+              if (tok.current === token) say(n + 1);
+            });
+        })
+        .catch((error) => {
+          if (tok.current === token) {
+            setPlaying(false);
+            setAudioError(
+              error instanceof Error ? error.message : 'The voice could not read this passage.',
+            );
+          }
+        });
+      return;
+    }
     const syn = window.speechSynthesis;
     if (!syn || typeof SpeechSynthesisUtterance === 'undefined') {
       setAudioError('Read-aloud is unavailable in this browser.');
@@ -257,7 +318,10 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
     const u = new SpeechSynthesisUtterance(words.join(' '));
     u.lang = item.g === 'af' ? 'af-ZA' : 'en-ZA';
     u.rate = sp.current;
-    const voice = syn.getVoices().find((v) => v.lang.toLowerCase().startsWith(item.g));
+    const voice =
+      syn.getVoices().find((v) => selected === 'device:' + v.voiceURI) ??
+      syn.getVoices().find((v) => v.localService && v.lang.toLowerCase().startsWith(item.g)) ??
+      syn.getVoices().find((v) => v.lang.toLowerCase().startsWith(item.g));
     if (voice) u.voice = voice;
     else if (item.g === 'af')
       setAudioError('Install an Afrikaans voice on your device for accurate read-aloud.');
@@ -284,6 +348,7 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
     if (playing) {
       tok.current++;
       window.speechSynthesis?.cancel();
+      stopAudio();
       setPlaying(false);
     } else if (cur >= 0) say(cur);
     else {
@@ -296,6 +361,7 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
   const pause = () => {
     tok.current++;
     window.speechSynthesis?.cancel();
+    stopAudio();
     setPlaying(false);
   };
   useNativeAudio(item, playing, {
@@ -311,10 +377,11 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
     if (playing) say(cur);
   };
   const show = (v: View) => {
+    pause();
     setView(v);
     setOpen(true);
   };
-  const saved = s.sv.includes(item.id);
+  const saved = s.sv.includes(bookmarkId);
   const goal = s.done === today();
 
   return (
@@ -388,7 +455,9 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
             <Round
               label="Bookmark"
               onClick={() =>
-                set((x) => ({ sv: saved ? x.sv.filter((i) => i !== item.id) : [...x.sv, item.id] }))
+                set((x) => ({
+                  sv: saved ? x.sv.filter((i) => i !== bookmarkId) : [...x.sv, bookmarkId],
+                }))
               }
             >
               <BookmarkSimpleIcon size={22} weight={saved ? 'fill' : 'regular'} />
@@ -404,19 +473,48 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
           className={`mx-auto max-w-prose px-6 font-serif leading-[1.75] text-pretty transition-[padding] duration-500 ease-ios [hyphens:auto] ${zen ? 'pt-[9vh]' : ''}`}
           style={{ fontSize: 'var(--fs)' }}
         >
-          {item.art && (
+          {(item.cover || item.art) && (
             <Image
               unoptimized
-              src={item.art}
+              src={item.cover || item.art!}
               alt=""
               width="400"
               height="600"
               className="mb-6 h-28 w-full rounded-2xl object-cover object-[50%_65%]"
             />
           )}
+          {bookNavigation && (
+            <div className="mb-4 flex items-center justify-between gap-2 font-sans text-sm">
+              <button
+                onClick={() => show({ k: 'chapters' })}
+                className="min-h-11 rounded-full bg-ln px-4"
+              >
+                Chapters · {bookNavigation.index + 1}/{bookNavigation.sections.length}
+              </button>
+              <div className="flex gap-2">
+                <button
+                  aria-label="Previous chapter"
+                  disabled={!bookNavigation.index}
+                  onClick={() => bookNavigation.choose(bookNavigation.index - 1)}
+                  className="grid size-11 place-items-center rounded-full bg-ln"
+                >
+                  ←
+                </button>
+                <button
+                  aria-label="Next chapter"
+                  disabled={bookNavigation.index + 1 === bookNavigation.sections.length}
+                  onClick={() => bookNavigation.choose(bookNavigation.index + 1)}
+                  className="grid size-11 place-items-center rounded-full bg-ln"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          )}
           <h1 className="font-serif text-[1.75em] leading-[1.15] font-bold tracking-tight">
             {item.t}
           </h1>
+          {item.sectionTitle && <h2 className="mt-3 font-serif text-xl">{item.sectionTitle}</h2>}
           <p className="mt-2.5 mb-5 border-b border-ln pb-4 font-sans text-[13px] text-mu">
             {item.a} · {item.k} · {LEVELS[item.v]}
             {item.n ? ` · ${item.n}` : ''}
@@ -429,7 +527,7 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
                 {' '}
                 ·{' '}
                 <a className="underline" href={item.source} target="_blank" rel="noreferrer">
-                  Curriculum source
+                  {item.grade ? 'Curriculum source' : 'Text source'}
                 </a>
               </>
             )}
@@ -467,6 +565,16 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
                 <ListBulletsIcon size={22} />
               </button>
             </div>
+          )}
+          {!zen && (
+            <button
+              aria-label="Auto study"
+              title="Study this text"
+              onClick={() => show({ k: 'study' })}
+              className="mb-5 grid size-11 place-items-center rounded-full bg-ln text-ac"
+            >
+              <GraduationCapIcon size={24} />
+            </button>
           )}
           {paras.map((p, pi) => (
             <p key={pi} className="mb-[1.15em]">
@@ -641,9 +749,36 @@ export function Reader({ item, onClose }: { item: Item; onClose: () => void }) {
       <Sheet
         open={open}
         onClose={() => setOpen(false)}
-        title={view.k === 'summary' ? summaryCopy.title : undefined}
+        title={
+          view.k === 'study'
+            ? 'Auto study'
+            : view.k === 'chapters'
+              ? 'Chapters and scenes'
+              : view.k === 'summary'
+                ? summaryCopy.title
+                : undefined
+        }
       >
-        {view.k === 'summary' && digest ? (
+        {view.k === 'study' ? (
+          <AutoStudy item={item} />
+        ) : view.k === 'chapters' && bookNavigation ? (
+          <ol className="space-y-2">
+            {bookNavigation.sections.map((title, index) => (
+              <li key={index}>
+                <button
+                  aria-current={index === bookNavigation.index ? 'true' : undefined}
+                  onClick={() => {
+                    setOpen(false);
+                    bookNavigation.choose(index);
+                  }}
+                  className={`min-h-11 w-full rounded-xl p-3 text-left text-sm ${index === bookNavigation.index ? 'bg-ink text-bg' : 'bg-ln'}`}
+                >
+                  {index + 1}. {title}
+                </button>
+              </li>
+            ))}
+          </ol>
+        ) : view.k === 'summary' && digest ? (
           <SummaryContent
             item={item}
             summary={digest}

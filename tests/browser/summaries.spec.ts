@@ -77,28 +77,26 @@ test('public summaries render without JavaScript, disclose coverage and link to 
     viewport: { width: 320, height: 740 },
   });
   const page = await context.newPage();
-  await page.goto('/library/nsc-en-HL-book-1');
+  await page.goto('/library/e6');
   await page.locator('summary').click();
-  await expect(
-    page.getByText('Covers the excerpt available here, not the whole book.'),
-  ).toBeVisible();
+  await expect(page.getByText('Edited for this text')).toBeVisible();
   await expect(page.getByRole('listitem')).toHaveCount(4);
-  await page.getByRole('link', { name: 'Open supporting passage: A refusal' }).click();
-  await expect(page).toHaveURL(/#passage-5$/);
-  await expect(page.locator('#passage-5')).toBeInViewport();
+  await page.getByRole('link', { name: 'Open supporting passage: Use evidence' }).click();
+  await expect(page).toHaveURL(/#passage-2$/);
+  await expect(page.locator('#passage-2')).toBeInViewport();
   const width = await page.evaluate(() => ({
     doc: document.documentElement.scrollWidth,
     viewport: innerWidth,
   }));
   expect(width.doc).toBeLessThanOrEqual(width.viewport);
   await page.goto('/library/nsc-en-HL-book-0');
-  await page.locator('summary').click();
   await expect(
-    page.getByText('An overview of the companion notes.', { exact: false }),
+    page.getByText('Verified title and author metadata.', { exact: false }),
   ).toBeVisible();
+  await expect(page.locator('summary')).toHaveCount(0);
   const text = await (await request.get('/library/e6/text')).text();
   expect(text).toContain('## Smart summary');
   expect(text).toContain('### Main talking points');
-  expect(await (await request.get('/llms-full.txt')).text()).toContain('Hoofgesprekspunte');
+  expect(await (await request.get('/llms-full.txt')).text()).toContain('Complete book text:');
   await context.close();
 });

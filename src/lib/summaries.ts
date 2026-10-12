@@ -1,5 +1,5 @@
 import type { Item, Lang } from './data';
-import { EDITORIALS, studyEditorial } from './summary-editorials';
+import { EDITORIALS } from './summary-editorials';
 
 export type SummaryPoint = {
   label?: string;
@@ -12,7 +12,7 @@ export type SummaryPoint = {
 export type ReadingSummary = {
   overview: string;
   points: SummaryPoint[];
-  scope: 'read' | 'excerpt' | 'notes';
+  scope: 'read' | 'excerpt' | 'notes' | 'chapter';
   method: 'editorial' | 'extractive';
   seconds: number;
 };
@@ -22,6 +22,7 @@ export const SUMMARY_COPY = {
     overview: 'At a glance',
     points: 'Main talking points',
     read: 'This read',
+    chapter: 'This chapter or scene',
     excerpt: 'This excerpt',
     notes: 'These study notes',
     excerptNotice: 'Covers the excerpt available here, not the whole book.',
@@ -37,6 +38,7 @@ export const SUMMARY_COPY = {
     overview: 'In ’n oogopslag',
     points: 'Hoofgesprekspunte',
     read: 'Hierdie teks',
+    chapter: 'Hierdie hoofstuk of toneel',
     excerpt: 'Hierdie uittreksel',
     notes: 'Hierdie studienotas',
     excerptNotice: 'Dek die uittreksel wat hier beskikbaar is, nie die hele boek nie.',
@@ -111,13 +113,14 @@ function sentences(text: string, language: Lang): Sentence[] {
 export function summarize(item: Item): ReadingSummary | null {
   const count = words(item.x).length;
   if (count < (item.k === 'Book' || item.k === 'Article' ? 60 : 120)) return null;
-  const scope =
-    item.rights === 'Original study note'
+  const scope = item.sectionTitle
+    ? 'chapter'
+    : item.rights === 'Original study note'
       ? 'notes'
-      : item.textSource || item.rights === 'Public-domain excerpt'
+      : (item.contentUrl && !item.sectionTitle) || item.rights === 'Public-domain excerpt'
         ? 'excerpt'
         : 'read';
-  const editorial = EDITORIALS[item.id] ?? studyEditorial(item);
+  const editorial = EDITORIALS[item.id];
   if (editorial?.source === item.x && editorial.language === item.g) {
     const points = editorial.points.map((point) => {
       const start = item.x.indexOf(point.quote);

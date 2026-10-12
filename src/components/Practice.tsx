@@ -1,9 +1,10 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { DICT, LIBRARY } from '@/lib/data';
+import { DICT } from '@/lib/data';
 import { nextReview } from '@/lib/learning';
 import { useStore } from '@/lib/store';
 import { chip } from './Sheets';
+import { StudyPicker } from './AutoStudy';
 type Question = {
   prompt: string;
   answer: string;
@@ -38,75 +39,21 @@ export function Practice() {
   );
   const start = () => {
     let questions: Question[];
-    if (mode === 'reading') {
-      const af = s.lang === 'af',
-        item = LIBRARY.find((i) => i.id === (af ? 'a1' : 'e1'))!;
-      questions = af
-        ? [
-            {
-              prompt: 'Waar wag Pieter?',
-              answer: 'Op die perron',
-              options: ['Op die perron', 'By die plaas', 'By die skool'],
-              passage: item.x,
-              explanation: 'Pieter kom by die stasie aan en gaan langs die ou man sit.',
-            },
-            {
-              prompt: 'Wat suggereer die ou man se woorde oor die trein?',
-              answer: 'Hy is geduldig en vertrou dat dit sal kom',
-              options: [
-                'Hy is geduldig en vertrou dat dit sal kom',
-                'Hy weet dat die trein nooit kom nie',
-                'Hy is kwaad vir Pieter',
-              ],
-              passage: item.x,
-              explanation: '“Maar hy kom altyd” dui op vertroue ondanks die vertraging.',
-            },
-          ]
-        : [
-            {
-              prompt: 'What does Gogo do when the power goes out?',
-              answer: 'She places a candle by the window',
-              options: [
-                'She places a candle by the window',
-                'She goes to sleep',
-                'She sends her neighbours home',
-              ],
-              passage: item.x,
-              explanation: 'The story states that Gogo lights a candle and puts it by the window.',
-            },
-            {
-              prompt: 'What does the light come to represent?',
-              answer: 'Care and welcome for the community',
-              options: [
-                'Care and welcome for the community',
-                'Gogo’s fear of the dark',
-                'A warning to stay away',
-              ],
-              passage: item.x,
-              explanation:
-                'Neighbours gather around the light. Thando realises it was never only for Gogo.',
-            },
-          ];
-    } else {
-      const dictionary = Object.entries(DICT)
-        .filter(([, word]) => word.g === s.lang)
-        .map(([w, word]) => ({ w, d: word.d, id: undefined as string | undefined }));
-      const pool = due.length
-        ? due.map((word) => ({ w: word.w, d: word.d, id: word.id }))
-        : dictionary;
-      const definitions = [...new Set([...dictionary, ...saved].map((word) => word.d))];
-      questions = shuffle(pool)
-        .slice(0, 5)
-        .map((word) => ({
-          prompt: word.w,
-          answer: word.d,
-          wordId: word.id,
-          options: shuffle([
-            word.d,
-            ...shuffle(definitions.filter((d) => d !== word.d)).slice(0, 2),
-          ]),
-        }));
-    }
+    const dictionary = Object.entries(DICT)
+      .filter(([, word]) => word.g === s.lang)
+      .map(([w, word]) => ({ w, d: word.d, id: undefined as string | undefined }));
+    const pool = due.length
+      ? due.map((word) => ({ w: word.w, d: word.d, id: word.id }))
+      : dictionary;
+    const definitions = [...new Set([...dictionary, ...saved].map((word) => word.d))];
+    questions = shuffle(pool)
+      .slice(0, 5)
+      .map((word) => ({
+        prompt: word.w,
+        answer: word.d,
+        wordId: word.id,
+        options: shuffle([word.d, ...shuffle(definitions.filter((d) => d !== word.d)).slice(0, 2)]),
+      }));
     locked.current = false;
     setScore(null);
     setRun({ index: 0, correct: 0, pick: null, questions });
@@ -192,32 +139,36 @@ export function Practice() {
                 }}
                 className={chip(mode === value)}
               >
-                {value === 'words' ? 'Words' : 'Comprehension'}
+                {value === 'words' ? 'Words' : 'Auto study'}
               </button>
             ))}
           </div>
-          <div className="squircle rounded-[22px] bg-sf p-5 shadow-[inset_0_0_0_1px_var(--ln)]">
-            <h2 className="mb-2 text-lg font-bold">
-              {score
-                ? `${score.correct} / ${score.total} · +${score.correct * 10} XP`
-                : mode === 'words'
-                  ? 'Make words stick'
-                  : 'Read between the lines'}
-            </h2>
-            <p className="mb-4 text-[13px] text-mu">
-              {mode === 'words'
-                ? due.length
-                  ? `${due.length} saved words are ready to review. Words you know return after longer intervals.`
-                  : 'Build vocabulary with a short word match. Save words while reading to review them here.'
-                : 'Read a short passage, then practise understanding and interpretation.'}
-            </p>
-            <button
-              onClick={start}
-              className="rounded-2xl bg-ink px-5 py-3.5 font-semibold text-bg"
-            >
-              {score ? 'Go again' : 'Start'}
-            </button>
-          </div>
+          {mode === 'reading' ? (
+            <StudyPicker key={s.lang} />
+          ) : (
+            <div className="squircle rounded-[22px] bg-sf p-5 shadow-[inset_0_0_0_1px_var(--ln)]">
+              <h2 className="mb-2 text-lg font-bold">
+                {score
+                  ? `${score.correct} / ${score.total} · +${score.correct * 10} XP`
+                  : mode === 'words'
+                    ? 'Make words stick'
+                    : 'Read between the lines'}
+              </h2>
+              <p className="mb-4 text-[13px] text-mu">
+                {mode === 'words'
+                  ? due.length
+                    ? `${due.length} saved words are ready to review. Words you know return after longer intervals.`
+                    : 'Build vocabulary with a short word match. Save words while reading to review them here.'
+                  : 'Read a short passage, then practise understanding and interpretation.'}
+              </p>
+              <button
+                onClick={start}
+                className="rounded-2xl bg-ink px-5 py-3.5 font-semibold text-bg"
+              >
+                {score ? 'Go again' : 'Start'}
+              </button>
+            </div>
+          )}
         </>
       )}
     </div>

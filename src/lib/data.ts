@@ -2,6 +2,8 @@ import { hash } from './text';
 import { FET_CATALOGUE } from './catalogue';
 import { CURRICULUM } from './curriculum';
 import { DISCOVERIES } from './discoveries';
+import published from './published.json' with { type: 'json' };
+import dictionarySeed from './dictionary-seed.json' with { type: 'json' };
 import { artPath } from './art';
 
 export type Lang = 'en' | 'af';
@@ -26,31 +28,48 @@ export type Item = {
   isbn?: string;
   summary?: string;
   tags?: string[];
+  published?: boolean;
+  year?: number;
+  cover?: string | null;
+  coverSource?: string;
+  collection?: string;
+  editionNote?: string;
+  wordCount?: number;
+  contentUrl?: string;
+  contentBytes?: number;
+  contentHash?: string;
+  sections?: { title: string; words: number }[];
+  book?: BookContent;
+  bookId?: string;
+  sectionIndex?: number;
+  sectionTitle?: string;
 };
 
+export type BookContent = {
+  title: string;
+  author: string;
+  source: string;
+  sections: { title: string; x: string; author?: string }[];
+  licence: string;
+};
 export const LEVELS = ['Beginner', 'Intermediate', 'Advanced'] as const;
-export const KINDS: Kind[] = ['Story', 'Poem', 'Article', 'Book'];
-
-export const DICT: Record<string, { g: Lang; d: string; t: string }> = {
-  flickered: { g: 'en', d: 'burned with an unsteady light', t: 'flikker' },
-  neighbour: { g: 'en', d: 'someone who lives near you', t: 'buurman' },
-  understood: { g: 'en', d: 'knew the meaning of something', t: 'verstaan' },
-  gogo: { g: 'en', d: 'grandmother (isiZulu, isiXhosa)', t: 'ouma' },
-  lingers: { g: 'en', d: 'stays a little longer than expected', t: 'talm' },
-  borrow: { g: 'en', d: 'to take something for a short while', t: 'leen' },
-  habits: { g: 'en', d: 'things you do regularly, almost without thinking', t: 'gewoontes' },
-  comprehension: { g: 'en', d: 'the ability to understand what you read', t: 'begrip' },
-  vocabulary: { g: 'en', d: 'all the words you know', t: 'woordeskat' },
-  negotiating: { g: 'en', d: 'talking to reach an agreement', t: 'onderhandel' },
-  horizon: { g: 'en', d: 'the line where land meets sky', t: 'horison' },
-  perron: { g: 'af', d: 'die plek by die stasie waar passasiers staan', t: 'platform' },
-  verskyn: { g: 'af', d: 'sigbaar word', t: 'appear' },
-  geglimlag: { g: 'af', d: 'saggies gelag sonder geluid', t: 'smiled' },
-  ontwaak: { g: 'af', d: 'wakker word', t: 'awaken' },
-  stilte: { g: 'af', d: 'geen geluid nie', t: 'silence' },
-  vlakte: { g: 'af', d: 'groot, plat stuk land', t: 'plain' },
-  heuwels: { g: 'af', d: 'lae berge', t: 'hills' },
+export const KINDS: Kind[] = ['Book', 'Poem', 'Story', 'Article'];
+export const KIND_LABELS: Record<Kind, string> = {
+  Book: 'Books',
+  Poem: 'Poems',
+  Story: 'Short stories',
+  Article: 'Articles',
 };
+
+// Real, attributed Wiktionary senses replace the prototype's hand-written glossary.
+export const DICT: Record<string, { g: Lang; d: string; t: string }> = Object.fromEntries(
+  Object.values(dictionarySeed)
+    .map((entry) => [
+      entry.word.toLowerCase(),
+      { g: entry.language as Lang, d: entry.meanings[0]?.definitions[0]?.definition ?? '', t: '' },
+    ])
+    .filter(([, value]) => typeof value !== 'string' && value.d),
+);
 
 // Original short reads plus the verified NSC catalogue.
 const ORIGINALS: Item[] = [
@@ -126,23 +145,44 @@ en die stilte hou my aan die hand.`,
   },
 ];
 
-export const LIBRARY: Item[] = [...ORIGINALS, ...DISCOVERIES, ...CURRICULUM, ...FET_CATALOGUE].map(
-  (item) => ({
-    ...item,
-    rights: item.rights ?? 'Original Leesmaat writing',
-    art: artPath(item.id),
-    summary:
-      item.rights === 'Original study note'
-        ? `${item.g === 'af' ? 'Oorspronklike studienotas' : 'Original study notes'}: ${item.t} · ${item.a}. ${item.n ?? ''}`
-        : item.x.split('\n\n')[0]!.replace(/\n/g, ' ').slice(0, 180),
-    tags: [
+const publishedItems = published as Item[];
+const curriculum = [...CURRICULUM, ...FET_CATALOGUE].map((item) => {
+  const full = publishedItems.find((entry) => entry.id === item.id);
+  return full
+    ? { ...item, ...full, source: item.source }
+    : {
+        ...item,
+        x: '',
+        m: 0,
+        rights: 'Catalogue metadata',
+        summary: `${item.t} by ${item.a}. ${item.n ?? ''}${item.isbn ? ' ISBN ' + item.isbn + '.' : ''}`,
+      };
+});
+export const LIBRARY: Item[] = [
+  ...publishedItems.filter((item) => !curriculum.some((entry) => entry.id === item.id)),
+  ...curriculum,
+  ...ORIGINALS,
+  ...DISCOVERIES,
+].map((item) => ({
+  ...item,
+  rights: item.rights ?? 'Original Leesmaat writing',
+  art: item.art ?? artPath(item.id),
+  summary:
+    item.summary ??
+    `${item.t} · ${item.a}${item.year ? ' · ' + item.year : ''}. ${item.contentUrl ? 'Read the book by chapter or scene.' : item.published ? 'Read the complete ' + item.k.toLowerCase() + '.' : item.x.split('\n\n')[0]!.replace(/\n/g, ' ').slice(0, 160)}`,
+  tags:
+    item.tags ??
+    [
       item.k,
       item.g === 'af' ? 'Afrikaans' : 'English',
       ...(item.genre ? [item.genre] : []),
-      ...(item.grade ? [`Grade ${item.grade}`, item.course ?? ''] : ['Short read']),
+      ...(item.grade ? ['Grade ' + item.grade, item.course ?? ''] : []),
     ].filter(Boolean),
-  }),
+}));
+export const BROWSABLE_LIBRARY = LIBRARY.filter(
+  (item) => item.published || item.rights === 'Catalogue metadata',
 );
+export const readable = (item: Item) => !!(item.contentUrl || item.x.trim());
 
 export const PLACEMENT: Record<Lang, { c: string[]; w: string; o: string[]; a: number }> = {
   en: {
@@ -168,6 +208,6 @@ export const PLACEMENT: Record<Lang, { c: string[]; w: string; o: string[]; a: n
 };
 
 export function dailyItem(g: Lang, day: string): Item {
-  const pool = LIBRARY.filter((i) => i.g === g && (!i.n || i.rights === 'Public-domain excerpt'));
+  const pool = LIBRARY.filter((i) => i.g === g && i.published && readable(i));
   return pool[hash(day + g) % pool.length]!;
 }

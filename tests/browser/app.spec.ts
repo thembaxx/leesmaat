@@ -1,3 +1,5 @@
+import { LIBRARY } from '../../src/lib/data';
+import { autoStudy } from '../../src/lib/study';
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 async function placed(page: Page) {
@@ -91,16 +93,34 @@ test('download is in IndexedDB and remains readable after an offline reload', as
   await page.screenshot({ path: 'test-results/offline-reader.png', animations: 'disabled' });
   await context.setOffline(false);
 });
-test('comprehension feedback and XP use the actual question count', async ({ page }) => {
+test('automatic study recalls a real passage, saves review dates and awards XP once', async ({
+  page,
+}) => {
   await placed(page);
   await page.getByRole('button', { name: 'Practice', exact: true }).click();
-  await page.getByRole('button', { name: 'Comprehension', exact: true }).click();
-  await page.getByRole('button', { name: 'Start', exact: true }).click();
-  await page.getByRole('button', { name: 'She places a candle by the window' }).click();
-  await page.getByRole('button', { name: 'Next question' }).click();
-  await page.getByRole('button', { name: 'Care and welcome for the community' }).click();
-  await page.getByRole('button', { name: 'Finish' }).click();
-  await expect(page.getByText('2 / 2 · +20 XP')).toBeVisible();
+  await page.getByRole('button', { name: 'Auto study', exact: true }).click();
+  const item = LIBRARY.find((i) => i.published && i.g === 'en' && i.k === 'Article')!;
+  await page.getByLabel('Study reading').selectOption(item.id);
+  await page.getByRole('button', { name: 'Start study', exact: true }).click();
+  const questions = autoStudy(item);
+  expect(questions.length).toBe(5);
+  for (let i = 0; i < questions.length; i++) {
+    await expect(page.getByRole('blockquote')).toContainText(questions[i]!.passage.trim());
+    await page.getByRole('button', { name: questions[i]!.answer, exact: true }).click();
+    await expect(page.getByRole('status')).toContainText(questions[i]!.explanation);
+    await page
+      .getByRole('button', {
+        name: i + 1 === questions.length ? 'Finish study' : 'Next question',
+        exact: true,
+      })
+      .click();
+  }
+  await expect(page.getByText('5 / 5 · +50 XP')).toBeVisible();
+  const state = await page.evaluate(() => JSON.parse(localStorage.getItem('lm')!));
+  expect(state.xp).toBe(50);
+  expect(questions.every((q) => state.reviews[q.id]?.interval === 1)).toBe(true);
+  await page.reload();
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('lm')!).xp)).toBe(50);
 });
 test('themes persist and screens have no serious accessibility violations', async ({ page }) => {
   await placed(page);
@@ -165,7 +185,9 @@ test('saved vocabulary is reviewed and scheduled rather than repeated immediatel
   await page.getByRole('button', { name: 'Back', exact: true }).click();
   await page.getByRole('button', { name: 'Practice', exact: true }).click();
   await page.getByRole('button', { name: 'Start', exact: true }).click();
-  await page.getByRole('button', { name: 'burned with an unsteady light', exact: true }).click();
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('lm')!).wd[0]);
+  expect(saved.d).toBeTruthy();
+  await page.getByRole('button', { name: saved.d, exact: true }).click();
   await page.getByRole('button', { name: 'Finish', exact: true }).click();
   await expect(page.getByText('1 / 1 · +10 XP')).toBeVisible();
   const review = await page.evaluate(

@@ -1,4 +1,5 @@
-import { LEVELS, type Item } from '@/lib/data';
+import Image from 'next/image';
+import { type Item } from '@/lib/data';
 import { hash } from '@/lib/text';
 import { useStore } from '@/lib/store';
 
@@ -9,14 +10,27 @@ export function Cover({ item, size = 'md' }: { item: Item; size?: 'sm' | 'md' | 
     md: 'w-full p-2.5',
     lg: 'w-[150px] p-2.5 animate-sway',
   }[size];
+  if (item.cover)
+    return (
+      <Image
+        unoptimized
+        src={item.cover}
+        alt={`${item.t} source-edition cover`}
+        width={400}
+        height={600}
+        loading="lazy"
+        className={`cover squircle aspect-[2/3] rounded-[6px_14px_14px_6px] bg-ln object-cover shadow-lg ${box.replace(/p-[\d.]+/, '')}`}
+      />
+    );
   return (
     <div
       className={`cover squircle flex aspect-[2/3] origin-left flex-col justify-between rounded-[6px_14px_14px_6px] text-white shadow-[inset_6px_0_8px_-4px_#0006,0_8px_18px_#0003] [transform:perspective(600px)_rotateY(-12deg)] ${box}`}
       style={{
         backgroundColor: `hsl(${h} 38% 26%)`,
-        backgroundImage: item.art
-          ? `linear-gradient(180deg,#0008,transparent 55%,#000b),url(${item.art})`
-          : undefined,
+        backgroundImage:
+          item.art && !item.published && item.rights !== 'Catalogue metadata'
+            ? `linear-gradient(180deg,#0008,transparent 55%,#000b),url(${item.art})`
+            : undefined,
         backgroundSize: 'cover',
       }}
     >
@@ -46,11 +60,17 @@ export function ItemRow({ item, onOpen }: { item: Item; onOpen: (id: string) => 
       className="squircle mb-2.5 flex w-full items-center gap-3.5 rounded-[22px] bg-sf p-4 text-left shadow-[inset_0_0_0_1px_var(--ln)]"
     >
       <Cover item={item} size="sm" />
-      <div className="flex-1">
+      <div className="min-w-0 flex-1">
         <b className="font-serif text-base font-semibold">{item.t}</b>
         <div className="text-[13px] text-mu">
-          {item.rights === 'Original study note' ? 'Study note' : item.k} · {LEVELS[item.v]} ·{' '}
-          {item.m} min{s.dl.includes(item.id) ? ' · offline' : ''}
+          {item.k} · {item.a}
+          {item.year ? ' · ' + item.year : ''}
+          {item.rights === 'Catalogue metadata'
+            ? ' · Catalogue'
+            : item.contentUrl
+              ? ' · Complete book'
+              : ' · ' + item.m + ' min'}
+          {s.dl.includes(item.id) ? ' · offline' : ''}
         </div>
         {pos > 0.02 && (
           <div className="mt-2 h-[3px] rounded bg-ln">

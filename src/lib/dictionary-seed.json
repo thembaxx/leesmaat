@@ -1,0 +1,4304 @@
+{
+  "reading": {
+    "word": "reading",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈɹiːdɪŋ/",
+        "label": ""
+      },
+      {
+        "text": "[ˈɹiːɾɪŋ]",
+        "label": ""
+      },
+      {
+        "text": "/ˈɹidiŋ/",
+        "label": ""
+      },
+      {
+        "text": "[ˈɹiɾiŋ]",
+        "label": ""
+      },
+      {
+        "text": "/ˈɹiːdɪŋ/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "present participle and gerund of read",
+            "example": null,
+            "synonyms": [],
+            "lemma": "read"
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "The process of interpreting written language.",
+            "example": "The student is behind in his reading by several chapters.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The process of interpreting a symbol, a sign or a measuring device.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An interpretation.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A value indicated by a measuring device.",
+            "example": "He glanced across and took note of the speedometer reading.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An event at which written material is read aloud.",
+            "example": "I attended a poetry reading.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The wording of a version of a text in a particular place or context.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A pronunciation associated with a particular character or word; particularly in East Asian scripts.",
+            "example": "Some Chinese characters have numerous readings.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Something to read; reading material.",
+            "example": "This is emphatically true; and hence the Portuguese Epic has been universally recognised as wholesome and tonic reading, in fact, the very reverse of a certain “poisonous honey”; and the general directness of the Camonian style, and the straightforwardness with which the Great Portuguese calls a spade (when he must name it) a spade, is a pleasant contrast to that over-development, or rather abuse ",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["readings"],
+    "source": "https://en.wiktionary.org/wiki/reading#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "read": {
+    "word": "read",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ɹiːd/",
+        "label": "Australia, New-Zealand, UK"
+      },
+      {
+        "text": "/ɹid/",
+        "label": "Canada, General-American"
+      },
+      {
+        "text": "/rɛːd/",
+        "label": "Early, Modern"
+      },
+      {
+        "text": "/riːd/",
+        "label": "Early, Modern"
+      },
+      {
+        "text": "/ɹiːd/",
+        "label": "Australia, New-Zealand, UK"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To look at and interpret letters or other information that is written.",
+            "example": "Have you read this book?",
+            "synonyms": ["interpret", "make out", "make sense of", "understand", "scan"],
+            "lemma": null
+          },
+          {
+            "definition": "To be understood or physically read in a specific way.",
+            "example": "Arabic reads right to left.",
+            "synonyms": ["interpret", "make out", "make sense of", "understand", "scan"],
+            "lemma": null
+          },
+          {
+            "definition": "To read a work or works written by the named author.",
+            "example": "At the moment I'm reading Milton.",
+            "synonyms": ["interpret", "make out", "make sense of", "understand", "scan"],
+            "lemma": null
+          },
+          {
+            "definition": "To speak aloud words or other information that is written. (often construed with a to phrase or an indirect object)",
+            "example": "He read us a passage from his new book.",
+            "synonyms": ["read aloud", "read out", "read out loud", "speak"],
+            "lemma": null
+          },
+          {
+            "definition": "To interpret, or infer a meaning, significance, thought, intention, etc., from.",
+            "example": "She read my mind and promptly rose to get me a glass of water.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To consist of certain text.",
+            "example": "On the door hung a sign that read \"No admittance\".",
+            "synonyms": ["say", "run"],
+            "lemma": null
+          },
+          {
+            "definition": "To substitute a corrected piece of text in place of an erroneous one; used to introduce an emendation of a text.",
+            "example": "In Livy, it is nearly certain that for Pylleon we should read Pteleon, as this place is mentioned in connection with Antron.",
+            "synonyms": ["sic pro"],
+            "lemma": null
+          },
+          {
+            "definition": "Used to introduce a blunter, actually intended meaning.",
+            "example": "Our school focuses primarily on the liberal arts (read \"useless degrees\").",
+            "synonyms": ["sic pro"],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A reading or an act of reading, especially of an actor's part of a play or a piece of stored data.",
+            "example": "I had a read of the evening papers.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Something to be read; a written work.",
+            "example": "His thrillers are always a gripping read.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A person's interpretation or impression of something.",
+            "example": "What's your read of the current political situation?",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An instance of reading (“calling attention to someone's flaws; a taunt or insult”).",
+            "example": "[As] Corey points out, \"if you and I are both black queens then we can't call each other black queens because that's not a read. That's a [fact].\"",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The identification of a specific sequence of genes in a genome or bases in a nucleic acid string.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "simple past and past participle of read",
+            "example": null,
+            "synonyms": [],
+            "lemma": "read"
+          }
+        ]
+      }
+    ],
+    "forms": [
+      "reads",
+      "reading",
+      "read",
+      "readen",
+      "no-table-tags",
+      "glossary",
+      "redd",
+      "readest",
+      "readst",
+      "readeth"
+    ],
+    "source": "https://en.wiktionary.org/wiki/read#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "book": {
+    "word": "book",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/bʊk/",
+        "label": "Australia, General-American, Received-Pronunciation"
+      },
+      {
+        "text": "/bɵk/",
+        "label": "British, Southern, Standard"
+      },
+      {
+        "text": "/buːk/",
+        "label": ""
+      },
+      {
+        "text": "/bʉk/",
+        "label": "Multicultural-London-English, Northern-Ireland, Scotland"
+      },
+      {
+        "text": "/bʊk/",
+        "label": "Australia, General-American, Received-Pronunciation"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A collection of sheets of paper bound together to hinge at one edge, containing printed or written material, pictures, etc.",
+            "example": "Knowing I lou'd my bookes, he furniſhd me / From mine owne Library, with volumes, that / I prize aboue my Dukedome.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A long work fit for publication, typically prose, such as a novel or textbook, and typically published as such a bound collection of sheets, but now sometimes electronically as an e-book.",
+            "example": "I have three copies of his first book.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A major division of a long work.",
+            "example": "Genesis is the first book of the Bible.",
+            "synonyms": ["tome", "volume"],
+            "lemma": null
+          },
+          {
+            "definition": "A record of betting (from the use of a notebook to record what each person has bet).",
+            "example": "I'm running a book on who is going to win the race.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A bookmaker (a person who takes bets on sporting events and similar); bookie; turf accountant.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A convenient collection, in a form resembling a book, of small paper items for individual use.",
+            "example": "a book of stamps",
+            "synonyms": ["booklet"],
+            "lemma": null
+          },
+          {
+            "definition": "The script of a musical or opera.",
+            "example": "The guild helps ensure that the ownership and control of the music, lyrics, and book of a show remain in the hands of its authors and composers—not the producers.",
+            "synonyms": ["libretto"],
+            "lemma": null
+          },
+          {
+            "definition": "Records of the accounts of a business.",
+            "example": null,
+            "synonyms": ["account", "record"],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To reserve (something) for future use.",
+            "example": "I want to book a hotel room for tomorrow night.",
+            "synonyms": ["reserve"],
+            "lemma": null
+          },
+          {
+            "definition": "To write down, to register or record in a book or as in a book.",
+            "example": "They booked that message from the hill.",
+            "synonyms": ["make a note of", "note down", "record", "write down"],
+            "lemma": null
+          },
+          {
+            "definition": "To add a name to the list of people who are participating in something.",
+            "example": "I booked a flight to New York.",
+            "synonyms": ["sign up", "register", "reserve", "schedule", "enroll"],
+            "lemma": null
+          },
+          {
+            "definition": "To record the name and other details of a suspected offender and the offence for later judicial action.",
+            "example": "The police booked him for driving too fast.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To issue a caution to, usually a yellow card, or a red card if a yellow card has already been issued.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To travel very fast.",
+            "example": "He was really booking until he passed the speed trap.",
+            "synonyms": ["bomb", "hurtle", "rocket", "speed", "shoot", "whiz"],
+            "lemma": null
+          },
+          {
+            "definition": "To record bets as bookmaker.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To receive the highest grade in a class.",
+            "example": "The top three students had a bet on which one was going to book their intellectual property class.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "simple past of bake",
+            "example": null,
+            "synonyms": [],
+            "lemma": "bake"
+          }
+        ]
+      }
+    ],
+    "forms": ["books", "boke", "booke", "booking", "booked"],
+    "source": "https://en.wiktionary.org/wiki/book#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "story": {
+    "word": "story",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈstɔː.ɹi/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈstɔ.ɹi/",
+        "label": "General-American"
+      },
+      {
+        "text": "/ˈstɔː.ɹi/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈstɔ.ɹi/",
+        "label": "General-American"
+      },
+      {
+        "text": "/ˈstɔː.ɹi/",
+        "label": "Received-Pronunciation"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "An account of real or fictional events.",
+            "example": "The book tells the story of two roommates.",
+            "synonyms": ["tome"],
+            "lemma": null
+          },
+          {
+            "definition": "A lie, fiction.",
+            "example": "You’ve been telling stories again, haven’t you?",
+            "synonyms": [
+              "alternative fact",
+              "anti-fact",
+              "invention",
+              "bluff",
+              "bollocks",
+              "bullshit",
+              "canard",
+              "cap"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "A soap opera.",
+            "example": "What will she do without being able to watch her stories?",
+            "synonyms": ["serial"],
+            "lemma": null
+          },
+          {
+            "definition": "History.",
+            "example": "[…] who is so unread or so uncatechis'd in story, that hath not heard of many sects refusing books as a hindrance, and preserving their doctrine unmixt for many ages, only by unwritt'n traditions.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A sequence of events, or a situation, such as might be related in an account.",
+            "example": "What's the story with him?",
+            "synonyms": ["narrative"],
+            "lemma": null
+          },
+          {
+            "definition": "A chronological collection of pictures or short videos published by a user on an application or website that is typically only available for a short period.",
+            "example": "Worshippers in Mecca are streaming their stories live on Snapchat, opening up the Saudi city to non-Muslims online.",
+            "synonyms": ["my day"],
+            "lemma": null
+          },
+          {
+            "definition": "Ellipsis of user story.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To tell as a story; to relate or narrate about.",
+            "example": "How worthy he is I will leave to appear hereafter, rather than story him in his own hearing.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To post a story (chronological collection of pictures or short videos) on an application or website.",
+            "example": "But Portman, quite self-deprecating about her social-media savvy, says she . . . isn’t quite fully at ease yet with the world of double-taps and geotags and storying.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "intj",
+        "definitions": [
+          {
+            "definition": "Used as a greeting, short for what's the story?",
+            "example": "*Any non-Irish person should be aware that it is not necessary to take the question literally i.e. one shouldn't start to explain your life story when greeted with 'What's the story?' rather they should respond in kind e.g. Greeting: 'What's the story?' Response: 'What's the story?' There are several variations on the theme, the most popular being 'What's the story, bud?' or the pithy : 'Story, bu",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "Alternative spelling of storey.",
+            "example": "Our shop was on the fourth story of the building, so we had to install an elevator.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["stories", "storie", "storying", "storied"],
+    "source": "https://en.wiktionary.org/wiki/story#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "poem": {
+    "word": "poem",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈpəʊ.ɪm/",
+        "label": "UK"
+      },
+      {
+        "text": "[ˈpʰəwɪm]",
+        "label": "UK"
+      },
+      {
+        "text": "/ˈpəʊ.əm/",
+        "label": "UK"
+      },
+      {
+        "text": "/ˈpɔːɪm/",
+        "label": "UK, uncommon"
+      },
+      {
+        "text": "/ˈpoʊ.əm/",
+        "label": "US"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A literary piece written in verse.",
+            "example": "Some poems, echoing the purpose of early poetic treatises on scientific principles, attempt to elucidate the mathematical concepts that underlie prime numbers. Others play with primes’ cultural associations. Still others derive their structure from mathematical patterns involving primes.",
+            "synonyms": ["song"],
+            "lemma": null
+          },
+          {
+            "definition": "A piece of writing in the tradition of poetry, an instance of poetry.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A piece of poetic writing, that is with an intensity or depth of expression or inspiration greater than is usual in prose.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["poems", "poëm", "poeme"],
+    "source": "https://en.wiktionary.org/wiki/poem#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "article": {
+    "word": "article",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈɑːtɪkl̩/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "[ˈɑːtʰɪkʰəɫ]",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈɑɹtɪkəl/",
+        "label": "General-American"
+      },
+      {
+        "text": "/ˈɑɹtəkl̩/",
+        "label": "General-American"
+      },
+      {
+        "text": "[ˈɑ(ː)ɹɾɨkɫ̩]",
+        "label": "General-American"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A piece of nonfiction writing such as a story, report, opinion piece, or entry in a newspaper, magazine, journal, encyclopedia, etc.",
+            "example": "Although there are dozens of different types of gems, among the best known and most important are […]. (Common gem materials not addressed in this article include amber, amethyst, chalcedony, garnet, lazurite, malachite, opals, peridot, rhodonite, spinel, tourmaline, turquoise and zircon.)",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An object, a member of a group or class.",
+            "example": "an article of clothing",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A part of speech that indicates, specifies and limits a noun (a, an, or the in English). In some languages the article may appear as an ending (e.g. definite article in Swedish) or there may be none (e.g. Russian, Pashto).",
+            "example": "‘A song called “Freak Like Me” by the Sugababes,’ said Jesse.\n‘Just Sugababes, no article,’ the man said, enjoying the stunned reaction on Jesse’s face.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A section of a legal document, bylaws, etc. or, in the plural, the entire document seen as a collection of these.",
+            "example": "The Articles of War are a set of regulations[…]to govern the conduct of[…]military[…]forces",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Ellipsis of genuine article.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A part or segment of something joined to other parts, or, in combination, forming a structured set.",
+            "example": "Each of the chelicerae is composed of two articles, forming a powerful pincer.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A person; an individual.",
+            "example": "a shrewd article",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A wench.",
+            "example": "She's a prime article, a devilish good piece, a hell of a goer.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To bind by articles of apprenticeship.",
+            "example": "to article an apprentice to a mechanic",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To accuse or charge by an exhibition of articles or accusations.",
+            "example": "At noon dined alone with Sir W. Batten, where great discourse of Sir W. Pen, Sir W. Batten being, I perceive, quite out of love with him, thinking him too great and too high, and began to talk that the world do question his courage, upon which I told him plainly I have been told that he was articled against for it, and that Sir H. Vane was his great friend therein.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To formulate in articles; to set forth in distinct particulars.",
+            "example": "If […]all his errors and follies were articled against him, the man would seem vicious and miserable.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["articles", "articling", "articled"],
+    "source": "https://en.wiktionary.org/wiki/article#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "light": {
+    "word": "light",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/laɪt/",
+        "label": ""
+      },
+      {
+        "text": "[laɪt]",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "[lɑjt]",
+        "label": "British, Southern, Standard"
+      },
+      {
+        "text": "[ɫɐɪt]",
+        "label": "General-American"
+      },
+      {
+        "text": "[ləjt]",
+        "label": "Canada, US, regional"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "Electromagnetic radiation in the wavelength range visible to the human eye (about 400–750 nanometers): visible light.",
+            "example": "As you can see, this spacious dining-room gets a lot of light in the mornings.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Electromagnetic radiation in the wavelength range visible to the human eye or in nearby ranges (infrared or ultraviolet radiation).",
+            "example": "black light",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Electromagnetic radiation of any wavelength.",
+            "example": "It’s everywhere. At this moment, as you sit quietly reading this book, you are awash in it. At work, it’s emanating from your electronic devices; step outside for lunch, and the sun bathes you in it. You may receive an extra dose of it when you visit your doctor, pass through security at the airport, or drive through city streets, but minuscule amounts of it are with you always. You cannot see, he",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A source of illumination.",
+            "example": "Put that light out!",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A lightbulb or similar light-emitting device, regardless of whether it is lit.",
+            "example": "We turned off all the lights and went to sleep.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A traffic light, or (by extension) an intersection controlled by traffic lights.",
+            "example": "To get to our house, turn right at the third light.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Spiritual or mental illumination; enlightenment, useful information.",
+            "example": "Can you throw any light on this problem?",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Facts; pieces of information; ideas, concepts.",
+            "example": "Now these notions are twofold, actions or habits[…], which are durable lights and notions, which we may use when we will.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To start (a fire).",
+            "example": "We lit the fire to get some heat.",
+            "synonyms": ["set"],
+            "lemma": null
+          },
+          {
+            "definition": "To set fire to; to set burning.",
+            "example": "She lit her last match.",
+            "synonyms": [
+              "ignite",
+              "kindle",
+              "conflagrate",
+              "aflame",
+              "alight",
+              "conflagrate",
+              "fire",
+              "fire up"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "To illuminate; to provide light for when it is dark.",
+            "example": "I used my torch to light the way home through the woods in the night.",
+            "synonyms": [
+              "illuminate",
+              "light up",
+              "alight",
+              "belight",
+              "beshine",
+              "bright",
+              "enlighten",
+              "fire"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "To become ignited; to take fire.",
+            "example": "This soggy match will not light.",
+            "synonyms": [
+              "catch fire",
+              "ignite",
+              "conflagrate",
+              "catch fire",
+              "catch on fire",
+              "combust",
+              "conflagrate",
+              "fire"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "To attend or conduct with a light; to show the way to by means of a light.",
+            "example": "His bishops lead him forth, and light him on.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To make (a bonus) available to be collected by hitting a target, and thus light up the feature light corresponding to that bonus to indicate its availability.",
+            "example": "Light the extra ball by amassing 500 million points in the wizard mode.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "Having light; bright; clear; not dark or obscure.",
+            "example": "The room is light when the Sun shines through the window.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Pale or whitish in color; highly luminous and more or less deficient in chroma.",
+            "example": "She had light skin.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Served with extra milk or cream.",
+            "example": "Do you want your coffee light or black? -I like mine light.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "Having little or relatively little actual weight; not heavy; not cumbrous or unwieldy.",
+            "example": "a light load ; a lighter backpack after having removed the books ; light weapons",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Having little weight as compared with bulk; of little density or specific gravity.",
+            "example": "feathers and cork are light ; oil is lighter than water",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Of short or insufficient weight; weighing less than the legal, standard, or proper amount; clipped or diminished.",
+            "example": "to issue light coin",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Free from burden or impediment; unencumbered.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Lightly built; typically designed for speed or small loads.",
+            "example": "a light aircraft ; a light tank",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Not heavily armed; armed with light weapons.",
+            "example": "light infantry; a troop of light horse",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Riding high because of no cargo; by extension, pertaining to a ship which is light.",
+            "example": "if a ship is light or partially loaded ; the light draft of a vessel, or its light displacement",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Without any piece of equipment attached or attached only to a caboose.",
+            "example": "the light locomotives ; a locomotive may be moved light",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "adverb",
+        "definitions": [
+          {
+            "definition": "Carrying little.",
+            "example": "I prefer to travel light.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A stone that is not thrown hard enough.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "See lights (“lungs”).",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A low-alcohol lager.",
+            "example": "We crossed to the pub on the corner of Carlisle Street and I ordered two schooners of old for him and one of light for me.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A member of the light cavalry.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To unload a ship, or to jettison material to make it lighter.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To lighten; to ease of a burden; to take off.",
+            "example": "His mailèd habergeon she did undight, / And from his head his heavy burgonet did light.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To leave; to depart.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To find by chance.",
+            "example": "I lit upon a rare book in a second-hand bookseller's.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To stop upon (of eyes or a glance); to notice.",
+            "example": "\"Sacredam!\" he cried, when his eyes lit upon Buck. \"Dat one dam bully dog! Eh? How moch?\"",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To alight; to land or come down.",
+            "example": "She fell out of the window but luckily lit on her feet.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": [
+      "lights",
+      "lite",
+      "lighte",
+      "lyght",
+      "lyghte",
+      "licht",
+      "lighting",
+      "lit",
+      "lighted",
+      "light",
+      "lighter",
+      "lightest"
+    ],
+    "source": "https://en.wiktionary.org/wiki/light#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "flicker": {
+    "word": "flicker",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈflɪkə/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈflɪkɚ/",
+        "label": "General-American"
+      },
+      {
+        "text": "/ˈflɪkə/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈflɪkɚ/",
+        "label": "General-American"
+      },
+      {
+        "text": "/ˈflɪkə/",
+        "label": "Received-Pronunciation"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "An unsteady flash of light.",
+            "example": "the flicker of the dying candle",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A short moment.",
+            "example": "a flicker of emotion",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To burn or shine unsteadily, or with a wavering light.",
+            "example": "The shadows flicker to and fro.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To keep going on and off; to appear and disappear for short moments; to flutter.",
+            "example": "A strong desire to smash up everything in the room kept flickering in his head.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To flutter or flap.",
+            "example": "And flickering on her nest made short essays to sing.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "Any of certain small woodpeckers, especially of the genus Colaptes.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "One who flicks.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Ellipsis of channel flicker (“remote control”).",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["flickers", "flickering", "flickered"],
+    "source": "https://en.wiktionary.org/wiki/flicker#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "flickered": {
+    "word": "flickered",
+    "language": "en",
+    "phonetics": [],
+    "meanings": [
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "simple past and past participle of flicker",
+            "example": null,
+            "synonyms": [],
+            "lemma": "flicker"
+          }
+        ]
+      }
+    ],
+    "forms": [],
+    "source": "https://en.wiktionary.org/wiki/flickered#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "neighbour": {
+    "word": "neighbour",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈneɪbə/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈneɪbɚ/",
+        "label": "General-American"
+      },
+      {
+        "text": "/ˈneɪbə/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈneɪbɚ/",
+        "label": "General-American"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A person living on adjacent or nearby land; a person situated adjacently or nearby; anything (of the same type of thing as the subject) in an adjacent or nearby position.",
+            "example": "My neighbour has two noisy cats.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "One who is near in sympathy or confidence.",
+            "example": "Buckingham / No more shall be the neighbour to my counsel.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A fellow human being.",
+            "example": "1982, Bible (NKJV), Leviticus 19:18,\nYou shall not take vengeance, nor bear any grudge against the children of your people, but you shall love your neighbor as yourself: I am the Lord.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Anything located directly adjacent to something else.",
+            "example": "The flood fill algorithm fills an area with colour by starting at one pixel and recursively visiting its neighbours.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To be adjacent to",
+            "example": "Though France neighbours Germany, its culture is significantly different.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To be similar to, to be almost the same as.",
+            "example": "That sort of talk is neighbouring on treason.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To associate intimately with; to be close to.",
+            "example": "[…] the barbarous Scythyan, […] / Shall bee as well neighbour’d, pittyed and relieued / As thou my ſometime daughter.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": [
+      "neighbours",
+      "neighbor",
+      "neighba",
+      "neyghbour",
+      "naybour",
+      "neibor",
+      "neibour",
+      "neighbore",
+      "neighboure",
+      "neyghbor",
+      "neyghbore",
+      "neyghboure",
+      "neighbouring",
+      "neighboured"
+    ],
+    "source": "https://en.wiktionary.org/wiki/neighbour#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "understood": {
+    "word": "understood",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ʌndəˈstʊd/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ʌndəˈstɵd/",
+        "label": "British, Southern, Standard"
+      },
+      {
+        "text": "/ʊndəˈstʊd/",
+        "label": "Northern-England"
+      },
+      {
+        "text": "/ʌndɚˈstʊd/",
+        "label": "Canada, General-American"
+      },
+      {
+        "text": "/ɐndəˈstʊd/",
+        "label": "Australia, New-Zealand"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "Having been comprehended.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "simple past and past participle of understand",
+            "example": "Three crewmembers are understood to have been injured in the explosion.",
+            "synonyms": [],
+            "lemma": "understand"
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "intj",
+        "definitions": [
+          {
+            "definition": "Indicates comprehension on the part of the speaker.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["more understood", "most understood"],
+    "source": "https://en.wiktionary.org/wiki/understood#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "linger": {
+    "word": "linger",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈlɪŋɡɚ/",
+        "label": "General-American"
+      },
+      {
+        "text": "/ˈliŋɡɚ/",
+        "label": ""
+      },
+      {
+        "text": "/ˈlɪŋɡə/",
+        "label": "Received-Pronunciation"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To stay or remain in a place or situation, especially as if unwilling to depart or not easily able to do so.",
+            "example": "Still more foole I ſhall appeare / By the time I linger here",
+            "synonyms": ["abide", "loiter", "tarry", "abide", "eld", "linger", "retard", "stay"],
+            "lemma": null
+          },
+          {
+            "definition": "To remain alive or existent although still proceeding toward death or extinction; to die gradually.",
+            "example": "He lingered through the day, and died that evening as the sun went down.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To consider or contemplate for a period of time; to engage in analytic thinking or discussion.",
+            "example": "Trump doesn't linger on the poll.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["lingers", "lingering", "lingered"],
+    "source": "https://en.wiktionary.org/wiki/linger#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "borrow": {
+    "word": "borrow",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈbɒɹəʊ/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈbɒɹə/",
+        "label": "Northumbria"
+      },
+      {
+        "text": "/ˈbɔɹo/",
+        "label": "Scotland"
+      },
+      {
+        "text": "/ˈbɑɹ.oʊ/",
+        "label": "Canada, General-American"
+      },
+      {
+        "text": "/ˈboɹ.oʊ/",
+        "label": "dialectal"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To receive (something) from somebody temporarily, expecting to return it.",
+            "example": "Finance is seldom romantic. But the idea of peer-to-peer lending comes close. This is an industry that brings together individual savers and lenders on online platforms. Those that want to borrow are matched with those that want to lend.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To receive money from a bank or other lender under the agreement that the lender will be paid back over time.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To adopt (an idea) as one's own.",
+            "example": "to borrow the style, manner, or opinions of another",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To adopt a word from another language.",
+            "example": "Americans, for example, call newcomers to Antarctica “fingies”, which comes from FNGs – a borrowed military abbreviation that means “Fucking New Guy”.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "In a subtraction, to deduct (one) from a digit of the minuend and add ten to the following digit, in order that the subtraction of a larger digit in the subtrahend from the digit in the minuend to which ten is added gives a positive result.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To lend.",
+            "example": "“Rosie, borrow me your look looker, I bet my lips are all. Everytime^([sic]) I eat or drink, so quick I gotta fix ’em, yet.”",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To temporarily obtain (something) for (someone).",
+            "example": "You must borrow me Garagantua's mouth first: 'tis a word too great for any mouth of this age's size: To say, ay, and no, to these particulars, is more than to answer in a catechism.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To feign or counterfeit.",
+            "example": "borrowed hair",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "Deviation of the path of a rolling ball from a straight line; slope; slant.",
+            "example": "This putt has a big left-to right borrow on it.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A borrow pit.",
+            "example": "As previously indicated, slurry used for construction of the slurry cutoff trench at Beaver Creek Dam was produced with natural clays and clay tills from local borrows.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "In Rust and some other programming languages, the situation where the ownership of a value is temporarily transferred to another region of code.",
+            "example": "If we currently have any borrows of a value, we can't mutably borrow it into self, nor can we move it (because that would invalidate the existing borrows).",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A ransom; a pledge or guarantee.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A surety; someone standing bail.",
+            "example": "”where am I to find such a sum? If I sell the very pyx and candlesticks on the altar at Jorvaulx, I shall scarce raise the half; and it will be necessary for that purpose that I go to Jorvaulx myself; ye may retain as borrows my two priests.”",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": [
+      "borrows",
+      "borrowing",
+      "borrowed",
+      "no-table-tags",
+      "glossary",
+      "borrow",
+      "borrowest",
+      "borrowedst",
+      "borroweth",
+      "boro"
+    ],
+    "source": "https://en.wiktionary.org/wiki/borrow#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "habit": {
+    "word": "habit",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈhæb.ɪt/",
+        "label": ""
+      },
+      {
+        "text": "/ˈhæb.ət/",
+        "label": ""
+      },
+      {
+        "text": "/ˈhæb.ɪt/",
+        "label": ""
+      },
+      {
+        "text": "/ˈhæb.ət/",
+        "label": ""
+      },
+      {
+        "text": "/ˈhæb.ɪt/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "An action performed on a regular basis.",
+            "example": "It’s become a habit of mine to have a cup of coffee after dinner.",
+            "synonyms": ["wont", "routine", "ritual", "habitude"],
+            "lemma": null
+          },
+          {
+            "definition": "An action performed repeatedly and automatically, usually without awareness.",
+            "example": "By force of habit, he dressed for work even though it was holiday.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An addiction.",
+            "example": "kick the habit",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To clothe.",
+            "example": "Ritson, who was a native of the bishoprick of Durham, tells us that the fairies frequented many parts of it; that they were described as being of the smallest size, and uniformly habited in green.",
+            "synonyms": ["garb", "habilitate"],
+            "lemma": null
+          },
+          {
+            "definition": "To inhabit.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A long piece of clothing worn by monks and nuns.",
+            "example": "It’s interesting how Catholic and Buddhist monks both wear habits.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A piece of clothing worn for a specific activity; a uniform.",
+            "example": "The new riding habits of the team looked smashing!",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Outward appearance; attire; dress.",
+            "example": "Noble and milde this Perſean ſeemes to be,\nIf outward habit Iudge the inward man.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Form of growth or general appearance and structure of a plant or crystal.",
+            "example": null,
+            "synonyms": [],
+            "lemma": "growth or general appearance and structure of a plant or crystal"
+          }
+        ]
+      }
+    ],
+    "forms": ["habits", "habiting", "habited"],
+    "source": "https://en.wiktionary.org/wiki/habit#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "comprehension": {
+    "word": "comprehension",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˌkɒmpɹɪˈhɛnʃn̩/",
+        "label": "UK"
+      },
+      {
+        "text": "/ˌkɑmpɹɪˈhɛnʃn̩/",
+        "label": "US"
+      },
+      {
+        "text": "/ˌkɔmpɹɪˈhenʃn̩/",
+        "label": "Australia"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A thorough understanding.",
+            "example": "Students will be tested on their comprehension of sentences in the foreign language.",
+            "synonyms": ["appreciation"],
+            "lemma": null
+          },
+          {
+            "definition": "The totality of intensions, that is, attributes, characters, marks, properties, or qualities, that the object possesses, or else the totality of intensions that are pertinent to the context of a given discussion.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A compact syntax for generating a collection in some programming languages, traditionally lists in functional programming languages.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The inclusion of nonconformists within the Church of England.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Reading comprehension.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["comprehensions"],
+    "source": "https://en.wiktionary.org/wiki/comprehension#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "vocabulary": {
+    "word": "vocabulary",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/vəˈkæb.jə.lə.ɹi/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/vəʊ-/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/-jʊ-/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/vəˈkabjələɹɪj/",
+        "label": "British, Southern, Standard"
+      },
+      {
+        "text": "/vəw-/",
+        "label": "British, Southern, Standard"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A usually alphabetized and explained collection of words e.g. of a particular field, or prepared for a specific purpose, often for learning.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The collection of words a person knows and uses.",
+            "example": "My Russian vocabulary is very limited.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The stock of words used in a particular field.",
+            "example": "The vocabulary of social sciences is often incomprehensible to ordinary people.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The words of a language collectively; lexis.",
+            "example": "The vocabulary of any language is influenced by contacts with other cultures.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A range of artistic or stylistic forms or techniques.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["vocabularies"],
+    "source": "https://en.wiktionary.org/wiki/vocabulary#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "negotiate": {
+    "word": "negotiate",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/nəˈɡəʊ.ʃi.eɪt/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/nɪˈɡoʊ.ʃi.eɪt/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/nɪˈɡəʊ.si.eɪt/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/nəˈɡoʊ.ʃi.eɪt/",
+        "label": "Canada, General-American"
+      },
+      {
+        "text": "/nɪˈɡoʊ.ʃi.eɪt/",
+        "label": "Canada, General-American"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To confer with others in order to come to terms or reach an agreement.",
+            "example": "1963, Martin Luther King, Jr., to the eight fellow clergymen who opposed the civil rights action, \"Letter from Birmingham Jail,\" Why We Can't Wait\n\"You are quite right in calling for negotiation. Indeed, this is the very purpose of direct action. Nonviolent direct action seeks to create such a crisis and foster such a tension that a community which has constantly refused to negotiate is forced to ",
+            "synonyms": ["treat"],
+            "lemma": null
+          },
+          {
+            "definition": "To arrange or settle something by mutual agreement.",
+            "example": "We negotiated the contract to everyone's satisfaction.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To succeed in coping with, getting over or navigate a hazard or obstacle.",
+            "example": "We negotiated the mountain track with difficulty.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To transfer to another person with all the rights of the original holder; to pass, as a bill.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To transact business; to carry on trade.",
+            "example": "Jews, Turks, Armenians,[…]negotiating in this famous Emporium.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To intrigue; to scheme.",
+            "example": "Certaine it is, shee was a busie negotiating woman.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["negotiates", "negotiating", "negotiated", "negociate"],
+    "source": "https://en.wiktionary.org/wiki/negotiate#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "horizon": {
+    "word": "horizon",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/həˈɹaɪ.zən/",
+        "label": "Canada, General-American, Received-Pronunciation"
+      },
+      {
+        "text": "/həˈɹɑe.zən/",
+        "label": "Australia"
+      },
+      {
+        "text": "[həˈɹɑe̯.zən]",
+        "label": "New-Zealand"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "The visible horizontal line (in all directions) where the sky appears to meet the earth in the distance.",
+            "example": "A tall building was visible on the whole sweep of the horizon.",
+            "synonyms": ["skysill", "skyline"],
+            "lemma": null
+          },
+          {
+            "definition": "The range or limit of one's knowledge, experience or interest; a boundary or threshold.",
+            "example": "Some students take a gap year after finishing high school to broaden their horizons.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The range or limit of any dimension in which one exists.",
+            "example": "Only mortality, this irreducible and primordial horizon, that very horizon which, in Being and Time, Heidegger so compellingly revealed as the unsurpassable and defining possibility, remains.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A specific layer of soil, or stratum",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A cultural sub-period or level within a more encompassing time period.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Any level line or surface.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The point at which a computer chess algorithm stops searching for further moves.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["horizons"],
+    "source": "https://en.wiktionary.org/wiki/horizon#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "quiet": {
+    "word": "quiet",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈkwaɪ̯.ət/",
+        "label": ""
+      },
+      {
+        "text": "[ˈkʰw̥aɪ̯.ət]",
+        "label": ""
+      },
+      {
+        "text": "/ˈkwaɪ̯.ət/",
+        "label": ""
+      },
+      {
+        "text": "[ˈkʰw̥aɪ̯.ət]",
+        "label": ""
+      },
+      {
+        "text": "/ˈkwaɪ̯.ət/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "With little or no sound; free of disturbing noise.",
+            "example": "I can't hear the music; it is too quiet.",
+            "synonyms": ["hushed", "muffled"],
+            "lemma": null
+          },
+          {
+            "definition": "Having little motion or activity; calm.",
+            "example": "the sea was quiet",
+            "synonyms": [
+              "placid",
+              "serene",
+              "calm",
+              "steady",
+              "collected",
+              "composed",
+              "cool-headed",
+              "equable"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "Not busy, of low quantity.",
+            "example": "The traffic was quiet for a Monday morning.",
+            "synonyms": [
+              "slow",
+              "unbusy",
+              "abeyant",
+              "at rest",
+              "cessant",
+              "dormant",
+              "dull",
+              "fallow"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "Not talking much or not talking loudly; reserved.",
+            "example": "He's a very quiet man usually, but is very chatty after a few beers.",
+            "synonyms": [
+              "reticent",
+              "taciturn",
+              "reticent",
+              "unloquacious",
+              "untalkative",
+              "quiet",
+              "reserved",
+              "silent"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "Not showy; undemonstrative.",
+            "example": "a quiet dress",
+            "synonyms": [
+              "modest",
+              "plain",
+              "simple",
+              "aloof",
+              "cool",
+              "distant",
+              "frosty",
+              "hankty"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "Requiring little or no interaction.",
+            "example": "a quiet install",
+            "synonyms": ["silent", "unattended"],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To cause (someone or something) to become quiet.",
+            "example": "Can you quiet your child? He’s making lots of noise.",
+            "synonyms": ["quiet down", "quieten"],
+            "lemma": null
+          },
+          {
+            "definition": "To become quiet or calm.",
+            "example": "When you quiet, we can start talking.",
+            "synonyms": ["quiet down", "quieten"],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "The absence of sound; quietness.",
+            "example": "There was a strange quiet in the normally very lively plaza.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The absence of movement; stillness, tranquility.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The absence of disturbance or trouble; peace, security.",
+            "example": "The King & his Nobles thinke they may ſleepe in quiet,\nNow they haue giuen vs a little holy water at the Court,\nBut thers no ſuch matter, we be no ſuch fooles,\nTo be bobd out with words and after come to hanging: […]",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "intj",
+        "definitions": [
+          {
+            "definition": "Be quiet.",
+            "example": "Quiet! The children are sleeping.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["quieter", "more quiet", "quietest", "most quiet", "quiets", "quieting", "quieted"],
+    "source": "https://en.wiktionary.org/wiki/quiet#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "garden": {
+    "word": "garden",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈɡɑː.d(ə)n/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈɡɑɹ.d(ə)n/",
+        "label": "Canada, General-American"
+      },
+      {
+        "text": "/ˈɡäː.d(ə)n/",
+        "label": "Australia"
+      },
+      {
+        "text": "/ˈɡɑː.d(ə)n/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈɡɑɹ.d(ə)n/",
+        "label": "Canada, General-American"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "An outdoor area containing one or more types of plants, usually plants grown for food or ornamental purposes.",
+            "example": "flower garden; herb garden; rose garden; vegetable garden",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Such an ornamental place to which the public have access.",
+            "example": "You can spend the afternoon walking around the town gardens.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Taking place in, or used in, such a garden.",
+            "example": "garden party; garden path; garden spade",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An ornamental garden featuring plants and other features to attract, house, conserve, benefit and/or display certain animals.",
+            "example": "butterfly garden; wild bird garden",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The grounds at the front or back of a house.",
+            "example": "This house has a swimming pool, a tent, a swing set and a fountain in the garden.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A road, street, or similar thoroughfare, which sometimes occupies a former garden.",
+            "example": "32 Windsor Gardens.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The twentieth Lenormand card.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A cluster; a bunch.",
+            "example": "Behind the tangled garden of microphones that had sprouted on the lectern, Goldwater spoke softly and casually about his family.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To grow plants in a garden; to create or maintain a garden.",
+            "example": "I love to garden—this year I'm going to plant some daffodils.",
+            "synonyms": ["make garden"],
+            "lemma": null
+          },
+          {
+            "definition": "Of a batsman, to inspect and tap the pitch lightly with the bat so as to smooth out small rough patches and irregularities.",
+            "example": null,
+            "synonyms": ["farm"],
+            "lemma": null
+          },
+          {
+            "definition": "To smoke marijuana.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "Common, ordinary, domesticated.",
+            "example": "In that case, the thing was mere plain or garden robbery.",
+            "synonyms": ["garden variety"],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["gardens", "gardening", "gardened"],
+    "source": "https://en.wiktionary.org/wiki/garden#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "portrait": {
+    "word": "portrait",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈpɔːtɹeɪt/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈpɔːtɹɪt/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈpɔɹtɹət/",
+        "label": "General-American"
+      },
+      {
+        "text": "/ˈpɔɹtɹeɪt/",
+        "label": "General-American"
+      },
+      {
+        "text": "/ˈpoʊɹtɹət/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A painting or other picture of a person, especially the head and shoulders.",
+            "example": "In portraits, the grace, and, we may add, the likeness, consists more in the general air than in the exact similitude of every feature.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An accurate depiction of a person, a mood, etc.",
+            "example": "The author painted a good portrait of urban life in New York in his latest book.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A print orientation where the vertical sides are longer than the horizontal sides.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To portray; to draw.",
+            "example": "But all as in most exquisite pictures, they vse to blaze and portrait, not only the daintie lineaments or beautie, but also round about it to shadowe the rude thickets and craggy clifts",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "Representing the actual features of an individual; not ideal.",
+            "example": "a portrait bust; a portrait statue",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["portraits", "pourtraict", "portraiting", "portraited"],
+    "source": "https://en.wiktionary.org/wiki/portrait#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "beautiful": {
+    "word": "beautiful",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈbjuːtɪ.fəl/",
+        "label": "UK"
+      },
+      {
+        "text": "/ˈbjuːtɪ.fʊl/",
+        "label": "UK"
+      },
+      {
+        "text": "/ˈbju.tɪ.fəl/",
+        "label": "US"
+      },
+      {
+        "text": "[bju.ɾə.fəl]",
+        "label": "US"
+      },
+      {
+        "text": "/ˈbjuːtɪ.fəl/",
+        "label": "UK"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "Possessing beauty, impressing the eye; attractive.",
+            "example": "Anyone who has ever met her thought she was absolutely beautiful.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Used emphatically or ironically, after the noun it qualifies.",
+            "example": "the house beautiful",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "That one likes very much.",
+            "example": "He was a beautiful person; he would drop everything to help you.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Affording pleasure to any of the senses, especially that of hearing; delightful.",
+            "example": "Beethoven's most beautiful sonata",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Impressing with charm in an intellectual or moral way, through inherent suitability or elegance.",
+            "example": "The skater performed a beautiful axel.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "Someone who is beautiful. Can be used as a term of address.",
+            "example": "The man was faithful to his wife, ignoring the many blonde beautifuls who surrounded him wherever he went.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["more beautiful", "most beautiful", "beautifuls"],
+    "source": "https://en.wiktionary.org/wiki/beautiful#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "lawyer": {
+    "word": "lawyer",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈlɔːjə(ɹ)/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈlɔɪ.ə(ɹ)/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈlɔɪ.ɚ/",
+        "label": "Northern, US, Western"
+      },
+      {
+        "text": "/ˈlɔ.jɚ/",
+        "label": "Southern, US"
+      },
+      {
+        "text": "/ˈlɔɪ.əɹ/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A professional person with a graduate law degree that qualifies for legal work (such as Juris Doctor)",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A professional person qualified (as by a law degree or bar exam) and authorized to practice law as an attorney-at-law, solicitor, advocate, barrister or equivalent, i.e. represent parties in lawsuits or trials and give legal advice.",
+            "example": "His forefathers had been, as a rule, professional men—physicians and lawyers; his grandfather died under the walls of Chapultepec Castle while twisting a tourniquet for a cursing dragoon; an uncle remained indefinitely at Malvern Hill;[…].",
+            "synonyms": ["advocate", "attorney", "counselor"],
+            "lemma": null
+          },
+          {
+            "definition": "A legal layman who argues points of law.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The burbot.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The stem of a bramble.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A relative of the raspberry found in Australia and New Zealand, Rubus australis",
+            "example": "The species of Eugnomus are very partial to the lawyer (Rubus australis ) when in bloom.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Various species of Calamus, including Calamus australis, Calamus muelleri, Calamus obstruens, Calamus vitiensis, Calamus warburgii, and Calamus moti.",
+            "example": "Besides the bags and nets common throughout the continent, these tribes have water-bags, which they make of closely-plaited “lawyer” (Calamus Australis), and also of palm-leaf sewn with the sinews of animals.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A woody climbing rainforest vine, Flagellaria indica.",
+            "example": "The stems of the \"lawyer vine\" (Flagellaria indica), buz or buzi (W.), boz (E.), are used in house-building, tying fences, etc.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To practice law.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To perform, or attempt to perform, the work of a lawyer.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To make legalistic arguments.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To barrage (a person) with questions in order to get them to admit something.",
+            "example": "You've been lawyered!",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["lawyers", "lawer", "lawyering", "lawyered"],
+    "source": "https://en.wiktionary.org/wiki/lawyer#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "street": {
+    "word": "street",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/stɹiːt/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "[ʃt͡ʃɹiːt]",
+        "label": ""
+      },
+      {
+        "text": "/stɹit/",
+        "label": "US"
+      },
+      {
+        "text": "[skɹitˀ]",
+        "label": ""
+      },
+      {
+        "text": "[ʃkɹitˀ]",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A paved part of road, usually in a village or a town.",
+            "example": "Walk down the street until you see a hotel on the right.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A road as above, but including the sidewalks (pavements) and buildings.",
+            "example": "I live on the street down from Joyce Avenue.",
+            "synonyms": ["way"],
+            "lemma": null
+          },
+          {
+            "definition": "The roads that run perpendicular to avenues in a grid layout.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The people who live in such a road, as a neighborhood.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The people who spend a great deal of time on the street in urban areas, especially, the young, the poor, the unemployed, and those engaged in illegal activities.",
+            "example": "Take or be taken. Get yours or get got. It was the code of the streets and I'd lived by it. The way things was looking, I was prolly gone die by it too.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An illicit or contraband source, especially of drugs.",
+            "example": "I got some pot cheap on the street.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Ellipsis of Wall Street.",
+            "example": "Orders were reported to have increased 2% monthly, ahead of the 1.2% expected by the street.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Living in the streets.",
+            "example": "a street cat",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "Having street cred; conforming to modern urban trends.",
+            "example": "Eric had to admit that she looked street—upscale street, but still street. Kayla's look tended to change with the seasons; at the moment it was less Goth than paramilitary, with laced jump boots.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To build or equip with streets.",
+            "example": "There are few places on this ſide the Alps better built, and ſo well Streeted as this, and none at all ſo well girt with Baſtions and Ramparts, which in ſome places are ſo ſpacious, that they uſually take the Air in Coaches upon the very Walls, which are beautified with divers rows of Trees and pleaſant Walks.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To eject; to throw onto the streets.",
+            "example": "Stage doormen and all sorts of doormen are very quick at streeting a man who won't move fast. I know a well-known Irishman who at a New York theatre was streeted just because he was insisting on getting in when the house was apparently booked out.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To heavily defeat.",
+            "example": "Wearing his custom-made silks, McCarthy duly rode the horse a treat as they streeted the opposition and helped connections clean up the bookies.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To go on sale.",
+            "example": "He points to the success of a recent Destiny's Child DVD that streeted just after member Beyonce's new solo CD",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To proselytize in public.",
+            "example": "A person I met streeting in Osaka told me the above Kanji examples as well as many others that I have since forgot.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": [
+      "streets",
+      "streete",
+      "streat",
+      "streate",
+      "more street",
+      "most street",
+      "streeting",
+      "streeted"
+    ],
+    "source": "https://en.wiktionary.org/wiki/street#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "curious": {
+    "word": "curious",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈkjʊə.ɹi.əs/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈkjɔː-/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈkjɵːɹɪjəs/",
+        "label": "British, Southern, Standard"
+      },
+      {
+        "text": "/ˈkjoː-/",
+        "label": "British, Southern, Standard"
+      },
+      {
+        "text": "/ˈkjʊɹ.i.əs/",
+        "label": "General-American"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "Tending to ask questions, or to want to explore or investigate; inquisitive; (with a negative connotation) nosy, prying.",
+            "example": "Young children are naturally curious about the world and everything in it.",
+            "synonyms": ["enquiring, inquiring", "exquisitive", "investigative", "peery"],
+            "lemma": null
+          },
+          {
+            "definition": "Caused by curiosity.",
+            "example": "But he to ſhifte their curious requeſt, / Gan cauſen, why ſhe could not come in place; [...].",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Leading one to ask questions about; somewhat odd, out of the ordinary, or unusual.",
+            "example": "The platypus is a curious creature, with fur like a mammal and a beak like a bird.",
+            "synonyms": [
+              "aberrant",
+              "abnormal",
+              "alien",
+              "anomalous",
+              "as queer as Dick's hatband",
+              "bizarre",
+              "booky",
+              "curious"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "Clipping of bi-curious.",
+            "example": "It's not what I'm used to / Just wanna try you on / I'm curious for you / Caught my attention",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Interested in entering a romantic or sexual relationship with a specified group.",
+            "example": "On the app I’d ultimately go with, I presented myself truthfully, as a Republican-curious woman tired of the Democrats’ hopelessness and constant pivoting during a highly charged election year.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Careful, fastidious, particular; (specifically) demanding a high standard of excellence, difficult to satisfy.",
+            "example": "Honourable even in the curiousest pointes of honour, whereout there can no disgrace nor disperagement come unto her.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Carefully or artfully constructed; made with great elegance or skill.",
+            "example": "To honour which a worlde of people reſorted unto the Lord de Bolognas caſtle; for the intertainment of whiche gueſtes, there neither wanted coſtly cheare, curious ſhewes, or pleaſaunt deviſes, that eyther money, friendſhip or cunning might compaſſe.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "Containing or pertaining to trivalent curium.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["more curious", "curiouser", "most curious", "curiousest"],
+    "source": "https://en.wiktionary.org/wiki/curious#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "rabbit": {
+    "word": "rabbit",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈɹæbɪt/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈɹabɪt/",
+        "label": "British, Southern, Standard"
+      },
+      {
+        "text": "/ˈɹæbət/",
+        "label": ""
+      },
+      {
+        "text": "/ˈɹæbɪt/",
+        "label": ""
+      },
+      {
+        "text": "/ˈɹæbət/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A mammal of most genera of the family Leporidae, with long ears, long hind legs and a short, fluffy tail. (Those of the larger kind are instead called hares)",
+            "example": "The pioneers survived by eating the small game they could get: rabbits, squirrels and occasionally a raccoon.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The meat from this animal.",
+            "example": "She was cooking rabbit stew for dinner.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The fur of a rabbit typically used to imitate another animal's fur.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A runner in a distance race whose goal is mainly to set the pace, either to tire a specific rival so that a teammate can win or to help another break a record; a pacesetter.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A very poor batsman, selected as a bowler or wicket-keeper.",
+            "example": null,
+            "synonyms": ["walking wicket"],
+            "lemma": null
+          },
+          {
+            "definition": "A batsman who is frequently dismissed by the same bowler (said to be that player's rabbit).",
+            "example": "Glenn McGrath dismissed Michael Atherton a record 19 times; hence Atherton is McGrath's rabbit.",
+            "synonyms": ["bunny"],
+            "lemma": null
+          },
+          {
+            "definition": "A large element at the beginning of a list of items to be bubble sorted, and thus tending to be quickly swapped into its correct position. Compare turtle.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Rarebit; Welsh rabbit or a similar dish: melted cheese served atop toast.",
+            "example": "The cheese mixture may be served with toast on the side or poured on top of toast and grilled until golden brown and bubbling. Other variations include Buck rabbit, a Welsh rabbit with a poached egg on top, and Yorkshire rabbit with bacon ...",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To hunt rabbits.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To flee.",
+            "example": "The informant seemed skittish, as if he was about to rabbit.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To talk incessantly and in a childish manner; to babble annoyingly.",
+            "example": "Stop your infernal rabbiting! Use proper words or nobody will listen to you!",
+            "synonyms": ["rabbit on"],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "Confound; damn; drat.",
+            "example": "LORD D. There, Dick, d'ye hear how the tutorer talks? oh rabbit it! he can ladle you out of latin by the quart;—and grunts greek like a pig.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["rabbits", "rabbiting", "rabbitting", "rabbited", "rabbitted"],
+    "source": "https://en.wiktionary.org/wiki/rabbit#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "treasure": {
+    "word": "treasure",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈtɹɛʒəɹ/",
+        "label": ""
+      },
+      {
+        "text": "/ˈt͡ʃɹɛʒəɹ/",
+        "label": ""
+      },
+      {
+        "text": "[ˈtɹɛʒɚ]",
+        "label": "General-American"
+      },
+      {
+        "text": "[ˈt͡ʃɹɛʒɚ]",
+        "label": "General-American"
+      },
+      {
+        "text": "/ˈtɹɛʒəɹ/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A collection of valuable things; accumulated wealth; a stock of money, jewels, etc.",
+            "example": "It seems there was a worm that slept upon a pile of treasure, which it had zealously heaped up under a stone bluff.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Anything greatly valued.",
+            "example": "Ye shall be peculiar treasure unto me.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A term of endearment.",
+            "example": "\"Hello, Treasure,\" he said without turning round. For a second she hesitated, standing in the soft light of the lamp, the deep blue of the rug making a background for her, the black fur collar of her coat framing the vivid beauty of her face.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The female genitals; pudenda.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To consider to be precious; to value highly.",
+            "example": "Oh, this ring is beautiful! I’ll treasure it forever.",
+            "synonyms": [
+              "cherish",
+              "prize",
+              "appreciate",
+              "bedear",
+              "cherish",
+              "esteem",
+              "hold dear",
+              "prize"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "To store or stow in a safe place.",
+            "example": "The rose-buds, withered as they were, were still treasured under his cuirass, and nearest to his heart.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To amass or collect together as though a treasure.",
+            "example": "He seems to have carefully treasured up all the tales he heard, and he wrote and published them, under the feigned name of Gian Alesio Abbatutis, in his native dialect, not long before his death.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To enrich.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["treasures", "threasure", "treasuring", "treasured"],
+    "source": "https://en.wiktionary.org/wiki/treasure#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "island": {
+    "word": "island",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈaɪlənd/",
+        "label": "Western"
+      },
+      {
+        "text": "/aj.læɳɖ/",
+        "label": "South-Asia"
+      },
+      {
+        "text": "/ˈaɪlənd/",
+        "label": "Western"
+      },
+      {
+        "text": "/aj.læɳɖ/",
+        "label": "South-Asia"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A contiguous area of land, smaller than a continent, totally surrounded by water.",
+            "example": "No man is an Iland, intire of it ſelfe; euery man is a peece of the Continent, a part of the maine; […]",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A contiguous area of land, smaller than a continent, partially surrounded by water; a peninsula; a half-island.",
+            "example": "Despite its name, Barry Island is actually a peninsula",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An entity surrounded by other entities that are very different from itself.",
+            "example": "The quiet library was an island of tranquility in the noisy, bustling city.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A superstructure on an aircraft carrier's deck.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A traffic island.",
+            "example": "the island in the middle of a roundabout",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A roundabout; a traffic circle.",
+            "example": "Dunton island, near Birmingham, is one of the most confusingly labelled islands in the U.K.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A bench, counter, etc., that is not connected to a wall or other furniture and which can be used from any side.",
+            "example": "A short, rather studious young woman on noticing him moved from behind an island counter.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Ellipsis of kitchen island.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To surround with water; make into an island.",
+            "example": "We paused at little river cities along the way and walked upon their bushy dikes, and heard tales of overflows in flood seasons, when four feet or more of water islanded the houses.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To set, dot (as if) with islands.",
+            "example": "the many-islanded Aegean",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To isolate.",
+            "example": "The turkey's nest was islanded with a fragrant swath,—the \"heft\" of the crop noted and rejoiced over,—the tons of good timothy and clover calculated,— […]",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["islands", "iland", "yland", "ylond", "ylelond", "islanding", "islanded"],
+    "source": "https://en.wiktionary.org/wiki/island#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "confidence": {
+    "word": "confidence",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈkɒn.fɪ.dəns/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈkɑn.fɪ.dəns/",
+        "label": "Atlantic-Canada, General-American"
+      },
+      {
+        "text": "/ˈkɒn.fɪ.dəns/",
+        "label": "Canada, dialectal"
+      },
+      {
+        "text": "/ˈkɔn.fɪ.dəns/",
+        "label": "Australia"
+      },
+      {
+        "text": "[ˈkɔ̟n.fə.dəns]",
+        "label": "New-Zealand"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "Self-assurance.",
+            "example": "He entered the ring with confidence.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A feeling of certainty; firm trust or belief; faith.",
+            "example": "She had confidence it would soon end.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Information held in secret; a piece of information shared but to thence be kept in secret.",
+            "example": "In the course of these confidences it became quite plain to me I had been represented to the wife of the high dignitary, and goodness knows to how many more people besides, as an exceptional and gifted creature - a piece of good fortune for the Company - a man you don’t get hold of every day.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Boldness; presumption.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["confidences", "confidency"],
+    "source": "https://en.wiktionary.org/wiki/confidence#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "interpretation": {
+    "word": "interpretation",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ɪnˌtɜːpɹəˈteɪʃən/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ɪnˌtɝpɹəˈteɪʃən/",
+        "label": "Canada, General-American"
+      },
+      {
+        "text": "/ɪnˌtɜːpɹəˈtæɪʃən/",
+        "label": "Australia"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "An act of interpreting or explaining something unclear; a translation; a version.",
+            "example": "The interpretation of a dream, or of an enigma",
+            "synonyms": ["gloss"],
+            "lemma": null
+          },
+          {
+            "definition": "A sense given by an interpreter; an exposition or explanation given; meaning.",
+            "example": "Commentators give various interpretations of the same passage of Scripture.",
+            "synonyms": ["reading"],
+            "lemma": null
+          },
+          {
+            "definition": "The discipline or study of translating one spoken or signed language into another (as opposed to translation, which concerns itself with written language).",
+            "example": "I believe that interpretation, particularly consecutive interpretation, is an art. I also believe, however, that the skill of consecutive interpretation can be taught, but only up to a point.",
+            "synonyms": ["interpreting"],
+            "lemma": null
+          },
+          {
+            "definition": "The power of explaining.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An artist's way of expressing thought or embodying a conception of nature through art.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An act or process of applying general principles or formulae to the explanation of the results obtained in special cases.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An approximation that allows aspects of a mathematical theory to be discussed in ordinary language.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "An assignment of a truth value to each propositional symbol of a propositional calculus.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["interpretations"],
+    "source": "https://en.wiktionary.org/wiki/interpretation#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "evidence": {
+    "word": "evidence",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈɛv.ɪ.dəns/",
+        "label": "UK, US"
+      },
+      {
+        "text": "/ˈɛv.ə.dəns/",
+        "label": "UK, US"
+      },
+      {
+        "text": "[ˈɛv.ɪ.ɾɪns]",
+        "label": "US"
+      },
+      {
+        "text": "[ˈɛv.ə.ɾɪns]",
+        "label": "US"
+      },
+      {
+        "text": "/ˈev.ɪ.dəns/",
+        "label": "Australia"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "Facts or observations presented in support of an assertion.",
+            "example": "There is no demonstrative evidence that anyone was here earlier.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Anything admitted by a court to prove or disprove alleged matters of fact in a trial.",
+            "example": "For Lothian and Borders Police, the early-morning raid had come at the end one of biggest investigations carried out by the force, which had originally presented a dossier of evidence on the murder of Jodi Jones to the Edinburgh procurator-fiscal, William Gallagher, on 25 November last year.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "One who bears witness.",
+            "example": "infamous and perjured evidences",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A body of objectively verifiable facts that are positively indicative of, and/or exclusively concordant with, that one conclusion over any other.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To provide evidence for, or suggest the truth of.",
+            "example": "She was furious, as evidenced by her slamming the door.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["evidences", "evidencing", "evidenced"],
+    "source": "https://en.wiktionary.org/wiki/evidence#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "repetition": {
+    "word": "repetition",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˌɹɛp.əˈtɪʃ.ən/",
+        "label": ""
+      },
+      {
+        "text": "[ˌɹɛp.əˈtɪʃ.n̩]",
+        "label": ""
+      },
+      {
+        "text": "/ˌɹiːpəˈtɪʃən/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "The act or an instance of repeating or being repeated.",
+            "example": "How we hope and believe each day will be our last of anxious waiting! The post comes in, and there is no letter for us. How bitter is the disappointment! and on every repetition it grows more acute.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The act of performing a single, controlled exercise motion. A group of repetitions is a set.",
+            "example": null,
+            "synonyms": ["rep"],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To petition again.",
+            "example": "The group went through several rounds at different courts, petitioning and repetitioning, losing again and again.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["repetitions", "repetitioning", "repetitioned", "re-petition"],
+    "source": "https://en.wiktionary.org/wiki/repetition#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "patience": {
+    "word": "patience",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈpeɪ̯.ʃəns/",
+        "label": "Canada, General-American, Received-Pronunciation"
+      },
+      {
+        "text": "/ˈpæɪ̯.ʃəns/",
+        "label": "Australia, New-Zealand"
+      },
+      {
+        "text": "/ˈpe.ʃəns/",
+        "label": "Scotland"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "The quality of being patient.",
+            "example": "Musical perfection requires practice and a lot of patience.",
+            "synonyms": ["forbearance", "restraint", "thole"],
+            "lemma": null
+          },
+          {
+            "definition": "Any of various card games that can be played by one person.",
+            "example": null,
+            "synonyms": ["solitaire"],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["patiences"],
+    "source": "https://en.wiktionary.org/wiki/patience#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "mist": {
+    "word": "mist",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/mɪst/",
+        "label": ""
+      },
+      {
+        "text": "/mɪst/",
+        "label": ""
+      },
+      {
+        "text": "/mɪst/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "Water or other liquid finely suspended in air. (Compare fog, haze.)",
+            "example": "It was difficult to see through the morning mist.",
+            "synonyms": ["brume"],
+            "lemma": null
+          },
+          {
+            "definition": "A layer of fine droplets or particles.",
+            "example": "There was an oily mist on the lens.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Anything that dims, darkens, or hinders vision.",
+            "example": "His passion cast a mist before his sense.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To form mist.",
+            "example": "It's misting this morning.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To spray fine droplets on, particularly of water.",
+            "example": "I mist my tropical plants every morning.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To rain in very fine droplets.",
+            "example": "... it's misting outside. When it mists outside it's half fog and half rain.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To cover with a mist.",
+            "example": "The lens was misted.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To be covered by tears.",
+            "example": "My eyes misted when I remembered what had happened.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To disperse into a mist, accompanying operation of equipment at high speeds.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "past of miss",
+            "example": "you shall be mist at Court",
+            "synonyms": [],
+            "lemma": "miss"
+          }
+        ]
+      }
+    ],
+    "forms": ["mists", "misting", "misted"],
+    "source": "https://en.wiktionary.org/wiki/mist#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "candle": {
+    "word": "candle",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈkæn.dəl/",
+        "label": ""
+      },
+      {
+        "text": "[ˈcʰæn.dl̩]",
+        "label": ""
+      },
+      {
+        "text": "/ˈkeə̯n.dəl/",
+        "label": ""
+      },
+      {
+        "text": "[ˈcʰeən.dl̩]",
+        "label": ""
+      },
+      {
+        "text": "/ˈkɛə̯n.dəl/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A light source consisting of a wick embedded in a solid, flammable substance such as wax, tallow, or paraffin.",
+            "example": "light a candle",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The protruding, removable portion of a filter, particularly a water filter.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A unit of luminous intensity, now replaced by the SI unit candela.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A fast-growing, light-colored, upward-growing shoot on a pine tree in the spring. As growth slows in summer, the shoot darkens and is no longer conspicuous.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Indicates how high or low church something is by height on the candle.",
+            "example": "That vicar used to be an evangelical, but she's crept up the candle in recent years.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To observe the growth of an embryo inside (an egg), using a bright light source.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To dry (greenware) prior to the firing cycle, setting the kiln at 200° Celsius until all water is removed from the greenware.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "To check (an item, such as an envelope) by holding it between a light source and the eye.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["candles", "candling", "candled"],
+    "source": "https://en.wiktionary.org/wiki/candle#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "mountain": {
+    "word": "mountain",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈmaʊn.tɪn/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈmuːn.tɪn/",
+        "label": "Northumbria"
+      },
+      {
+        "text": "/ˈmaʊn.t(ə)n/",
+        "label": "Canada, General-American"
+      },
+      {
+        "text": "[ˈmaʊn.tn̩]",
+        "label": "Canada, General-American"
+      },
+      {
+        "text": "/ˈmaʊn.tən/",
+        "label": "Ireland"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "An elevation of land of considerable dimensions rising more or less abruptly, forming a conspicuous figure in the landscape, usually having a small extent of surface at its summit.",
+            "example": "Everest is the highest mountain in the world.",
+            "synonyms": ["mount"],
+            "lemma": null
+          },
+          {
+            "definition": "Something very large in size or quantity; a huge amount; a great heap.",
+            "example": "He was a real mountain of a man, standing seven feet tall.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A difficult task or challenge.",
+            "example": "Five minutes into the game the Black Cats were facing a mountain, partly because of West Brom's newly-found ruthlessness in front of goal but also as a result of the home side's defensive generosity.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Wine from Malaga made from grapes that grow on a mountain.",
+            "example": "Called on Courtenay, with whom I walked to Hampstead Heath, and got into excellent spirits, enjoying fine fresh air; then dined with him tête-a-tête on mutton broth and mackerel and drank mountain and old port moderately.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A woman's large breast.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The twenty-first Lenormand card.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["mountains"],
+    "source": "https://en.wiktionary.org/wiki/mountain#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "language": {
+    "word": "language",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈlæŋ.ɡwɪd͡ʒ/",
+        "label": "Australia, Received-Pronunciation"
+      },
+      {
+        "text": "/ˈlaŋ.ɡwɪd͡ʒ/",
+        "label": "British, Northern-England, Scotland, Southern, Standard, Wales"
+      },
+      {
+        "text": "/ˈlæŋ.ɡwɪd͡ʒ/",
+        "label": "US"
+      },
+      {
+        "text": "/ˈleɪŋ-/",
+        "label": "US"
+      },
+      {
+        "text": "/ˈlæŋ.ɡwɪd͡ʒ/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A body of words, and set of methods of combining them (called a grammar), understood by a community and used as a form of communication.",
+            "example": "The English and German languages are both members of the West Germanic language family.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The ability to communicate using words.",
+            "example": "the gift of language",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A sublanguage: the slang of a particular community or jargon of a particular specialist field.",
+            "example": "legal language; the language of chemistry",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The specific wording or style of a text, such as a law or a contract.",
+            "example": "Technological advances are notorious for exposing the open-endedness of the language in our laws, even when we thought our definitions were airtight. Lawmakers can’t anticipate everything. Indeed, you could make the case that the whole area of patent law just is the problem of deciding whether some new technology should fall within the range of the language of the patent.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "The expression of thought (the communication of meaning) in a specified way; that which communicates something, as language does.",
+            "example": "body language; the language of the eyes",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A body of sounds, signs or signals by which animals communicate, and by which plants are sometimes also thought to communicate.",
+            "example": "A more likely hypothesis was that the attacked leaves were transmitting some airborne chemical signal to sound the alarm, rather like insects sending out warnings […] But this is the first time that a plant-to-plant language has been detected.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A computer language; a machine language.",
+            "example": "In fact pointers are called references in these languages to distinguish them from pointers in languages like C and C++.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A manner of expression.",
+            "example": "Their language simple, as their manners meek, […]",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To communicate by language; to express in language.",
+            "example": "Others were languaged in such doubtful expressions that they have a double sense.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "intj",
+        "definitions": [
+          {
+            "definition": "An admonishment said in response to someone using vulgar language during a conversation.",
+            "example": "Nancy: So... me and Barbara are gonna study at her house tonight. That's cool, right? / Karen: No, not cool. / Nancy: What? Why not? / Karen: Why do you think? Am I speaking Chinese in this house? Until we know Will is okay, no one leaves. / Nancy: This is such bullshit. / Ted: Language. / Nancy: So we're under house arrest? Just because Mike's friend got lost on the way home from... / Mike: Wait,",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A languet, a flat plate in or below the flue pipe of an organ.",
+            "example": "A flue-pipe is one in which the air passes through the throat, or flue, which is the narrow, longitudinal aperture between the lower lip and the tongue, or language. […] The language is adjusted by slightly elevating or depressing it, […]",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["languages", "languaging", "languaged"],
+    "source": "https://en.wiktionary.org/wiki/language#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "memory": {
+    "word": "memory",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈmɛm.ə.ɹi/",
+        "label": "General-American, Received-Pronunciation"
+      },
+      {
+        "text": "/ˈmɛm.ɹi/",
+        "label": "General-American, Received-Pronunciation"
+      },
+      {
+        "text": "/ˈmɪm.ə.ɹi/",
+        "label": "pin-pen-merger"
+      },
+      {
+        "text": "/ˈmɪm.ɹi/",
+        "label": "pin-pen-merger"
+      },
+      {
+        "text": "/ˈmem.ə.ɹi/",
+        "label": "Australia, New-Zealand"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "The ability of the brain to record information or impressions with the facility of recalling them later, usually at will.",
+            "example": "Memory is a facility common to all animals.",
+            "synonyms": ["recall", "retention"],
+            "lemma": null
+          },
+          {
+            "definition": "A record of a thing or an event stored and available for later use by an organism.",
+            "example": "I have no memory of that event.",
+            "synonyms": ["recall", "recollection"],
+            "lemma": null
+          },
+          {
+            "definition": "The part of a computer that stores variable executable code or data (RAM) or unalterable executable code or default data (ROM).",
+            "example": "This data passes from the CPU to the memory.",
+            "synonyms": ["core"],
+            "lemma": null
+          },
+          {
+            "definition": "The time within which past events can be or are remembered.",
+            "example": "in recent memory",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Of a material, which returns to its original shape when heated.",
+            "example": "memory metal",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A memorial.",
+            "example": "These weeds are memories of those worser hours.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Synonym of pelmanism (“memory card game”).",
+            "example": "After he saw her a few more times, Mr. Cherkasky asked Ms. Cochrane out on a date in May 2008 to Central Park. He brought along some games to break the ice, and Ms. Cochrane brought cupcakes. They found a quiet place to sit and played Memory and Yahtzee, both of which were new to Ms. Cochrane.",
+            "synonyms": ["pelmanism"],
+            "lemma": null
+          },
+          {
+            "definition": "A term of venery for a social group of elephants, normally called a herd.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["memories", "memorie"],
+    "source": "https://en.wiktionary.org/wiki/memory#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "friendship": {
+    "word": "friendship",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈfɹɛn(d)ʃɪp/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "The condition of being friends.",
+            "example": "But (as the Poet ſaith) Malè ſarta gratia, nequicquam coit, & reſcinditur: Friendſhip, that is but euill peeced, will not ioine cloſe, but falleth aſunder againe:",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A friendly relationship, or a relationship as friends.",
+            "example": "“They’re cuddling by the fire, they’re going on trips together, they’re introducing their friends to their family, but they’re very clear that those are friendships,” Stinson said. “It really makes me think about the definitions that we have about friendship and romance, and how those things differ, and I just like how messy it all is.”",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Good will.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["friendships"],
+    "source": "https://en.wiktionary.org/wiki/friendship#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "honest": {
+    "word": "honest",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ˈɒn.ɪst/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ˈɔː.nɪst/",
+        "label": "Received-Pronunciation, dated"
+      },
+      {
+        "text": "/ˈɑ.nɪst/",
+        "label": "Atlantic-Canada, General-American"
+      },
+      {
+        "text": "/ˈɑ.nəst/",
+        "label": "Atlantic-Canada, General-American"
+      },
+      {
+        "text": "/ˈɒn.ɪst/",
+        "label": "Canada, dialectal"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          {
+            "definition": "Scrupulous with regard to telling the truth; not given to swindling, lying, or fraud; upright.",
+            "example": "brutally honest",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "True, especially as far as is known by the person making the statement; fair; unbiased.",
+            "example": "an honest account of events",
+            "synonyms": ["truthful"],
+            "lemma": null
+          },
+          {
+            "definition": "In good faith; without malice.",
+            "example": "an honest mistake",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Accurate.",
+            "example": "an honest scale",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Authentic; full.",
+            "example": "an honest day's work",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Earned or acquired in a fair manner.",
+            "example": "an honest dollar",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Open; frank.",
+            "example": "an honest countenance",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "Decent; honourable; suitable; becoming.",
+            "example": "Behold what honest clothes you send forth to bleaching!",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To adorn or grace; to honour; to make becoming, appropriate, or honourable.",
+            "example": "You have very much honested my lodging with your presence.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "adverb",
+        "definitions": [
+          {
+            "definition": "Honestly; really.",
+            "example": "It wasn’t my fault, honest.",
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": [
+      "more honest",
+      "honester",
+      "most honest",
+      "honestest",
+      "honests",
+      "honesting",
+      "honested"
+    ],
+    "source": "https://en.wiktionary.org/wiki/honest#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "adventure": {
+    "word": "adventure",
+    "language": "en",
+    "phonetics": [
+      {
+        "text": "/ədˈvɛn.t͡ʃə/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ədˈvɛn.t͡ʃɚ/",
+        "label": "Canada, General-American"
+      },
+      {
+        "text": "/ædˈvɛnt͡ʃɚ/",
+        "label": "Canada, General-American"
+      },
+      {
+        "text": "/ədˈvɛn.t͡ʃə/",
+        "label": "Received-Pronunciation"
+      },
+      {
+        "text": "/ədˈvɛn.t͡ʃɚ/",
+        "label": "Canada, General-American"
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A feeling of desire for new and exciting things.",
+            "example": "his sense of adventure",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A remarkable occurrence; a striking event.",
+            "example": "a life full of adventures",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A daring feat; a bold undertaking, in which dangers are likely to be encountered, and the issue is staked upon unforeseen events; the encountering of risks.",
+            "example": "He loved excitement and adventure.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A mercantile or speculative enterprise of hazard; a venture; a shipment by a merchant on his own account.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A text adventure or an adventure game.",
+            "example": "The first thing to strike me about Spyplane was that it is more like a verbal simulation than an adventure.",
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "That which happens by chance; hazard; hap.",
+            "example": null,
+            "synonyms": [
+              "fortune",
+              "hazard",
+              "luck",
+              "adventure",
+              "accident",
+              "casualty",
+              "chance",
+              "chance-medley"
+            ],
+            "lemma": null
+          },
+          {
+            "definition": "Chance of danger or loss.",
+            "example": null,
+            "synonyms": ["hazard"],
+            "lemma": null
+          },
+          {
+            "definition": "Risk; danger; peril.",
+            "example": "He was in great adventure of his life.",
+            "synonyms": [
+              "jeopardy",
+              "adventure",
+              "danger",
+              "distress",
+              "harm's way",
+              "peril",
+              "jeopardy",
+              "extremity"
+            ],
+            "lemma": null
+          }
+        ]
+      },
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "To risk oneself.",
+            "example": "O man cõmyttynge thy lyfe vnto the ſtreme / Alas note well thy deſyrous vanyte / Howe thou the [thee] auentereſt in holowe beame / To pas the ſee in contynuall ieopardye […]",
+            "synonyms": ["venture"],
+            "lemma": null
+          },
+          {
+            "definition": "To risk oneself; to dare to go somewhere or undertake something.",
+            "example": "[A]fter the confusion of tongues, when Japhet and his posteretie, emboldened by example of Noe, adventured by shipp into diverse west ilelandes, […]",
+            "synonyms": ["venture"],
+            "lemma": null
+          },
+          {
+            "definition": "To try the chance; to take the risk.",
+            "example": "What? threat you me with telling of the King? I will auoucht’t in preſence of the King: I dare aduenture to be ſent to th’Towre.",
+            "synonyms": ["venture"],
+            "lemma": null
+          },
+          {
+            "definition": "To dare to say or utter.",
+            "example": "But were I to adventure an opinion I would affirm that, were the Vice-Preſident now in this city, he would himſelf be mute!",
+            "synonyms": ["venture"],
+            "lemma": null
+          },
+          {
+            "definition": "To venture upon; to run the risk of; to dare.",
+            "example": "Now if it ſo be that it woulde happely be thought not a thyng metely to be aduentured to ſet all on a fluſhe at ones, and daſhe raſhelye out holye ſcrypture in euerye lewde felowes teeth: […]",
+            "synonyms": ["venture"],
+            "lemma": null
+          },
+          {
+            "definition": "To risk or hazard; jeopard.",
+            "example": "Foꝛ what wiſe merchaunt aduentureth all his good in one ſhip?",
+            "synonyms": ["venture"],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": [
+      "adventures",
+      "aventure",
+      "adventuring",
+      "adventured",
+      "no-table-tags",
+      "glossary",
+      "adventure",
+      "adventurest",
+      "adventuredst",
+      "adventureth"
+    ],
+    "source": "https://en.wiktionary.org/wiki/adventure#English",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "af:stilte": {
+    "word": "stilte",
+    "language": "af",
+    "phonetics": [
+      {
+        "text": "/ˈstəl.tə/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "silence",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["stiltes"],
+    "source": "https://en.wiktionary.org/wiki/stilte#Afrikaans",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "af:vlakte": {
+    "word": "vlakte",
+    "language": "af",
+    "phonetics": [
+      {
+        "text": "/ˈflak.tə/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "Flatness, levelness.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          },
+          {
+            "definition": "A plain.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["vlaktes"],
+    "source": "https://en.wiktionary.org/wiki/vlakte#Afrikaans",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "af:boek": {
+    "word": "boek",
+    "language": "af",
+    "phonetics": [
+      {
+        "text": "/buk/",
+        "label": ""
+      },
+      {
+        "text": "[bʊk]",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "book",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["boeke", "boekie"],
+    "source": "https://en.wiktionary.org/wiki/boek#Afrikaans",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "af:lees": {
+    "word": "lees",
+    "language": "af",
+    "phonetics": [
+      {
+        "text": "/lɪəs/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "verb",
+        "definitions": [
+          {
+            "definition": "to read",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["lees", "lesende", "gelees"],
+    "source": "https://en.wiktionary.org/wiki/lees#Afrikaans",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "af:tuin": {
+    "word": "tuin",
+    "language": "af",
+    "phonetics": [
+      {
+        "text": "/tœi̯n/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "A garden, yard.",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["tuine", "tuintjie"],
+    "source": "https://en.wiktionary.org/wiki/tuin#Afrikaans",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "af:gedig": {
+    "word": "gedig",
+    "language": "af",
+    "phonetics": [
+      {
+        "text": "/χəˈdəχ/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "poem",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["gedigte"],
+    "source": "https://en.wiktionary.org/wiki/gedig#Afrikaans",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "af:woord": {
+    "word": "woord",
+    "language": "af",
+    "phonetics": [
+      {
+        "text": "/vʊərt/",
+        "label": ""
+      }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "word",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["woorde"],
+    "source": "https://en.wiktionary.org/wiki/woord#Afrikaans",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "af:storie": {
+    "word": "storie",
+    "language": "af",
+    "phonetics": [],
+    "meanings": [
+      {
+        "partOfSpeech": "noun",
+        "definitions": [
+          {
+            "definition": "story (narrative)",
+            "example": null,
+            "synonyms": [],
+            "lemma": null
+          }
+        ]
+      }
+    ],
+    "forms": ["stories", "storietjie"],
+    "source": "https://en.wiktionary.org/wiki/storie#Afrikaans",
+    "provider": "Wiktionary via Kaikki",
+    "licence": "CC BY-SA 4.0 / GFDL",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  }
+}

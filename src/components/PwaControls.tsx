@@ -89,7 +89,7 @@ export function InstallPanel() {
         {pwa.available
           ? 'Offline reading is ready. Download a read from its reading settings.'
           : 'Open Leesmaat online once to prepare offline reading.'}{' '}
-        Device voices determine whether read-aloud works offline.
+        Download reading voices in Settings for audio without a connection.
       </p>
       {pwa.available && (
         <button

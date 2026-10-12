@@ -1,0 +1,7 @@
+{
+  "piperModels": "c10ece1aade47bb51c153c893d14e5bf8e5b7117",
+  "espeakCompiledSource": "https://github.com/steveseguin/espeakng.js/tree/46a04afb1425209f6d6f7e50ac389ae24f41b821",
+  "espeakPreferredSource": "https://github.com/espeak-ng/espeak-ng/tree/1.49.1",
+  "piperPhonemizerSource": "https://github.com/diffusion-studio/piper-wasm",
+  "onnxSource": "https://github.com/microsoft/onnxruntime/tree/v1.18.0"
+}

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Literata } from 'next/font/google';
+import { Inter, Literata, Roboto, Noto_Serif } from 'next/font/google';
 import type { ReactNode } from 'react';
 import './globals.css';
 import { themeBoot } from '@/lib/theme';
@@ -9,6 +9,15 @@ import { SPLASH_DEVICES } from '@/lib/splash';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const literata = Literata({ subsets: ['latin', 'latin-ext'], variable: '--font-literata' });
+
+const dictionaryBody = Roboto({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-dictionary-body',
+});
+const dictionaryWord = Noto_Serif({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-dictionary-word',
+});
 
 export const metadata: Metadata = {
   metadataBase: SITE_URL ? new URL(SITE_URL) : undefined,
@@ -55,7 +64,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html suppressHydrationWarning lang="en" className={`${inter.variable} ${literata.variable}`}>
+    <html
+      suppressHydrationWarning
+      lang="en"
+      className={`${inter.variable} ${literata.variable} ${dictionaryBody.variable} ${dictionaryWord.variable}`}
+    >
       <head>
         <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />

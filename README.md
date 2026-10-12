@@ -46,14 +46,14 @@ The Firebase public configuration has not been supplied with this project. Sign-
 ## Learning and content
 
 - Separate placement and levels for English and Afrikaans: sentence comfort, vocabulary and inference.
-- Saved-word review intervals of 1, 3, 6 days, then progressively longer up to 60 days. Missed words return after ten minutes. Comprehension practice includes passage-based understanding and interpretation.
-- Speech synthesis follows sentences and highlights words when the browser supplies boundary events. Available languages and voice quality depend on installed device voices.
+- Saved-word review intervals of 1, 3, 6 days, then progressively longer up to 60 days. Missed words return after ten minutes. Auto study generates exact-source recall questions for the selected book chapter, scene, poem, story or essay. Answers schedule reviews and award XP once per completed session. Main talking points are available while studying.
+- Choose downloadable English Piper voices or compact Afrikaans eSpeak-NG variants in Settings → Reading voice. Preview recordings, filter gender/country, inspect model and shared-engine sizes, and try custom text after downloading. Generated speech stays on device and works offline; device voices remain available as a fallback. Sentence highlighting follows generated audio; word highlighting is available when system voices provide boundary events. See [VOICE.md](VOICE.md) for research and licensing.
 - Source-range notes highlight the actual selected words. Prototype notes without a range are preserved in Bookmarks.
 - Reader search supports phrases, match counts and previous/next matches. Paper, sepia, night, monochrome, font size, speed and zen controls are included.
-- Smart summaries add a brief overview, main talking points and links to highlighted supporting passages. Available on longer reader entries and public title pages, in the text’s language, including offline. Short poems and stories stay focused on the text. Book excerpts and companion notes have explicit coverage labels. Edited summaries are matched to exact source versions; other longer content uses paragraph-aware key-sentence extraction. No model API or account is needed, and archived copies are summarized from their own text. Public text and LLM endpoints include the same summaries.
+- Smart summaries add a brief overview, main talking points and links to highlighted supporting passages. Available on longer reader entries and public title pages, in the text’s language, including offline. Short poems and stories stay focused on the text. Book previews and individual chapters have explicit coverage labels. Edited summaries are matched to exact source versions; other longer content uses paragraph-aware key-sentence extraction. No model API or account is needed, and archived copies are summarized from their own text. Public text and LLM endpoints include the same summaries.
 - A daily goal awards once per day; a completion celebration respects reduced motion.
 - The verified Grade 12 HL/FAL literature list covers the 2026 exam period. Grade 10–11 entries come from the current DBE FET literature catalogue and are labelled catalogue selections: confirm the school's chosen texts.
-- Modern setworks show **original study notes**, clearly identified as such. Two public-domain works include attributed opening excerpts. 125 individually assigned vector illustrations provide title-specific cover art. Six new complete original reads expand stories, poems and articles, including advanced Afrikaans. See [CONTENT.md](CONTENT.md) for sources and rights.
+- The catalogue prioritises **books, poems, short stories, articles**. It includes 45 sourced public-domain works: 15 complete books, 18 poems, nine short stories and three essays. Book chapters load on demand; offline downloads preserve the whole book. Modern setworks have verified title/author/ISBN records and library links. Actual source-edition covers replace generated imagery where available; remaining titles use typography. Earlier original readings remain reachable through saved links. Real Wiktionary dictionary cards show IPA, part of speech, numbered definitions, examples and attribution, using self-hosted Roboto and Noto Serif. Afrikaans entries include English definitions and a 9,150-entry offline snapshot; English lookups are cached after use. See [CONTENT.md](CONTENT.md) for sources and rights.
 
 ## Verification
 
@@ -75,12 +75,28 @@ Leesmaat is the retained name, with the tagline **A little reading. A bigger wor
 
 The onboarding book and floating background use lazily loaded Three.js. Drag the book or use its keyboard-accessible turn/reset buttons. Animation caps pixel density and runs at 30 fps; it pauses outside the active view and when hidden. Reduced motion, data saver and unavailable WebGL retain a static illustration. Three.js is never needed to complete placement.
 
-The installed app supports installation prompts where provided, Safari instructions, app shortcuts, offline status, optional persistent-storage requests and controlled updates. Reader links survive reload and browser Back/Forward; sharing uses Web Share or clipboard fallback. Fullscreen, Media Session controls and a screen wake lock during read-aloud enhance supporting devices. These APIs vary by browser; installed local voices determine offline audio availability.
+The installed app supports installation prompts where provided, Safari instructions, app shortcuts, offline status, optional persistent-storage requests and controlled updates. Reader links survive reload and browser Back/Forward; sharing uses Web Share or clipboard fallback. Fullscreen, Media Session controls and a screen wake lock during read-aloud enhance supporting devices. These APIs vary by browser; Downloaded packs provide offline audio; system voice availability varies.
 
 Paper, sepia, night and system themes coordinate the HTML background, safe areas, browser chrome, loading/recovery screens, manifest and supported portrait iOS launch images. A necessary `leesmaat-theme` preference cookie lets the manifest use the selected launch colors. Browsers can retain an older installed launch screen until they refresh app metadata.
 
-Public `/library` and `/library/[id]` pages render without JavaScript, expose original text/notes and attribution, and include per-title descriptions and structured data. `/llms.txt`, `/llm.txt` (alias), `/llms-full.txt` and per-title `/text` endpoints expose public material with rights labels, never private reading data.
+Public `/library` and `/library/[id]` pages render without JavaScript, expose real reading text, book chapter indexes, verified catalogue records and attribution, and include per-title descriptions and structured data. `/llms.txt`, `/llm.txt` (alias), `/llms-full.txt` and per-title `/text` endpoints expose public material with rights labels, never private reading data. Per-book plain-text endpoints contain all imported chapters.
 
-Set **NEXT_PUBLIC_SITE_URL** to the production HTTPS origin in `.env.local` and on the host **before building**. This enables canonical URLs, absolute social images, robots sitemap discovery and all 127 sitemap entries. Without a configured domain, the project deliberately omits canonicals and absolute sitemap entries. The public library and relative LLM links still work.
+Set **NEXT_PUBLIC_SITE_URL** to the production HTTPS origin in `.env.local` and on the host **before building**. This enables canonical URLs, absolute social images, robots sitemap discovery and all current library sitemap entries. Without a configured domain, the project deliberately omits canonicals and absolute sitemap entries. The public library and relative LLM links still work.
 
 Browser verification covers phone, tablet, desktop and landscape layouts, reduced motion, install events, sharing/history, system themes, public content, WCAG checks and a real service-worker update through a local test proxy. Native API behavior still warrants a smoke test on physical iOS and Android devices before release.
+
+## Rebuild content and voices
+
+Imported assets are committed, so normal installation/build needs no source-data downloads. To refresh them deliberately:
+
+```sh
+python3 -m pip install beautifulsoup4
+pnpm content:import
+pnpm dictionary:import
+pnpm voices:import
+node scripts/build-voice.mjs
+pnpm format
+pnpm test
+```
+
+Content and voice manifests store exact sizes and SHA-256 digests. Generated book JSON, dictionary snapshots and vendored speech engines are excluded from formatting to preserve those digests. A production build regenerates the Piper worker and engine manifest; model weights remain on demand. eSpeak recordings in `public/voice-previews` were generated with the shipped pack.

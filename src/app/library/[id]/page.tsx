@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { EditionCover } from '@/components/EditionCover';
 import { Brand } from '@/components/Brand';
 import { PublicSummary } from '@/components/ReadingSummary';
 import { summarize } from '@/lib/summaries';
@@ -40,23 +40,24 @@ export default async function TitlePage({ params }: Props) {
   const { id } = await params;
   const item = LIBRARY.find((entry) => entry.id === id);
   if (!item) notFound();
-  const study = item.rights === 'Original study note';
+  const catalogue = item.rights === 'Catalogue metadata';
   const digest = summarize(item);
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
-    name: study ? `${item.t} — Leesmaat study notes` : item.t,
+    '@type': item.k === 'Book' ? 'Book' : 'CreativeWork',
+    name: item.t,
     description: item.summary,
     inLanguage: item.g === 'af' ? 'af-ZA' : 'en-ZA',
     author: {
-      '@type': study || item.rights === 'Original Leesmaat writing' ? 'Organization' : 'Person',
-      name: study || item.rights === 'Original Leesmaat writing' ? 'Leesmaat' : item.a,
+      '@type': item.rights === 'Original Leesmaat writing' ? 'Organization' : 'Person',
+      name: item.rights === 'Original Leesmaat writing' ? 'Leesmaat' : item.a,
     },
     genre: item.genre ?? item.k,
-    ...(SITE_URL ? { url: publicUrl(`/library/${item.id}`), image: publicUrl(item.art!) } : {}),
-    ...(study
-      ? { about: { '@type': 'Book', name: item.t, author: { '@type': 'Person', name: item.a } } }
+    ...(SITE_URL
+      ? { url: publicUrl(`/library/${item.id}`), image: publicUrl(item.cover ?? item.art!) }
       : {}),
+    ...(item.isbn ? { isbn: item.isbn } : {}),
+    ...(item.year ? { datePublished: String(item.year) } : {}),
   };
   return (
     <main className="mx-auto max-w-3xl px-6 py-8 pb-16">
@@ -73,41 +74,61 @@ export default async function TitlePage({ params }: Props) {
         </Link>
       </header>
       <div className="mt-10 grid gap-7 sm:grid-cols-[150px_1fr]">
-        <Image
-          unoptimized
-          src={item.art!}
-          alt={`Original Leesmaat illustration for ${item.t}`}
-          width="400"
-          height="600"
-          className="w-32 rounded-2xl shadow-lg sm:w-full"
-        />
+        <div className="w-32 sm:w-full">
+          <EditionCover item={item} />
+        </div>
         <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-ac">
-            {study ? 'Study notes' : item.k} · {item.g === 'af' ? 'Afrikaans' : 'English'}
+            {item.k} · {item.g === 'af' ? 'Afrikaans' : 'English'}
           </p>
           <h1 lang={item.g} className="font-serif text-4xl leading-tight">
             {item.t}
           </h1>
           <p className="mt-3 text-sm text-mu">
-            {item.a} · {LEVELS[item.v]} · {item.m} min
+            {item.a}
+            {item.year ? ' · ' + item.year : ''} · {LEVELS[item.v]}
+            {catalogue
+              ? ' · Catalogue record'
+              : item.contentUrl
+                ? ' · Complete book'
+                : ' · ' + item.m + ' min'}
             {item.grade ? ` · Grade ${item.grade} ${item.course}` : ''}
           </p>
           <Link
             href={`/?read=${item.id}`}
             className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm font-semibold text-bg"
           >
-            Read in Leesmaat
+            {catalogue ? 'View book details' : 'Read in Leesmaat'}
           </Link>
         </div>
       </div>
       <p className="my-7 rounded-2xl bg-ln p-4 text-sm">
         {item.rights}
-        {study
-          ? '. These original notes support your reading of the setwork; use your own copy of the text.'
-          : item.textSource
-            ? '. This is a selected opening excerpt. Find the full text at the source below.'
-            : '. A complete short read created for Leesmaat.'}
+        {catalogue
+          ? '. Verified title and author metadata. Find this edition through a publisher or library.'
+          : item.contentUrl
+            ? '. Complete reading text is available chapter by chapter in the app and as plain text below. This page previews the opening section.'
+            : item.published
+              ? '. Complete text from the attributed source edition.'
+              : '. Original Leesmaat writing.'}
+        {item.editionNote && <span className="mt-2 block">{item.editionNote}</span>}
       </p>
+      {item.sections && (
+        <details className="mb-6 rounded-2xl border border-ln p-4">
+          <summary className="cursor-pointer text-sm font-semibold">
+            {item.sections.length} chapters, scenes or poems
+          </summary>
+          <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm">
+            {item.sections.map((part, index) => (
+              <li key={index}>
+                <Link href={`/?read=${item.id}~${index}`} className="text-ac underline">
+                  {part.title}
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </details>
+      )}
       {digest && <PublicSummary item={item} summary={digest} />}
       <article lang={item.g} className="max-w-prose font-serif text-lg leading-relaxed">
         {item.x.split('\n\n').map((paragraph, index) => (
@@ -123,12 +144,25 @@ export default async function TitlePage({ params }: Props) {
       <footer className="mt-8 flex flex-wrap gap-5 border-t border-ln pt-5 text-sm text-ac">
         {item.source && (
           <a href={item.source} rel="noreferrer" target="_blank" className="underline">
-            Curriculum source
+            {item.grade ? 'Curriculum source' : 'Text source'}
           </a>
         )}
         {item.textSource && (
           <a href={item.textSource} rel="noreferrer" target="_blank" className="underline">
             Full text source
+          </a>
+        )}
+        {item.coverSource && (
+          <a href={item.coverSource} target="_blank" rel="noreferrer" className="underline">
+            Source-edition cover
+          </a>
+        )}
+        {catalogue && (
+          <a
+            href={`https://openlibrary.org/search?q=${encodeURIComponent(item.t + ' ' + item.a)}`}
+            className="underline"
+          >
+            Find a library edition
           </a>
         )}
         <a href={`/library/${item.id}/text`} className="underline">

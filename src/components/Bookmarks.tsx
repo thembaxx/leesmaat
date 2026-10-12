@@ -68,6 +68,23 @@ export function Bookmarks({ onOpen }: { onOpen: (id: string) => void }) {
         ) : (
           <Empty>Tap a word while reading, then save it.</Empty>
         ))}
+      {tab === 'Words' && s.wd.length > 0 && (
+        <p className="mb-5 text-xs text-mu">
+          Dictionary definitions:{' '}
+          <a
+            href="https://kaikki.org/dictionary/"
+            target="_blank"
+            rel="noreferrer"
+            className="underline"
+          >
+            Wiktionary via Kaikki
+          </a>{' '}
+          ·{' '}
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline">
+            CC BY-SA 4.0 / GFDL
+          </a>
+        </p>
+      )}
       {tab === 'Notes' &&
         (s.nt.length ? (
           s.nt.map((note) => (

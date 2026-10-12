@@ -274,3 +274,10 @@ article p[id^='passage-']:target {
   background: var(--hl);
   border-radius: 0.5rem;
 }
+
+.dictionary-card {
+  font-family: var(--font-dictionary-body), Arial, sans-serif;
+}
+.dictionary-headword {
+  font-family: var(--font-dictionary-word), Georgia, serif;
+}

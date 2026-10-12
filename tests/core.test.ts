@@ -92,7 +92,12 @@ test('curriculum entries are unique, sourced and clearly label their actual read
   for (const item of LIBRARY.filter((i) => i.n)) {
     assert.ok(item.source?.startsWith('https://'));
     assert.ok(item.rights);
-    assert.ok(item.x.length > 100);
+    if (item.published) assert.ok(item.x.length > 100);
+    else {
+      assert.equal(item.rights, 'Catalogue metadata');
+      assert.equal(item.x, '');
+      assert.equal(item.m, 0);
+    }
     assert.ok(item.course);
     assert.ok([10, 11, 12].includes(item.grade!));
     if (item.rights === 'Original study note') assert.match(item.x, /original|oorspronklike/);

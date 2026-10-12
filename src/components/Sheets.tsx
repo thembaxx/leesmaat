@@ -1,10 +1,13 @@
 'use client';
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
-import { DICT, LEVELS, type Item, type Lang } from '@/lib/data';
+import { LEVELS, type Item, type Lang } from '@/lib/data';
 import { norm } from '@/lib/text';
 import { useStore, type State } from '@/lib/store';
 import { useOffline } from './OfflineProvider';
 import { useSync } from './SyncProvider';
+import { DictionaryCard } from './DictionaryCard';
+import type { DictionaryEntry } from '@/lib/dictionary';
+import { VoicePanel } from './VoicePanel';
 import { InstallPanel } from './PwaControls';
 import { XIcon } from '@phosphor-icons/react';
 export const chip = (on: boolean) =>
@@ -73,7 +76,7 @@ export function SettingsPanel({ reader }: { reader?: { item: Item; onZen: () => 
   const { s, set } = useStore(),
     offline = useOffline(),
     sync = useSync();
-  const downloaded = reader && s.dl.includes(reader.item.id);
+  const downloaded = reader && s.dl.includes(reader.item.bookId ?? reader.item.id);
   return (
     <div>
       <h3 className="mb-2.5 text-lg font-bold">Reading</h3>
@@ -124,6 +127,7 @@ export function SettingsPanel({ reader }: { reader?: { item: Item; onZen: () => 
           </button>
         ))}
       </div>
+      <VoicePanel language={reader?.item.g ?? s.lang} />
       {reader ? (
         <>
           <div className="flex flex-wrap gap-2">
@@ -133,11 +137,13 @@ export function SettingsPanel({ reader }: { reader?: { item: Item; onZen: () => 
             <button
               disabled={offline.busy !== null || (!downloaded && !offline.available)}
               onClick={() =>
-                downloaded ? offline.remove(reader.item.id) : offline.download(reader.item)
+                downloaded
+                  ? offline.remove(reader.item.bookId ?? reader.item.id)
+                  : offline.download(reader.item)
               }
               className={chip(!!downloaded)}
             >
-              {offline.busy === reader.item.id
+              {offline.busy === (reader.item.bookId ?? reader.item.id)
                 ? 'Saving…'
                 : downloaded
                   ? 'Remove offline copy'
@@ -218,28 +224,20 @@ export function WordPanel({
   const { s, set } = useStore();
   const [note, setNote] = useState('');
   const lang = language ?? s.lang;
-  const e = DICT[norm(text)],
-    saved = s.wd.some((w) => norm(w.w) === norm(text) && w.g === lang);
+  const [entry, setEntry] = useState<DictionaryEntry | null>(null);
+  const definition = entry?.meanings[0]?.definitions[0]?.definition;
+  const vocabularyWord = entry?.requested || entry?.word || text;
+  const saved = s.wd.some((w) => norm(w.w) === norm(vocabularyWord) && w.g === lang);
   return (
     <div>
-      <h3 className="mb-1.5 font-serif text-[28px] font-bold">{text}</h3>
-      {e ? (
-        <>
-          <p className="mb-1.5 font-serif text-[17px]">{e.d}</p>
-          <p className="text-[13px] text-mu">
-            {e.g === 'en' ? 'Afrikaans' : 'English'}: <b>{e.t}</b>
-          </p>
-        </>
-      ) : (
-        <p className="text-[13px] text-mu">Add your own definition or note below.</p>
-      )}
+      <DictionaryCard text={text} language={lang} onEntry={setEntry} />
       <label className="mt-3 block text-[13px] text-mu">
         Your note
         <textarea
           value={note}
           onChange={(x) => setNote(x.target.value)}
           rows={3}
-          placeholder="Add a definition, paragraph or note"
+          placeholder="Write a thought or example sentence"
           className="mt-1 w-full resize-none rounded-2xl bg-ln p-3 text-ink"
         />
       </label>
@@ -261,17 +259,17 @@ export function WordPanel({
         </button>
         {text.trim().split(/\s+/).length === 1 && (
           <button
-            disabled={saved || (!e && !note.trim())}
+            disabled={saved || !definition}
             onClick={() =>
               set((x) => ({
                 wd: [
                   ...x.wd,
                   {
-                    id: `${lang}-${norm(text)}`,
+                    id: `${lang}-${norm(vocabularyWord)}`,
                     g: lang,
-                    w: text,
-                    d: e?.d ?? note.trim(),
-                    t: e?.t ?? '',
+                    w: vocabularyWord,
+                    d: definition ?? '',
+                    t: '',
                     u: note.trim(),
                   },
                 ],

@@ -1,4 +1,4 @@
-import records from './fet-catalogue.json';
+import records from './fet-catalogue.json' with { type: 'json' };
 import { CATALOGUE_SOURCE } from './curriculum';
 import type { Item } from './data';
 export const FET_CATALOGUE: Item[] = records.map((record) => {

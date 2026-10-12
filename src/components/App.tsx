@@ -11,8 +11,10 @@ import { FloatingNav, type Tab } from './FloatingNav';
 import { Home } from './Home';
 import { Onboarding } from './Onboarding';
 import { Practice } from './Practice';
-import { Reader } from './Reader';
+import { ReadingGate } from './ReadingGate';
+import { baseId } from '@/lib/books';
 import { AppLoading } from './Brand';
+import { VoiceProvider } from './VoiceProvider';
 import { PwaStatus } from './PwaControls';
 
 function Shell() {
@@ -20,7 +22,9 @@ function Shell() {
   const offline = useOffline();
   const [tab, setTab] = useState<Tab>('home');
   const [open, setOpen] = useState<string | null>(null);
-  const item = offline.items.find((i) => i.id === open) ?? LIBRARY.find((i) => i.id === open);
+  const item =
+    offline.items.find((i) => i.id === baseId(open ?? '')) ??
+    LIBRARY.find((i) => i.id === baseId(open ?? ''));
   useEffect(() => {
     const readLocation = () => {
       const url = new URL(location.href);
@@ -32,13 +36,13 @@ function Shell() {
     window.addEventListener('popstate', readLocation);
     return () => window.removeEventListener('popstate', readLocation);
   }, []);
-  const navigate = (id: string | null, nextTab = tab) => {
+  const navigate = (id: string | null, nextTab = tab, replace = false) => {
     const url = new URL(location.href);
     url.searchParams.delete('read');
     url.searchParams.delete('tab');
     if (id) url.searchParams.set('read', id);
     if (nextTab !== 'home') url.searchParams.set('tab', nextTab);
-    history.pushState({ leesmaat: true, reader: !!id }, '', url);
+    history[replace ? 'replaceState' : 'pushState']({ leesmaat: true, reader: !!id }, '', url);
     setOpen(id);
     setTab(nextTab);
   };
@@ -63,7 +67,15 @@ function Shell() {
         <FloatingNav tab={tab} onChange={(next) => navigate(null, next)} />
       </div>
       <Celebration />
-      {item && s.ob && <Reader key={item.id} item={item} onClose={closeReader} />}
+      {item && s.ob && (
+        <ReadingGate
+          key={item.id}
+          item={item}
+          requested={open!}
+          onClose={closeReader}
+          onChoose={(id) => navigate(id, tab, true)}
+        />
+      )}
       {!s.ob && <Onboarding />}
     </main>
   );
@@ -73,9 +85,11 @@ export function App() {
   return (
     <StoreProvider>
       <SyncProvider>
-        <OfflineProvider>
-          <Shell />
-        </OfflineProvider>
+        <VoiceProvider>
+          <OfflineProvider>
+            <Shell />
+          </OfflineProvider>
+        </VoiceProvider>
       </SyncProvider>
     </StoreProvider>
   );

@@ -1,14 +1,14 @@
-import Image from 'next/image';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { EditionCover } from '@/components/EditionCover';
 import { Brand } from '@/components/Brand';
-import { LIBRARY, LEVELS } from '@/lib/data';
+import { BROWSABLE_LIBRARY, KINDS, LEVELS } from '@/lib/data';
 import { SITE_URL, publicUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'English & Afrikaans reading library',
   description:
-    'Explore short stories, poems, articles and verified South African literature study notes for Grades 10–12.',
+    'Read complete books, poems, short stories and essays, with verified South African literature catalogue records.',
   ...(SITE_URL ? { alternates: { canonical: publicUrl('/library') } } : {}),
 };
 
@@ -25,8 +25,8 @@ export default function LibraryPage() {
       </header>
       <h1 className="mt-12 font-serif text-4xl tracking-tight">A world on your bookshelf.</h1>
       <p className="mt-4 max-w-xl text-mu">
-        Short reads for a daily habit, and study notes to accompany South African literature. Modern
-        setworks are original study notes; public-domain selections are labelled excerpts.
+        Complete books, then poems, short stories and essays. Reading texts retain their source
+        attribution. Modern school setworks have verified catalogue records with library links.
       </p>
       <nav aria-label="Library languages" className="my-7 flex gap-5 text-sm text-ac">
         <a href="#english" className="underline">
@@ -42,45 +42,39 @@ export default function LibraryPage() {
             {language === 'en' ? 'English' : 'Afrikaans'}
           </h2>
           <div className="grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {LIBRARY.filter((item) => item.g === language).map((item) => (
-              <Link
-                key={item.id}
-                href={`/library/${item.id}`}
-                prefetch={false}
-                className="group block"
-              >
-                <div className="relative aspect-[2/3] overflow-hidden rounded-[6px_18px_18px_6px] bg-ac shadow-lg transition-transform group-hover:-translate-y-1">
-                  <Image
-                    unoptimized
-                    src={item.art!}
-                    alt={`Original Leesmaat illustration for ${item.t}`}
-                    width="400"
-                    height="600"
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 flex flex-col justify-between bg-gradient-to-b from-black/60 via-transparent to-black/80 p-3 text-white"
-                  >
-                    <span className="font-serif text-sm leading-tight">{item.t}</span>
-                    <span className="text-[10px]">{item.a}</span>
-                  </div>
-                </div>
-                <h3 lang={item.g} className="mt-3 font-serif text-sm font-semibold leading-snug">
-                  {item.t}
-                </h3>
-                <p className="mt-1 text-xs text-mu">
-                  {item.rights === 'Original study note' ? 'Study note' : item.k} · {LEVELS[item.v]}
-                </p>
-              </Link>
-            ))}
+            {BROWSABLE_LIBRARY.filter((item) => item.g === language)
+              .sort(
+                (a, b) =>
+                  KINDS.indexOf(a.k) - KINDS.indexOf(b.k) ||
+                  Number(!!b.published) - Number(!!a.published),
+              )
+              .map((item) => (
+                <Link
+                  key={item.id}
+                  href={`/library/${item.id}`}
+                  prefetch={false}
+                  className="group block"
+                >
+                  <EditionCover item={item} />
+                  <h3 lang={item.g} className="mt-3 font-serif text-sm font-semibold leading-snug">
+                    {item.t}
+                  </h3>
+                  <p className="mt-1 text-xs text-mu">
+                    {item.k} ·{' '}
+                    {item.contentUrl
+                      ? 'Complete book'
+                      : item.published
+                        ? LEVELS[item.v]
+                        : 'Catalogue'}
+                  </p>
+                </Link>
+              ))}
           </div>
         </section>
       ))}
       <footer className="mt-14 border-t border-ln pt-5 text-xs text-mu">
-        Original illustrations by Leesmaat. Curriculum metadata is attributed on each title page.
-        Confirm your school’s setworks with your teacher.
+        Reading texts and source-edition covers are attributed on each title page. Confirm your
+        school’s setworks with your teacher.
       </footer>
     </main>
   );

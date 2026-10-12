@@ -27,23 +27,20 @@ const grounded = (entry: Item) => {
 
 test('current summaries have valid supporting passages and remain shorter than their sources', () => {
   for (const entry of LIBRARY) if (summarize(entry)) grounded(entry);
-  for (const id of Object.keys(EDITORIALS)) assert.equal(grounded(item(id)).method, 'editorial');
+  for (const id of Object.keys(EDITORIALS).filter((id) => !item(id).published))
+    assert.equal(grounded(item(id)).method, 'editorial');
   assert.equal(summarize(item('e2')), null);
   assert.equal(summarize(item('e1')), null);
   assert.equal(summarize(item('a5')), null);
 });
 
-test('book overviews cover only the available excerpt or study notes', () => {
+test('book previews disclose their scope and catalogue records never invent plot summaries', () => {
   const excerpt = grounded(item('nsc-en-FAL-book-1'));
   assert.equal(excerpt.scope, 'excerpt');
   assert.match(excerpt.overview, /Utterson|door/);
   assert.doesNotMatch(excerpt.overview, /transformation|potion|murder/);
-  const notes = grounded(item('nsc-en-HL-book-0'));
-  assert.equal(notes.scope, 'notes');
-  assert.match(notes.overview, /passage|inference/);
-  assert.doesNotMatch(notes.overview, /tiger|ocean|shipwreck/);
+  assert.equal(summarize(item('nsc-en-HL-book-0')), null);
   assert.match(summaryText(item('nsc-en-FAL-book-1')), /not the whole book/);
-  assert.match(summaryText(item('nsc-en-HL-book-0')), /companion notes/);
   assert.match(summaryText(item('a3')), /Hoofgesprekspunte/);
 });
 

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "en_US-ljspeech-medium",
+    "name": "Linda",
+    "language": "en",
+    "country": "US",
+    "gender": "female",
+    "engine": "piper",
+    "style": "Natural",
+    "files": [
+      {
+        "url": "/voice-files/en_US-ljspeech-medium/model?v=6f52a751e2349abe7a76735eb09dc1875298c77ea2342ffd2fef79ff81b87f22",
+        "remote": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_US/ljspeech/medium/en_US-ljspeech-medium.onnx",
+        "bytes": 63531379,
+        "sha256": "6f52a751e2349abe7a76735eb09dc1875298c77ea2342ffd2fef79ff81b87f22"
+      },
+      {
+        "url": "/voice-files/en_US-ljspeech-medium/config?v=141d612cc0a95ed7efc1ca936b845c2364967f2e9217c5dbfcf69fc4d6c65860",
+        "remote": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_US/ljspeech/medium/en_US-ljspeech-medium.onnx.json",
+        "bytes": 4972,
+        "sha256": "141d612cc0a95ed7efc1ca936b845c2364967f2e9217c5dbfcf69fc4d6c65860"
+      }
+    ],
+    "preview": "/voice-previews/en_US-ljspeech-medium.mp3",
+    "licence": "Public-domain dataset",
+    "source": "https://huggingface.co/rhasspy/piper-voices/blob/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_US/ljspeech/medium/MODEL_CARD"
+  },
+  {
+    "id": "en_US-john-medium",
+    "name": "John",
+    "language": "en",
+    "country": "US",
+    "gender": "male",
+    "engine": "piper",
+    "style": "Natural",
+    "files": [
+      {
+        "url": "/voice-files/en_US-john-medium/model?v=789c6c875726e627ddee93d51d8727859abe9c091c3d141591f4b83c2072e988",
+        "remote": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_US/john/medium/en_US-john-medium.onnx",
+        "bytes": 63531379,
+        "sha256": "789c6c875726e627ddee93d51d8727859abe9c091c3d141591f4b83c2072e988"
+      },
+      {
+        "url": "/voice-files/en_US-john-medium/config?v=af60f177b6b550f3d7a302720c0fb89e7f94a82b5dca464775ef63b1c69ba09a",
+        "remote": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_US/john/medium/en_US-john-medium.onnx.json",
+        "bytes": 4965,
+        "sha256": "af60f177b6b550f3d7a302720c0fb89e7f94a82b5dca464775ef63b1c69ba09a"
+      }
+    ],
+    "preview": "/voice-previews/en_US-john-medium.mp3",
+    "licence": "Public-domain dataset",
+    "source": "https://huggingface.co/rhasspy/piper-voices/blob/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_US/john/medium/MODEL_CARD"
+  },
+  {
+    "id": "en_GB-cori-medium",
+    "name": "Cori",
+    "language": "en",
+    "country": "GB",
+    "gender": "female",
+    "engine": "piper",
+    "style": "Natural",
+    "files": [
+      {
+        "url": "/voice-files/en_GB-cori-medium/model?v=1899f98e5fb8310154f3c2973f4b8a929ba7245e722b3d3a85680b833d95f10d",
+        "remote": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_GB/cori/medium/en_GB-cori-medium.onnx",
+        "bytes": 63531379,
+        "sha256": "1899f98e5fb8310154f3c2973f4b8a929ba7245e722b3d3a85680b833d95f10d"
+      },
+      {
+        "url": "/voice-files/en_GB-cori-medium/config?v=e262c16d7f192f69d4edd6b4ef8a5915379e67495fcc402f1ab15eeb33da3d36",
+        "remote": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_GB/cori/medium/en_GB-cori-medium.onnx.json",
+        "bytes": 4966,
+        "sha256": "e262c16d7f192f69d4edd6b4ef8a5915379e67495fcc402f1ab15eeb33da3d36"
+      }
+    ],
+    "preview": "/voice-previews/en_GB-cori-medium.mp3",
+    "licence": "Public-domain dataset",
+    "source": "https://huggingface.co/rhasspy/piper-voices/blob/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_GB/cori/medium/MODEL_CARD"
+  },
+  {
+    "id": "en_GB-northern_english_male-medium",
+    "name": "Northern English",
+    "language": "en",
+    "country": "GB",
+    "gender": "male",
+    "engine": "piper",
+    "style": "Natural",
+    "files": [
+      {
+        "url": "/voice-files/en_GB-northern_english_male-medium/model?v=57a219ae8e638873db7d18893304be5069c42868f392bb95c3ff17f0690d0689",
+        "remote": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_GB/northern_english_male/medium/en_GB-northern_english_male-medium.onnx",
+        "bytes": 63201294,
+        "sha256": "57a219ae8e638873db7d18893304be5069c42868f392bb95c3ff17f0690d0689"
+      },
+      {
+        "url": "/voice-files/en_GB-northern_english_male-medium/config?v=69557ed3d974463453e9b0c09dd99a7ed0e52b8b87b64b357dbeeb2540a97d47",
+        "remote": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_GB/northern_english_male/medium/en_GB-northern_english_male-medium.onnx.json",
+        "bytes": 4847,
+        "sha256": "69557ed3d974463453e9b0c09dd99a7ed0e52b8b87b64b357dbeeb2540a97d47"
+      }
+    ],
+    "preview": "/voice-previews/en_GB-northern_english_male-medium.mp3",
+    "licence": "CC BY-SA 4.0 dataset",
+    "source": "https://huggingface.co/rhasspy/piper-voices/blob/c10ece1aade47bb51c153c893d14e5bf8e5b7117/en/en_GB/northern_english_male/medium/MODEL_CARD"
+  },
+  {
+    "id": "af-male",
+    "name": "Afrikaans male",
+    "language": "af",
+    "country": "ZA",
+    "gender": "male",
+    "engine": "espeak",
+    "style": "Compact \u00b7 synthetic tone",
+    "variant": "af+m3",
+    "files": [],
+    "preview": "/voice-previews/af-male.wav",
+    "licence": "GPL-3.0-or-later",
+    "source": "https://github.com/espeak-ng/espeak-ng"
+  },
+  {
+    "id": "af-female",
+    "name": "Afrikaans female",
+    "language": "af",
+    "country": "ZA",
+    "gender": "female",
+    "engine": "espeak",
+    "style": "Compact \u00b7 synthetic tone",
+    "variant": "af+f3",
+    "files": [],
+    "preview": "/voice-previews/af-female.wav",
+    "licence": "GPL-3.0-or-later",
+    "source": "https://github.com/espeak-ng/espeak-ng"
+  }
+]

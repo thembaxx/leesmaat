@@ -17,7 +17,7 @@ Sepia uses a warm parchment background; night uses true black with softer green 
 
 Motion supports reading: subtle press feedback, a spring-like navigation indicator and gently turning covers. Three.js introduces the open book and an ambient world during placement. Reduced motion and data saver keep a quiet static composition. Avoid movement behind the actual reading text.
 
-Covers are original editorial illustrations with six families: window, mountain, sea, forest, moon and city. Their title and author are readable; modern setworks say Study notes. Never suggest these are publisher artwork or complete copyrighted texts.
+Covers are original editorial illustrations with six families: window, mountain, sea, forest, moon and city. Legacy original readings retain these illustrations. Published reading cards use actual attributed source-edition covers; catalogue records use clear title/author typography. Dictionary headwords use Noto Serif and definitions use Roboto, both self-hosted.
 
 Obvious actions use an icon with an accessible label and a tooltip. Keep words for choices, unfamiliar actions and primary onboarding steps. All three main navigation destinations remain icon-only.
 

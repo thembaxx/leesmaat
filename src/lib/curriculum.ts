@@ -1,4 +1,4 @@
-import excerpts from './public-domain.json';
+import excerpts from './public-domain.json' with { type: 'json' };
 import type { Item, Kind, Lang } from './data';
 export const CURRICULUM_SOURCE =
   'https://www.westerncape.gov.za/education/files/wcg-blob-files?file=2026-07%2Fgrade-12-literature-extract-from-dcf-0008-of-2024-booklet.pdf&type=file';

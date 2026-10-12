@@ -1,4 +1,5 @@
 import type { Item } from './data';
+import { completeDownload } from './books';
 const DB_NAME = 'leesmaat-library';
 function openDB(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -36,8 +37,10 @@ export const offlineItems = () =>
 export async function downloadItem(item: Item) {
   if (!('serviceWorker' in navigator) || !navigator.serviceWorker.controller)
     throw new Error('Offline reading is still preparing. Try again in a moment.');
+  item = await completeDownload(item);
   const cache = await caches.open('leesmaat-content-v1');
-  if (item.art) await cache.add(item.art);
+  if (item.cover) await cache.add(item.cover);
+  else if (item.art) await cache.add(item.art);
   await transaction('readwrite', (store) => store.put(item));
 }
 export async function removeDownload(id: string) {

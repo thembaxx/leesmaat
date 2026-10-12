@@ -68,7 +68,7 @@ export function useNativeAudio(item: Item, playing: boolean, actions: AudioActio
 }
 
 export async function shareRead(item: Item) {
-  const url = new URL(`/library/${item.id}`, location.origin).href;
+  const url = new URL(`/library/${item.bookId ?? item.id}`, location.origin).href;
   if (navigator.share) {
     try {
       await navigator.share({ title: item.t, text: `Read ${item.t} with Leesmaat`, url });

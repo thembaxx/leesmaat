@@ -1,3 +1,4 @@
+import { LIBRARY } from '../../src/lib/data';
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
@@ -139,10 +140,12 @@ test('public pages expose content, attribution and LLM files without personal st
     expect(html).toContain(process.env.NEXT_PUBLIC_SITE_URL + '/library/e1');
     expect(html).toContain('og:image');
     const sitemap = await (await request.get('/sitemap.xml')).text();
-    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(127);
+    expect((sitemap.match(/<loc>/g) ?? []).length).toBe(LIBRARY.length + 2);
     expect(sitemap).toContain(process.env.NEXT_PUBLIC_SITE_URL + '/library/e1');
   }
-  expect(await (await request.get('/llms.txt')).text()).toContain('not their full text');
+  expect(await (await request.get('/llms.txt')).text()).toContain(
+    'Catalogue records do not imply that reading text is included',
+  );
   expect(await (await request.get('/llm.txt')).text()).toBe(
     await (await request.get('/llms.txt')).text(),
   );
@@ -240,7 +243,13 @@ test('read-aloud requests and releases screen wake lock and exposes media contro
       },
     });
     Object.defineProperty(window, 'speechSynthesis', {
-      value: { getVoices: () => [], cancel: () => {}, speak: () => {} },
+      value: {
+        getVoices: () => [],
+        cancel: () => {},
+        speak: () => {},
+        addEventListener: () => {},
+        removeEventListener: () => {},
+      },
     });
   });
   await page.goto('/?read=e1');

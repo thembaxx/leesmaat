@@ -2,8 +2,17 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { FireIcon, SlidersHorizontalIcon } from '@phosphor-icons/react';
-import { dailyItem, KINDS, LEVELS, LIBRARY, type Kind } from '@/lib/data';
+import {
+  dailyItem,
+  KINDS,
+  KIND_LABELS,
+  LEVELS,
+  LIBRARY,
+  BROWSABLE_LIBRARY,
+  type Kind,
+} from '@/lib/data';
 import { CATALOGUE_SOURCE, CURRICULUM_SOURCE } from '@/lib/curriculum';
+import { baseId } from '@/lib/books';
 import { today } from '@/lib/text';
 import { useStore } from '@/lib/store';
 import { Cover, ItemRow } from './Cover';
@@ -31,8 +40,14 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
         ? 'Good afternoon'
         : 'Good evening';
   const daily = dailyItem(s.lang, today());
-  const pool = LIBRARY.filter((i) => i.g === s.lang);
-  const resume = pool.find((i) => (s.pos[i.id] ?? 0) > 0.02 && (s.pos[i.id] ?? 0) < 0.97);
+  const pool = (search.trim() ? LIBRARY : BROWSABLE_LIBRARY).filter((i) => i.g === s.lang);
+  const resumeId = Object.keys(s.pos)
+    .reverse()
+    .find(
+      (id) =>
+        (s.pos[id] ?? 0) > 0.02 && (s.pos[id] ?? 0) < 0.97 && pool.some((i) => i.id === baseId(id)),
+    );
+  const resume = pool.find((i) => i.id === baseId(resumeId ?? ''));
   const list = pool
     .filter(
       (i) =>
@@ -41,7 +56,12 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
         (grade === 'All' || i.grade === Number(grade)) &&
         `${i.t} ${i.a}`.toLowerCase().includes(search.toLowerCase()),
     )
-    .sort((a, b) => Math.abs(a.v - s.levels[s.lang]) - Math.abs(b.v - s.levels[s.lang]));
+    .sort(
+      (a, b) =>
+        KINDS.indexOf(a.k) - KINDS.indexOf(b.k) ||
+        Number(!!b.published) - Number(!!a.published) ||
+        Math.abs(a.v - s.levels[s.lang]) - Math.abs(b.v - s.levels[s.lang]),
+    );
   const secs = Math.min(s.secs, 300);
   const C = 2 * Math.PI * 40;
 
@@ -143,20 +163,20 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
       {resume && (
         <>
           <h2 className="mt-6 mb-2.5 text-xl font-bold tracking-tight">Continue</h2>
-          <ItemRow item={resume} onOpen={onOpen} />
+          <ItemRow item={resume} onOpen={() => onOpen(resumeId!)} />
         </>
       )}
 
-      <h2 className="mt-6 mb-2.5 text-xl font-bold tracking-tight">NSC setworks · 2026</h2>
+      <h2 className="mt-6 mb-2.5 text-xl font-bold tracking-tight">Books to get lost in</h2>
       <p className="mb-3 text-[13px] text-mu">
-        Read excerpts and study notes alongside your own setwork.{' '}
+        Read complete books chapter by chapter.{' '}
         <a href={CURRICULUM_SOURCE} target="_blank" rel="noreferrer" className="underline">
           Official Grade 12 list
         </a>
       </p>
       <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4">
         {pool
-          .filter((i) => i.grade === 12 && (course === 'All' || i.course === course))
+          .filter((i) => i.k === 'Book' && i.published)
           .map((i) => (
             <button
               key={i.id}
@@ -165,13 +185,14 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
             >
               <Cover item={i} />
               <b className="mt-2 block text-[13px]">{i.t}</b>
-              <small className="text-xs text-mu">{i.n}</small>
+              <small className="text-xs text-mu">{i.a}</small>
             </button>
           ))}
       </div>
 
       <p className="my-3 text-[13px] text-mu">
-        Grades 10–11: confirm your school’s selection in the{' '}
+        NSC setworks are included as verified catalogue records. Confirm your school’s selection in
+        the{' '}
         <a className="underline" href={CATALOGUE_SOURCE} target="_blank" rel="noreferrer">
           DBE literature catalogue
         </a>
@@ -213,7 +234,7 @@ export function Home({ onOpen }: { onOpen: (id: string) => void }) {
       <div className="mb-2.5 flex gap-2 overflow-x-auto">
         {(['All', ...KINDS] as const).map((k) => (
           <button key={k} onClick={() => setKind(k)} className={chip(kind === k)}>
-            {k}
+            {k === 'All' ? 'All' : KIND_LABELS[k]}
           </button>
         ))}
       </div>

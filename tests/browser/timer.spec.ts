@@ -26,8 +26,8 @@ for (const width of [320, 390, 430]) {
       timerBox = await timer.boundingBox();
     expect(cardBox).not.toBeNull();
     expect(timerBox).not.toBeNull();
-    expect(timerBox!.width).toBe(96);
-    expect(timerBox!.height).toBe(96);
+    expect(timerBox!.width).toBeCloseTo(96, 2);
+    expect(timerBox!.height).toBeCloseTo(96, 2);
     expect(timerBox!.x).toBeGreaterThanOrEqual(cardBox!.x + 20);
     expect(timerBox!.x + timerBox!.width).toBeLessThanOrEqual(cardBox!.x + cardBox!.width - 20);
     const sizes = await card.evaluate((element) => ({

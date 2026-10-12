@@ -1,0 +1,48 @@
+{
+  "piper": [
+    {
+      "name": "piper-worker.js",
+      "url": "/voice-runtime/piper-worker.js",
+      "bytes": 144304,
+      "sha256": "5ff5f4dedab240a877b88cb70e6e1c0e2fad82c70f4956090fa8da739c112588"
+    },
+    {
+      "name": "piper-phonemize.js",
+      "url": "/voice-runtime/piper-phonemize.js",
+      "bytes": 120714,
+      "sha256": "fef0c2fc442d24fdef5c7c7cc37d5da2314407640fe11ab1bfe347c723dff19b"
+    },
+    {
+      "name": "piper-phonemize.wasm",
+      "url": "/voice-runtime/piper-phonemize.wasm",
+      "bytes": 635212,
+      "sha256": "b777cd107a91d2bcc6a1ea46f2c26a662a7407394fe84589198aeaa83dd7a9d6"
+    },
+    {
+      "name": "piper-phonemize.data",
+      "url": "/voice-runtime/piper-phonemize.data",
+      "bytes": 18077249,
+      "sha256": "29f1025eb23a5b5c192cd14a6efbce4509402ff265405072ee6f7d1a09b78f8c"
+    },
+    {
+      "name": "ort-wasm-simd.wasm",
+      "url": "/voice-runtime/ort-wasm-simd.wasm",
+      "bytes": 10595041,
+      "sha256": "f533b5f21790563d7556c611c3835ac65848ee326da2689aac54ed7d9cc8c6a4"
+    }
+  ],
+  "espeak": [
+    {
+      "name": "espeak.worker.js",
+      "url": "/voice-runtime/espeak.worker.js",
+      "bytes": 776339,
+      "sha256": "27dbae622e8dbd2b4f5def07208db1c557554148b83a99bacba37419031e2e2e"
+    },
+    {
+      "name": "espeak.worker.data",
+      "url": "/voice-runtime/espeak.worker.data",
+      "bytes": 2553388,
+      "sha256": "a1a5de916d3f3d28babe3a0948d6eab84e793ae69e333974a918a69ddec32a67"
+    }
+  ]
+}

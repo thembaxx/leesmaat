@@ -12,6 +12,8 @@ const assets = [
   '/manifest.webmanifest?theme=sepia',
   '/manifest.webmanifest?theme=night',
   '/offline.html',
+  '/dictionaries/af.json',
+  '/dictionaries/SOURCE.md',
   '/icon-maskable-512.png',
   '/apple-touch-icon.png',
   '/social.png',
