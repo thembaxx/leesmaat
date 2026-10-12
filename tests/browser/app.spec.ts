@@ -35,7 +35,11 @@ test('placement gives each language its own level and persists after reload', as
   await page.getByRole('button', { name: /^Despite the clamour/ }).click();
   await page.getByRole('button', { name: 'to stay a little longer', exact: true }).click();
   await page.getByRole('button', { name: 'She plans ahead and cares about others' }).click();
-  await expect(page.getByText('Advanced', { exact: true })).toBeVisible();
+  await expect(
+    page
+      .getByRole('dialog', { name: 'Reading placement', exact: true })
+      .getByText('Advanced', { exact: true }),
+  ).toBeVisible();
   await page.getByRole('button', { name: 'Start reading' }).click();
   await page.reload();
   await expect(page.getByRole('button', { name: 'Settings', exact: true })).toBeVisible();
