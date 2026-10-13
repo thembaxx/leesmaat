@@ -23,14 +23,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: item.summary,
     ...(SITE_URL
       ? {
-          alternates: { canonical: publicUrl(path) },
+          alternates: {
+            canonical: publicUrl(path),
+            types: { 'text/plain': publicUrl(`${path}/text`) },
+          },
           openGraph: {
             title: item.t,
             description: item.summary,
             type: 'article',
             url: publicUrl(path),
             locale: item.g === 'af' ? 'af_ZA' : 'en_ZA',
+            siteName: 'Leesmaat',
             images: [{ url: publicUrl('/social.png'), width: 1200, height: 630 }],
+          },
+          twitter: {
+            card: 'summary_large_image',
+            title: `${item.t} | Leesmaat`,
+            description: item.summary,
+            images: [publicUrl('/social.png')],
           },
         }
       : {}),

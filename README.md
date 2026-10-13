@@ -81,7 +81,7 @@ Paper, sepia, night and system themes coordinate the HTML background, safe areas
 
 Public `/library` and `/library/[id]` pages render without JavaScript, expose real reading text, book chapter indexes, verified catalogue records and attribution, and include per-title descriptions and structured data. `/llms.txt`, `/llm.txt` (alias), `/llms-full.txt` and per-title `/text` endpoints expose public material with rights labels, never private reading data. Per-book plain-text endpoints contain all imported chapters.
 
-Set **NEXT_PUBLIC_SITE_URL** to the production HTTPS origin in `.env.local` and on the host **before building**. This enables canonical URLs, absolute social images, robots sitemap discovery and all current library sitemap entries. Without a configured domain, the project deliberately omits canonicals and absolute sitemap entries. The public library and relative LLM links still work.
+Set **NEXT_PUBLIC_SITE_URL** to the production HTTPS origin in `.env.local` and on the host **before building**. This enables canonical URLs, absolute social images, robots sitemap discovery and all current library sitemap entries. The verified production domain defaults to `https://leesmaat.vercel.app`. An explicit empty override omits canonicals and absolute sitemap entries and marks public pages noindex. Origin values with paths, credentials, queries or fragments are rejected. The public library and relative LLM links still work.
 
 Browser verification covers phone, tablet, desktop and landscape layouts, reduced motion, install events, sharing/history, system themes, public content, WCAG checks and a real service-worker update through a local test proxy. Native API behavior still warrants a smoke test on physical iOS and Android devices before release.
 

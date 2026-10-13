@@ -2,6 +2,8 @@
 
 **A little reading. A bigger world.**
 
+Search positioning: **English & Afrikaans reading companion**. The tagline carries the feeling; page titles and descriptions name the languages and reading task. The verified canonical origin defaults to `https://leesmaat.vercel.app`; set `NEXT_PUBLIC_SITE_URL` before building to change it, or to an empty value for an unindexed preview. The public library, per-title text, `/llms.txt`, `/llm.txt` alias and `/llms-full.txt` preserve attribution and exclude private reading data.
+
 Leesmaat means a reading companion: a warm, quiet place to build confidence in English and Afrikaans. The name stays short, human and connected to the app's South African context.
 
 The mark combines an open book with a small spark of understanding. The lower-case Literata wordmark carries a coral full stop. Use the book alone at small sizes and the wordmark when there is room. The maskable icon keeps the mark inside the central safe area.

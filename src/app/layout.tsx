@@ -3,7 +3,7 @@ import { Inter, Literata, Roboto, Noto_Serif } from 'next/font/google';
 import type { ReactNode } from 'react';
 import './globals.css';
 import { themeBoot } from '@/lib/theme';
-import { SITE_URL, description } from '@/lib/site';
+import { SITE_URL, description, siteTitle, siteSchema } from '@/lib/site';
 import { ThemeBridge } from '@/components/ThemeBridge';
 import { SPLASH_DEVICES } from '@/lib/splash';
 
@@ -21,9 +21,11 @@ const dictionaryWord = Noto_Serif({
 
 export const metadata: Metadata = {
   metadataBase: SITE_URL ? new URL(SITE_URL) : undefined,
-  title: { default: 'Leesmaat — A little reading. A bigger world.', template: '%s | Leesmaat' },
+  title: { default: siteTitle, template: '%s | Leesmaat' },
   description,
   applicationName: 'Leesmaat',
+  category: 'education',
+  robots: { index: Boolean(SITE_URL), follow: true },
   manifest: '/manifest.webmanifest',
   icons: { icon: '/icon.svg', apple: '/apple-touch-icon.png' },
   appleWebApp: { capable: true, title: 'Leesmaat', statusBarStyle: 'black-translucent' },
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_ZA',
     siteName: 'Leesmaat',
-    title: 'Leesmaat — A little reading. A bigger world.',
+    title: siteTitle,
     description,
     ...(SITE_URL
       ? {
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Leesmaat',
+    title: siteTitle,
     description,
     ...(SITE_URL ? { images: ['/social.png'] } : {}),
   },
@@ -70,6 +72,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${inter.variable} ${literata.variable} ${dictionaryBody.variable} ${dictionaryWord.variable}`}
     >
       <head>
+        <link rel="describedby" type="text/plain" href="/llms.txt" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteSchema()).replace(/</g, '\\u003c'),
+          }}
+        />
         <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
         {SPLASH_DEVICES.flatMap(([width, height, ratio]) =>
