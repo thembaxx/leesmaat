@@ -5,11 +5,32 @@ import { Brand } from '@/components/Brand';
 import { BROWSABLE_LIBRARY, KINDS, LEVELS } from '@/lib/data';
 import { SITE_URL, publicUrl } from '@/lib/site';
 
+const libraryTitle = 'English & Afrikaans reading library';
+const libraryDescription =
+  'Read complete books, poems, short stories and essays, with verified South African literature catalogue records.';
 export const metadata: Metadata = {
-  title: 'English & Afrikaans reading library',
-  description:
-    'Read complete books, poems, short stories and essays, with verified South African literature catalogue records.',
-  ...(SITE_URL ? { alternates: { canonical: publicUrl('/library') } } : {}),
+  title: libraryTitle,
+  description: libraryDescription,
+  ...(SITE_URL
+    ? {
+        alternates: { canonical: publicUrl('/library') },
+        openGraph: {
+          type: 'website',
+          siteName: 'Leesmaat',
+          locale: 'en_ZA',
+          title: `${libraryTitle} | Leesmaat`,
+          description: libraryDescription,
+          url: publicUrl('/library'),
+          images: [{ url: publicUrl('/social.png'), width: 1200, height: 630 }],
+        },
+        twitter: {
+          card: 'summary_large_image',
+          title: `${libraryTitle} | Leesmaat`,
+          description: libraryDescription,
+          images: [publicUrl('/social.png')],
+        },
+      }
+    : {}),
 };
 
 export default function LibraryPage() {
