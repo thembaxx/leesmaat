@@ -43,6 +43,10 @@ test('complete books download all chapters and keep navigation offline', async (
   await expect(
     page.getByRole('heading', { name: 'CHAPTER III. A Caucus-Race and a Long Tale', exact: true }),
   ).toBeVisible();
+  const cover = LIBRARY.find((item) => item.id === 'pg-11')!.cover!;
+  expect(
+    await page.evaluate(async (url) => (await fetch(url, { cache: 'no-store' })).ok, cover),
+  ).toBe(true);
   await context.setOffline(false);
   const text = await (await request.get('/library/pg-11/text')).text();
   expect(text).toContain('CHAPTER XII. Alice’s Evidence');

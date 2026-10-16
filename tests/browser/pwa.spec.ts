@@ -1,6 +1,7 @@
 import { LIBRARY } from '../../src/lib/data';
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { SPLASH_DEVICES } from '../../src/lib/splash';
 
 async function setup(page: Page, theme = 'paper') {
   await page.addInitScript((value) => {
@@ -23,9 +24,21 @@ test('saved and system themes match browser chrome and manifest colors', async (
     '#f4ecd8',
   );
   await expect(page.locator('link[rel="manifest"]')).toHaveCount(1);
+  await expect(page.locator('meta[name="color-scheme"]')).toHaveCount(1);
+  await expect(page.locator('meta[name="theme-color"]')).toHaveCount(2);
+  await expect(page.locator('link[rel="apple-touch-startup-image"]')).toHaveCount(
+    SPLASH_DEVICES.length * 4,
+  );
+  expect(
+    await page
+      .locator('link[rel="apple-touch-startup-image"]')
+      .evaluateAll((links) =>
+        links.every((link) => (link as HTMLLinkElement).href.endsWith('-sepia.png')),
+      ),
+  ).toBe(true);
   await expect(page.locator('link[rel="manifest"]')).toHaveAttribute(
     'href',
-    '/manifest.webmanifest',
+    '/manifest.webmanifest?theme=sepia',
   );
   const manifest = await (await request.get('/manifest.webmanifest?theme=sepia')).json();
   expect(manifest.background_color).toBe('#f4ecd8');
@@ -216,12 +229,21 @@ test('read-aloud requests and releases screen wake lock and exposes media contro
 }) => {
   await setup(page);
   await page.addInitScript(() => {
-    const status = { requested: 0, released: 0, playback: '', actions: [] as string[] };
+    const status = {
+      requested: 0,
+      released: 0,
+      playback: '',
+      actions: [] as string[],
+      finishWake: () => {},
+    };
     (window as unknown as { nativeStatus: typeof status }).nativeStatus = status;
     Object.defineProperty(navigator, 'wakeLock', {
       value: {
         request: async () => {
           status.requested++;
+          await new Promise<void>((resolve) => {
+            status.finishWake = resolve;
+          });
           return {
             released: false,
             release: async () => {
@@ -267,9 +289,22 @@ test('read-aloud requests and releases screen wake lock and exposes media contro
   );
   expect(playing.playback).toBe('playing');
   expect(playing.actions).toEqual(
-    expect.arrayContaining(['play', 'pause', 'nexttrack', 'previoustrack']),
+    expect.arrayContaining(['play', 'pause', 'stop', 'nexttrack', 'previoustrack']),
   );
+  await page.evaluate(() => {
+    document.dispatchEvent(new Event('visibilitychange'));
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  expect(
+    await page.evaluate(
+      () => (window as unknown as { nativeStatus: { requested: number } }).nativeStatus.requested,
+    ),
+  ).toBe(1);
   await page.getByRole('button', { name: 'Pause', exact: true }).click();
+  // A wake lock granted after Pause must be released rather than kept alive.
+  await page.evaluate(() =>
+    (window as unknown as { nativeStatus: { finishWake: () => void } }).nativeStatus.finishWake(),
+  );
   await expect
     .poll(() =>
       page.evaluate(

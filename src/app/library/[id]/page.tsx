@@ -70,7 +70,7 @@ export default async function TitlePage({ params }: Props) {
     ...(item.year ? { datePublished: String(item.year) } : {}),
   };
   return (
-    <main className="mx-auto max-w-3xl px-6 py-8 pb-16">
+    <main className="public-page mx-auto max-w-3xl px-6 py-8 pb-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }}

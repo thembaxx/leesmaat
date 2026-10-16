@@ -12,7 +12,6 @@ import {
 import { INIT, hydrateState, type State } from './state';
 import { applyFields, mergeFields, seedFields, stampChanges, type Fields } from './sync';
 import { today } from './text';
-import { syncBrowserTheme } from './theme';
 export type { State } from './state';
 type Patch = Partial<State> | ((s: State) => Partial<State>);
 type Ctx = {
@@ -93,12 +92,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     else delete r.dataset.theme;
     r.toggleAttribute('data-mono', s.mono);
     r.style.setProperty('--fs', `${s.fs}px`);
-    syncBrowserTheme(s.theme);
-    const preference = matchMedia('(prefers-color-scheme: dark)');
-    const updateTheme = () => syncBrowserTheme(s.theme);
-    preference.addEventListener('change', updateTheme);
-    return () => preference.removeEventListener('change', updateTheme);
-  }, [s.theme, s.mono, s.fs, s.lang, ready]);
+  }, [s.theme, s.mono, s.fs, ready]);
   const set = useCallback(
     (p: Patch) =>
       update((old) => {

@@ -22,7 +22,7 @@ pnpm build
 pnpm start
 ```
 
-Offline caching runs in production (`pnpm build && pnpm start`), on localhost or HTTPS. Development deliberately does not register a worker. On a production page, allow the app shell to prepare, open a reading's settings, and choose **Download offline**. The **Archive** tab in Bookmarks lists real IndexedDB downloads. Reload offline to verify the shell, reading, artwork, words and notes remain available. In iOS Safari, use Share → Add to Home Screen; other supporting browsers offer installation from their menu.
+Offline caching runs in production (`pnpm build && pnpm start`), on localhost or HTTPS. Development deliberately does not register a worker. Visiting either the app or a public library page prepares the app shell; the first public title is saved during worker installation too. Open a reading's settings and choose **Download offline** to keep its complete text and source-edition cover. The **Archive** tab in Bookmarks lists real IndexedDB downloads. Reload offline to verify the shell, reading, artwork, words and notes remain available. In iOS Safari, use Share → Add to Home Screen; other supporting browsers offer installation from their menu.
 
 ## Enable Google sync
 
@@ -77,7 +77,7 @@ The onboarding book and floating background use lazily loaded Three.js. Drag the
 
 The installed app supports installation prompts where provided, Safari instructions, app shortcuts, offline status, optional persistent-storage requests and controlled updates. Reader links survive reload and browser Back/Forward; sharing uses Web Share or clipboard fallback. Fullscreen, Media Session controls and a screen wake lock during read-aloud enhance supporting devices. These APIs vary by browser; Downloaded packs provide offline audio; system voice availability varies.
 
-Paper, sepia, night and system themes coordinate the HTML background, safe areas, browser chrome, loading/recovery screens, manifest and supported portrait iOS launch images. A necessary `leesmaat-theme` preference cookie lets the manifest use the selected launch colors. Browsers can retain an older installed launch screen until they refresh app metadata.
+Paper, sepia, night and system themes coordinate the HTML background, safe areas, browser chrome, loading/recovery screens, manifest and supported portrait/landscape iOS launch images. A small inline style and preference script paint the background before the main CSS or hydration is ready; the theme bridge reuses those head tags during hydration. The standalone offline recovery page is generated from `scripts/offline-template.html` using the same startup theme code. Theme-specific manifest URLs keep launch colors available offline and when cookies are blocked; a `leesmaat-theme` preference cookie also supports direct manifest requests. Launch images include pixel density in their filenames so devices with identical CSS screen sizes receive the correct image. Only requested launch images are cached, keeping all other device variants out of the initial offline download. Browsers can retain an older installed launch screen until they refresh app metadata.
 
 Public `/library` and `/library/[id]` pages render without JavaScript, expose real reading text, book chapter indexes, verified catalogue records and attribution, and include per-title descriptions and structured data. `/llms.txt`, `/llm.txt` (alias), `/llms-full.txt` and per-title `/text` endpoints expose public material with rights labels, never private reading data. Per-book plain-text endpoints contain all imported chapters.
 

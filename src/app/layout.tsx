@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Literata, Roboto, Noto_Serif } from 'next/font/google';
 import type { ReactNode } from 'react';
 import './globals.css';
-import { themeBoot } from '@/lib/theme';
+import { themeBoot, themePaint } from '@/lib/theme';
 import { SITE_URL, description, siteTitle, siteSchema } from '@/lib/site';
 import { ThemeBridge } from '@/components/ThemeBridge';
-import { SPLASH_DEVICES } from '@/lib/splash';
+import { PwaProvider } from '@/components/PwaProvider';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const literata = Literata({ subsets: ['latin', 'latin-ext'], variable: '--font-literata' });
@@ -26,7 +26,6 @@ export const metadata: Metadata = {
   applicationName: 'Leesmaat',
   category: 'education',
   robots: { index: Boolean(SITE_URL), follow: true },
-  manifest: '/manifest.webmanifest',
   icons: { icon: '/icon.svg', apple: '/apple-touch-icon.png' },
   appleWebApp: { capable: true, title: 'Leesmaat', statusBarStyle: 'black-translucent' },
   formatDetection: { telephone: false },
@@ -61,7 +60,6 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
-  colorScheme: 'light dark',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -72,6 +70,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${inter.variable} ${literata.variable} ${dictionaryBody.variable} ${dictionaryWord.variable}`}
     >
       <head>
+        <style dangerouslySetInnerHTML={{ __html: themePaint }} />
         <link rel="describedby" type="text/plain" href="/llms.txt" />
         <script
           type="application/ld+json"
@@ -79,18 +78,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             __html: JSON.stringify(siteSchema()).replace(/</g, '\\u003c'),
           }}
         />
-        <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
-        {SPLASH_DEVICES.flatMap(([width, height, ratio]) =>
-          ['paper', 'night'].map((theme) => (
-            <link
-              key={`${width}-${height}-${theme}`}
-              rel="apple-touch-startup-image"
-              href={`/brand/splash/${width}-${height}-${theme}.png`}
-              media={`(device-width: ${width}px) and (device-height: ${height}px) and (-webkit-device-pixel-ratio: ${ratio}) and (orientation: portrait) and (prefers-color-scheme: ${theme === 'night' ? 'dark' : 'light'})`}
-            />
-          )),
-        )}
+        <ThemeBridge />
         <script
           dangerouslySetInnerHTML={{
             __html: themeBoot,
@@ -98,8 +86,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="bg-bg font-sans text-ink antialiased">
-        <ThemeBridge />
-        {children}
+        <PwaProvider>{children}</PwaProvider>
       </body>
     </html>
   );

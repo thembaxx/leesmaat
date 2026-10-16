@@ -4,6 +4,7 @@ import { LIBRARY } from '../src/lib/data';
 import { coverMotif } from '../src/lib/art';
 import { hash } from '../src/lib/text';
 import { SPLASH_DEVICES } from '../src/lib/splash';
+import { THEME_COLORS } from '../src/lib/theme';
 
 const mark = `<path d="M32 51C24 44 14 43 6 45V16c10-2 19 1 26 7 7-6 16-9 26-7v29c-8-2-18-1-26 6Z" fill="#fbfaf7"/><path d="M32 24v22M12 22c6 0 11 2 15 5m10 0c4-3 9-5 15-5" stroke="#2f6b4f" stroke-width="3" stroke-linecap="round"/><path d="m32 3 2.8 6.2L41 12l-6.2 2.8L32 21l-2.8-6.2L23 12l6.2-2.8L32 3Z" fill="#eab972"/>`;
 const icon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96"><rect width="96" height="96" rx="23" fill="#2f6b4f"/><g transform="translate(16 16)">${mark}</g></svg>`;
@@ -24,14 +25,20 @@ writeFileSync(
 const social = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#fbfaf7"/><circle cx="1100" cy="520" r="340" fill="#e4eddf"/><circle cx="1130" cy="480" r="240" fill="none" stroke="#b7cbb2" stroke-width="2"/><g transform="translate(800 150) scale(4)"><rect width="96" height="96" rx="23" fill="#2f6b4f"/><g transform="translate(16 16)">${mark}</g></g><text x="80" y="125" font-family="Georgia,serif" font-size="48" fill="#2f6b4f">leesmaat.</text><text x="80" y="300" font-family="Georgia,serif" font-size="66" fill="#161614">A little reading.</text><text x="80" y="390" font-family="Georgia,serif" font-size="66" fill="#161614">A bigger world.</text><text x="84" y="500" font-family="sans-serif" font-size="25" fill="#68655d">English · Afrikaans · Five minutes at a time</text></svg>`;
 await sharp(Buffer.from(social)).png().toFile('public/social.png');
 mkdirSync('public/brand/splash', { recursive: true });
-for (const [width, height, ratio] of SPLASH_DEVICES) {
-  for (const theme of ['paper', 'sepia', 'night']) {
-    const background = theme === 'night' ? '#000000' : theme === 'sepia' ? '#f4ecd8' : '#fbfaf7';
-    const ink = theme === 'night' ? '#e9e6df' : '#2f6b4f';
-    const splash = `<svg xmlns="http://www.w3.org/2000/svg" width="${width * ratio}" height="${height * ratio}" viewBox="0 0 ${width} ${height}"><rect width="100%" height="100%" fill="${background}"/><g transform="translate(${width / 2 - 40} ${height / 2 - 80})"><rect width="80" height="80" rx="20" fill="#2f6b4f"/><g transform="translate(8 8)">${mark}</g></g><text x="${width / 2}" y="${height / 2 + 44}" font-family="Georgia,serif" font-size="30" text-anchor="middle" fill="${ink}">leesmaat.</text></svg>`;
-    await sharp(Buffer.from(splash))
-      .png()
-      .toFile(`public/brand/splash/${width}-${height}-${theme}.png`);
+for (const [deviceWidth, deviceHeight, ratio] of SPLASH_DEVICES) {
+  for (const orientation of ['portrait', 'landscape']) {
+    const [width, height] =
+      orientation === 'portrait' ? [deviceWidth, deviceHeight] : [deviceHeight, deviceWidth];
+    for (const theme of ['paper', 'sepia', 'night']) {
+      const background = THEME_COLORS[theme as keyof typeof THEME_COLORS];
+      const ink = theme === 'night' ? '#e9e6df' : '#2f6b4f';
+      const splash = `<svg xmlns="http://www.w3.org/2000/svg" width="${width * ratio}" height="${height * ratio}" viewBox="0 0 ${width} ${height}"><rect width="100%" height="100%" fill="${background}"/><g transform="translate(${width / 2 - 40} ${height / 2 - 80})"><rect width="80" height="80" rx="20" fill="#2f6b4f"/><g transform="translate(8 8)">${mark}</g></g><text x="${width / 2}" y="${height / 2 + 44}" font-family="Georgia,serif" font-size="30" text-anchor="middle" fill="${ink}">leesmaat.</text></svg>`;
+      await sharp(Buffer.from(splash))
+        .png()
+        .toFile(
+          `public/brand/splash/${deviceWidth}-${deviceHeight}-${ratio}x-${orientation}-${theme}.png`,
+        );
+    }
   }
 }
 

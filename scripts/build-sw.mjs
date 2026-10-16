@@ -17,7 +17,11 @@ const assets = [
   '/icon-maskable-512.png',
   '/apple-touch-icon.png',
   '/social.png',
-  ...walk('public/brand').map((path) => path.slice(6)),
+  // A device uses only its matching launch image. Cache those on demand instead
+  // of downloading every phone/tablet/theme/orientation during installation.
+  ...walk('public/brand')
+    .filter((path) => !path.includes('/splash/'))
+    .map((path) => path.slice(6)),
   '/icon.svg',
   '/icon-192.png',
   '/icon-512.png',
