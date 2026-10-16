@@ -8,6 +8,7 @@
     "public/voice-runtime/**",
     "public/content/**",
     "public/dictionaries/**",
+    "public/offline.html",
     "public/assistant-runtime/**"
   ]
 }

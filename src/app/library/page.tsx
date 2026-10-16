@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function LibraryPage() {
   return (
-    <main className="mx-auto max-w-5xl px-6 py-8 pb-16">
+    <main className="public-page mx-auto max-w-5xl px-6 py-8 pb-16">
       <header className="flex items-center justify-between gap-4">
         <Link href="/" aria-label="Open Leesmaat">
           <Brand />

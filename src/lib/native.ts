@@ -9,7 +9,7 @@ export function useNativeAudio(item: Item, playing: boolean, actions: AudioActio
     current.current = actions;
   }, [actions]);
   useEffect(() => {
-    if (!('mediaSession' in navigator)) return;
+    if (!('mediaSession' in navigator) || typeof MediaMetadata === 'undefined') return;
     navigator.mediaSession.metadata = new MediaMetadata({
       title: item.t,
       artist: item.a,
@@ -19,6 +19,7 @@ export function useNativeAudio(item: Item, playing: boolean, actions: AudioActio
     const bindings = {
       play: () => current.current.play(),
       pause: () => current.current.pause(),
+      stop: () => current.current.pause(),
       nexttrack: () => current.current.next(),
       previoustrack: () => current.current.previous(),
     };
@@ -46,15 +47,19 @@ export function useNativeAudio(item: Item, playing: boolean, actions: AudioActio
       navigator.mediaSession.playbackState = playing ? 'playing' : 'paused';
     if (!playing || !('wakeLock' in navigator)) return;
     let live = true;
+    let acquiring = false;
     let lock: WakeLockSentinel | null = null;
     const acquire = async () => {
-      if (document.hidden || (lock && !lock.released)) return;
+      if (!live || document.hidden || acquiring || (lock && !lock.released)) return;
+      acquiring = true;
       try {
         const next = await navigator.wakeLock.request('screen');
-        if (!live) await next.release();
+        if (!live || document.hidden) await next.release();
         else lock = next;
       } catch {
         /* Reading still works when the device declines a wake lock. */
+      } finally {
+        acquiring = false;
       }
     };
     void acquire();
