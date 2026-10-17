@@ -1,5 +1,10 @@
 # Leesmaat
 
+> **Portfolio project** · [Live application](https://leesmaat.vercel.app) · [GitHub source](https://github.com/thembaxx/leesmaat)
+>
+> Built with a focus on intuitive interfaces, responsive design and practical product engineering. Explore the live experience or review the implementation below.
+
+
 English and Afrikaans literacy, five minutes at a time. Next.js App Router, TypeScript, Tailwind v4 and Phosphor icons, with optional Google sync and an offline reading archive.
 
 ## Run
