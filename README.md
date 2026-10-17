@@ -1,5 +1,29 @@
 # Leesmaat
 
+English and Afrikaans reading practice in short sessions, with bookmarks, placement and an offline reading archive.
+
+**[Explore the live application](https://leesmaat.vercel.app/)** · [Browse the source](https://github.com/thembaxx/leesmaat)
+
+## Engineering highlights
+
+Account-free local reading, IndexedDB downloads and optional Firebase Google sync with per-user access rules.
+
+## Technology
+
+Declared in [package.json](package.json): Next.js `16.4.0` · React `^19.3.0` · TypeScript `^7.0.2` · Tailwind CSS `^4.3.3` · Three.js `^0.186.1` · Firebase `^13.0.0` · WebLLM `0.2.85` · Zod `^4.6.5`.
+
+**Quality tooling:** `typecheck`, `lint`, `format:check`, `test`, `test:e2e` scripts are available. See the setup guide below for prerequisites; this documentation pass does not assert that those checks were run.
+
+## Application preview
+
+![Leesmaat — reading placement introduction](docs/screenshots/desktop.jpg)
+
+Captured from the live application on 17 October 2026. [Capture details and limitations](docs/screenshots/README.md).
+
+---
+
+## Project guide
+
 English and Afrikaans literacy, five minutes at a time. Next.js App Router, TypeScript, Tailwind v4 and Phosphor icons, with optional Google sync and an offline reading archive.
 
 ## Run
