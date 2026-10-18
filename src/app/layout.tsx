@@ -6,6 +6,7 @@ import { themeBoot, themePaint } from '@/lib/theme';
 import { SITE_URL, description, siteTitle, siteSchema } from '@/lib/site';
 import { ThemeBridge } from '@/components/ThemeBridge';
 import { PwaProvider } from '@/components/PwaProvider';
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const literata = Literata({ subsets: ['latin', 'latin-ext'], variable: '--font-literata' });
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className="bg-bg font-sans text-ink antialiased">
         <PwaProvider>{children}</PwaProvider>
+        <Analytics />
       </body>
     </html>
   );
