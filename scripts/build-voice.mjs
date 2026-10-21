@@ -8,8 +8,8 @@ for (const suffix of ['js', 'wasm', 'data'])
     `public/voice-runtime/piper-phonemize.${suffix}`,
   );
 copyFileSync(
-  'node_modules/onnxruntime-web/dist/ort-wasm-simd.wasm',
-  'public/voice-runtime/ort-wasm-simd.wasm',
+  'node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm',
+  'public/voice-runtime/ort-wasm-simd-threaded.wasm',
 );
 await build({
   entryPoints: ['src/lib/voice-worker.ts'],
@@ -28,7 +28,7 @@ for (const [engine, files] of Object.entries({
     'piper-phonemize.js',
     'piper-phonemize.wasm',
     'piper-phonemize.data',
-    'ort-wasm-simd.wasm',
+    'ort-wasm-simd-threaded.wasm',
   ],
   espeak: ['espeak.worker.js', 'espeak.worker.data'],
 })) {
