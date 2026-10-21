@@ -50,7 +50,9 @@ async function run(job: Job) {
     });
     ort.env.wasm.numThreads = 1;
     ort.env.wasm.proxy = false;
-    ort.env.wasm.wasmPaths = { 'ort-wasm-simd.wasm': job.assets['ort-wasm-simd.wasm']! };
+    ort.env.wasm.wasmPaths = {
+      wasm: new URL(job.assets['ort-wasm-simd-threaded.wasm']!, self.location.origin).href,
+    };
   }
   if (currentVoice !== job.voice.id) {
     if (session) await session.release();
