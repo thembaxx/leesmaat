@@ -8,3 +8,6 @@ allowBuilds:
 # Firebase's Node transport pins an older minor; keep the compatible v1 patch line current.
 overrides:
   '@grpc/grpc-js': 1.14.6
+  # gaxios 6 uses require('uuid'). v11 is the last CommonJS-compatible line;
+  # 11.1.1 fixes GHSA-w5hq-g745-h8pq without moving the transport to ESM.
+  'gaxios@6>uuid': 11.1.1
