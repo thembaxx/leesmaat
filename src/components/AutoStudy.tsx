@@ -6,6 +6,7 @@ import { summarize, SUMMARY_COPY } from '@/lib/summaries';
 import { BROWSABLE_LIBRARY, readable, type Item } from '@/lib/data';
 import { loadBook, bookSection } from '@/lib/books';
 import { useStore } from '@/lib/store';
+import { ExamResponse } from './ExamResponse';
 import { chip } from './Sheets';
 
 export function AutoStudy({ item }: { item: Item }) {
@@ -29,9 +30,7 @@ export function AutoStudy({ item }: { item: Item }) {
     question = questions[index];
   if (!question)
     return (
-      <p className="py-4 text-sm text-mu">
-        This passage is too short for a study session. Choose a longer chapter.
-      </p>
+      <ExamResponse item={item} />
     );
   const choose = (answer: string) => {
     if (locked.current || completed.current) return;
@@ -57,6 +56,7 @@ export function AutoStudy({ item }: { item: Item }) {
   };
   return (
     <section aria-label="Automatic study">
+      <ExamResponse key={item.id} item={item} />
       <p className="text-xs text-mu">
         {item.t}
         {item.sectionTitle ? ' · ' + item.sectionTitle : ''}
