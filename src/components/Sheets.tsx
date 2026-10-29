@@ -197,26 +197,42 @@ export function SettingsPanel({ reader }: { reader?: { item: Item; onZen: () => 
               </p>
             )}
             {sync.emailLinkEnabled && !sync.user && (
-              <form className="mt-4 flex flex-col gap-2" onSubmit={async (event) => {
-                event.preventDefault();
-                if (sendingEmailLink) return;
-                setSendingEmailLink(true);
-                try { await sync.sendEmailLink(emailAddress); }
-                catch { /* The provider displays a safe error. */ }
-                finally { setSendingEmailLink(false); }
-              }}>
+              <form
+                className="mt-4 flex flex-col gap-2"
+                onSubmit={async (event) => {
+                  event.preventDefault();
+                  if (sendingEmailLink) return;
+                  setSendingEmailLink(true);
+                  try {
+                    await sync.sendEmailLink(emailAddress);
+                  } catch {
+                    /* The provider displays a safe error. */
+                  } finally {
+                    setSendingEmailLink(false);
+                  }
+                }}
+              >
                 <label htmlFor="leesmaat-email-link" className="text-[13px] font-semibold">
                   Sign in with an email link
                 </label>
-                <input id="leesmaat-email-link" name="email" type="email" required maxLength={254}
-                  autoComplete="email" placeholder="you@example.com"
+                <input
+                  id="leesmaat-email-link"
+                  name="email"
+                  type="email"
+                  required
+                  maxLength={254}
+                  autoComplete="email"
+                  placeholder="you@example.com"
                   className="min-h-11 rounded-xl border border-ln bg-bg px-3 text-ink"
-                  value={emailAddress} onChange={event => setEmailAddress(event.target.value)} />
+                  value={emailAddress}
+                  onChange={(event) => setEmailAddress(event.target.value)}
+                />
                 <button type="submit" className={chip(false)} disabled={sendingEmailLink}>
                   {sendingEmailLink ? 'Sending link…' : 'Email me a sign-in link'}
                 </button>
                 <p className="text-xs text-mu">
-                  Open the link from your inbox. If you switch browsers or devices, confirm the same email address to finish.
+                  Open the link from your inbox. If you switch browsers or devices, confirm the same
+                  email address to finish.
                 </p>
               </form>
             )}

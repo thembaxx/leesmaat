@@ -161,7 +161,18 @@ export function SyncProvider({ children }: { children: ReactNode }) {
     }
   };
   return (
-    <Context value={{ user, status, error, configured: syncConfigured, emailLinkEnabled, sendEmailLink, login, logout }}>
+    <Context
+      value={{
+        user,
+        status,
+        error,
+        configured: syncConfigured,
+        emailLinkEnabled,
+        sendEmailLink,
+        login,
+        logout,
+      }}
+    >
       {children}
       <EmailLinkFinish />
     </Context>
@@ -206,13 +217,19 @@ function EmailLinkFinish() {
     try {
       const { auth } = firebaseClient();
       await signInWithEmailLink(auth, email.trim(), link);
-      try { window.sessionStorage.removeItem(PENDING_EMAIL_KEY); } catch { /* ignored */ }
+      try {
+        window.sessionStorage.removeItem(PENDING_EMAIL_KEY);
+      } catch {
+        /* ignored */
+      }
       // The action code is sensitive. Remove it from the visible browser URL after use.
       window.history.replaceState(window.history.state, '', window.location.pathname);
       dialog.current?.close();
       setLink(null);
     } catch {
-      setError('The email and link did not match, or the link expired. Confirm the inbox address or request a new link.');
+      setError(
+        'The email and link did not match, or the link expired. Confirm the inbox address or request a new link.',
+      );
     } finally {
       setBusy(false);
     }
@@ -224,21 +241,55 @@ function EmailLinkFinish() {
     setLink(null);
   }
   return (
-    <dialog ref={dialog} aria-labelledby="leesmaat-email-link-heading"
-      onCancel={(event) => { event.preventDefault(); dismiss(); }}
-      className="squircle fixed inset-0 m-auto w-[min(24rem,calc(100vw-2rem))] rounded-[26px] bg-sf p-6 text-ink shadow-2xl backdrop:bg-black/45">
-      <h2 id="leesmaat-email-link-heading" className="text-xl font-bold">Finish signing in</h2>
-      <p className="my-3 text-sm text-mu">Confirm the same email address that received the Leesmaat link. On another device or browser, type that address again.</p>
+    <dialog
+      ref={dialog}
+      aria-labelledby="leesmaat-email-link-heading"
+      onCancel={(event) => {
+        event.preventDefault();
+        dismiss();
+      }}
+      className="squircle fixed inset-0 m-auto w-[min(24rem,calc(100vw-2rem))] rounded-[26px] bg-sf p-6 text-ink shadow-2xl backdrop:bg-black/45"
+    >
+      <h2 id="leesmaat-email-link-heading" className="text-xl font-bold">
+        Finish signing in
+      </h2>
+      <p className="my-3 text-sm text-mu">
+        Confirm the same email address that received the Leesmaat link. On another device or
+        browser, type that address again.
+      </p>
       <form onSubmit={finish} className="flex flex-col gap-3">
-        <label className="text-sm font-semibold" htmlFor="leesmaat-email-confirm">Email address</label>
-        <input id="leesmaat-email-confirm" type="email" autoComplete="email" required maxLength={254}
-          value={email} onChange={event => setEmail(event.target.value)}
-          className="min-h-11 rounded-xl border border-ln bg-bg px-3 text-ink"/>
-        {error && <p role="alert" className="text-sm text-red-600">{error}</p>}
-        <button type="submit" disabled={busy} className="min-h-11 rounded-xl bg-ink px-4 font-semibold text-bg">
+        <label className="text-sm font-semibold" htmlFor="leesmaat-email-confirm">
+          Email address
+        </label>
+        <input
+          id="leesmaat-email-confirm"
+          type="email"
+          autoComplete="email"
+          required
+          maxLength={254}
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          className="min-h-11 rounded-xl border border-ln bg-bg px-3 text-ink"
+        />
+        {error && (
+          <p role="alert" className="text-sm text-red-600">
+            {error}
+          </p>
+        )}
+        <button
+          type="submit"
+          disabled={busy}
+          className="min-h-11 rounded-xl bg-ink px-4 font-semibold text-bg"
+        >
           {busy ? 'Checking your link…' : 'Verify and sign in'}
         </button>
-        <button type="button" onClick={dismiss} className="min-h-11 rounded-xl bg-ln px-4 text-sm font-semibold">Not now</button>
+        <button
+          type="button"
+          onClick={dismiss}
+          className="min-h-11 rounded-xl bg-ln px-4 text-sm font-semibold"
+        >
+          Not now
+        </button>
       </form>
     </dialog>
   );
