@@ -221,7 +221,7 @@ export function SettingsPanel({ reader }: { reader?: { item: Item; onZen: () => 
               </form>
             )}
             {sync.emailLinkEnabled && !sync.user && (
-              <p role="status" className="mt-2 text-[13px] text-mu">{sync.status}</p>
+              <output className="mt-2 block text-[13px] text-mu">{sync.status}</output>
             )}
             {sync.error && (
               <p role="alert" className="mt-2 text-[13px]">
