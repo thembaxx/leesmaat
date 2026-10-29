@@ -78,6 +78,8 @@ export function SettingsPanel({ reader }: { reader?: { item: Item; onZen: () => 
     offline = useOffline(),
     sync = useSync();
   const downloaded = reader && s.dl.includes(reader.item.bookId ?? reader.item.id);
+  const [emailAddress, setEmailAddress] = useState('');
+  const [sendingEmailLink, setSendingEmailLink] = useState(false);
   return (
     <div>
       <h3 className="mb-2.5 text-lg font-bold">Reading</h3>
@@ -176,7 +178,7 @@ export function SettingsPanel({ reader }: { reader?: { item: Item; onZen: () => 
             </button>
           </div>
           <div className="mt-5 border-t border-ln pt-4">
-            <h3 className="mb-2 text-lg font-bold">Google sync</h3>
+            <h3 className="mb-2 text-lg font-bold">Account & sync</h3>
             <output className="mb-3 text-[13px] text-mu">
               {sync.user
                 ? `${sync.user.displayName ?? 'Signed in'} · ${sync.status}`
@@ -194,13 +196,56 @@ export function SettingsPanel({ reader }: { reader?: { item: Item; onZen: () => 
                 Google sign-in will be available when sync is enabled for this app.
               </p>
             )}
+            {sync.emailLinkEnabled && !sync.user && (
+              <form
+                className="mt-4 flex flex-col gap-2"
+                onSubmit={async (event) => {
+                  event.preventDefault();
+                  if (sendingEmailLink) return;
+                  setSendingEmailLink(true);
+                  try {
+                    await sync.sendEmailLink(emailAddress);
+                  } catch {
+                    /* The provider displays a safe error. */
+                  } finally {
+                    setSendingEmailLink(false);
+                  }
+                }}
+              >
+                <label htmlFor="leesmaat-email-link" className="text-[13px] font-semibold">
+                  Sign in with an email link
+                </label>
+                <input
+                  id="leesmaat-email-link"
+                  name="email"
+                  type="email"
+                  required
+                  maxLength={254}
+                  autoComplete="email"
+                  placeholder="you@example.com"
+                  className="min-h-11 rounded-xl border border-ln bg-bg px-3 text-ink"
+                  value={emailAddress}
+                  onChange={(event) => setEmailAddress(event.target.value)}
+                />
+                <button type="submit" className={chip(false)} disabled={sendingEmailLink}>
+                  {sendingEmailLink ? 'Sending link…' : 'Email me a sign-in link'}
+                </button>
+                <p className="text-xs text-mu">
+                  Open the link from your inbox. If you switch browsers or devices, confirm the same
+                  email address to finish.
+                </p>
+              </form>
+            )}
+            {sync.emailLinkEnabled && !sync.user && (
+              <output className="mt-2 block text-[13px] text-mu">{sync.status}</output>
+            )}
             {sync.error && (
               <p role="alert" className="mt-2 text-[13px]">
                 {sync.error}
               </p>
             )}
             <p className="mt-3 text-xs text-mu">
-              Your Google account receives only your own reading data. Downloads stay on this
+              Your signed-in account receives only your own reading data. Downloads stay on this
               device. Signing out keeps your local library.
             </p>
           </div>

@@ -1,0 +1,39 @@
+name: Leesmaat email-link validation
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/email-link-validation.yml'
+      - 'src/components/SyncProvider.tsx'
+      - 'src/components/Sheets.tsx'
+      - '.env.example'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Feature source formatting
+        run: pnpm exec oxfmt --check src/components/SyncProvider.tsx src/components/Sheets.tsx
+      - name: Typecheck
+        run: pnpm typecheck
+      - name: Lint
+        run: pnpm lint
+      - name: Unit tests
+        run: pnpm test
+      - name: Production build with email-link feature disabled
+        run: pnpm build
+        env:
+          NEXT_PUBLIC_SITE_URL: 'https://leesmaat.example'
+          NEXT_PUBLIC_FIREBASE_EMAIL_LINK_ENABLED: 'false'
