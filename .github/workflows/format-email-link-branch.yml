@@ -4,6 +4,8 @@ on:
     branches: [feat/email-link-sync]
     paths:
       - '.github/workflows/format-email-link-branch.yml'
+      - 'src/components/Sheets.tsx'
+      - 'src/components/SyncProvider.tsx'
 permissions:
   contents: write
 jobs:
