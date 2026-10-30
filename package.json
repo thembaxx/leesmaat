@@ -27,7 +27,7 @@
     "@vercel/analytics": "^2.0.1",
     "firebase": "^13.1.0",
     "next": "16.4.3",
-    "onnxruntime-web": "1.30.0",
+    "onnxruntime-web": "1.31.1",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "three": "^0.186.1",
