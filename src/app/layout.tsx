@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   title: { default: siteTitle, template: '%s | Leesmaat' },
   description,
   applicationName: 'Leesmaat',
+  manifest: '/manifest.webmanifest',
   category: 'education',
   robots: { index: Boolean(SITE_URL), follow: true },
   icons: { icon: '/icon.svg', apple: '/apple-touch-icon.png' },
